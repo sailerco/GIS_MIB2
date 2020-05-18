@@ -59,9 +59,6 @@ a:hover{
 .img{
     float: right;
 }
-.eingabe{
-    font-size: medium;
-}
 footer{
     padding: 10px;
     background-color:black;
@@ -71,7 +68,7 @@ footer a:hover{
     color: white;
 }
 
-input[type=text], input[type=submit], input[type=textarea]{
+input[type=text], input[type=submit], #text{
     padding: 2px 5px;
     margin-bottom: 2px;
     background-color: lightgray;
@@ -81,7 +78,9 @@ input[type=text], input[type=submit], input[type=textarea]{
 input[type=text]{
     width: 15em;
   }
-input[type=textarea]{
+#text, ::placeholder{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 20em;
     padding-bottom: 5em;
 }
@@ -98,4 +97,6 @@ ul{
     font-size: 16px;
     list-style-type: circle;
 }
-
+#klein{
+    font-size: smaller;
+}
