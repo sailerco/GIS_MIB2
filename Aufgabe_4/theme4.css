@@ -31,9 +31,15 @@ a{
       color: gray;
 }
 header > a > img{
-    margin: 20px auto 10px;
+    margin: 20px 10px;
     height: 55px;
-    width:auto;
+
+}
+header > a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h1{
     display: none;
@@ -157,12 +163,22 @@ main img{
 @media (min-width:641px) {
 a h1{
     display: block;
-    margin: 30px 50px 10px;
+    margin: 20px 50px 20px;
 }
 header > a > img{
-    margin: 20px 10px;
     height: 55px;
-    width:auto;
+}
+header{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.cart{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.cart1{
+    margin: auto 20px;
 }
 nav > a > img{
     display: block;
