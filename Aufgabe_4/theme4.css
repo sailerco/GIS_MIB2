@@ -2,9 +2,6 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
-[title~=Preis]{
-    font-weight: bolder;
-}
 body{
     background-image: url(grid.jpg);
     margin: 0;
@@ -27,12 +24,12 @@ a{
 #activelogo{
     filter: grayscale(2);
 }
+
+@media (min-width:320px) { 
 .info>p{
       font-size: smaller;
       color: gray;
 }
-@media (min-width:320px) { 
-
 header > a > img{
     margin: 20px auto 10px;
     height: 55px;
