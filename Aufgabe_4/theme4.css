@@ -28,7 +28,7 @@ a{
     filter: grayscale(2);
 }
 
-@media (min-width:320px) { 
+@media screen and (min-width:320px) { 
 .info>p{
       font-size: smaller;
       color: gray;
@@ -165,7 +165,7 @@ main img{
 }
 
 }
-@media (min-width:641px) {
+@media screen and (min-width:641px) {
 a h1{
     display: block;
     margin: 20px 50px 20px;
@@ -210,7 +210,7 @@ nav{
     align-items: baseline;
     }
 }
-@media (min-width:1025px) { 
+@media screen and (min-width:1025px) { 
 nav{
     display: grid;
     grid-template-columns: 20%  20% 20% 20% 20% ;
