@@ -27,6 +27,7 @@ a{
 
 @media (min-width:320px) { 
 .info>p{
+        display: none;
       font-size: smaller;
       color: gray;
 }
@@ -106,49 +107,6 @@ nav > a > img{
 .navy a ~ h4:hover{
     color: #add9e6;
 }
-/* .overlay{
-    opacity: 0;
-}
-.banner {
-    position: relative;
-    width: 50%;
-    max-width: 300px;
-  }
-  .imagebanner {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-.banner:hover .overlay{
-    opacity: 1;    
-    position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); 
-  color: #f1f1f1;
-  width: 100%;
-  transition: .5s ease;font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-.search{
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-bottom: 0px;
-    display: flex;
-    align-items: center;
-
-}
-.search img{
-    width: 40px;
-}
-.searchsome{
-    display: none;
-}
-.search img:active .searchsome{
-    display: block;
-} */
-
 div + p{
     text-align: center;
     font-weight: bold;
@@ -197,6 +155,9 @@ main img{
 
 }
 @media (min-width:641px) {
+.info>p{
+        display: block;
+}
 a h1{
     display: block;
     margin: 30px 50px 10px;
