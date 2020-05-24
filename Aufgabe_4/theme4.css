@@ -127,6 +127,7 @@ main img{
     height: auto;
 }
 .shop > div{
+    height: 310px;
     margin:20px;
     background-color: white;
     text-align: center;
