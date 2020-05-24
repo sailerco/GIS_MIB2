@@ -29,9 +29,10 @@ a{
 }
 
 @media (min-width:320px) { 
-    .info>p{
-        font-style: italic;
-    }
+.info>p{
+      font-size: smaller;
+      color: gray;
+}
 header > a > img{
     margin: 20px auto 10px;
     height: 55px;
