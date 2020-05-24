@@ -27,7 +27,11 @@ a{
 #activelogo{
     filter: grayscale(2);
 }
+
 @media (min-width:320px) { 
+    .info>p{
+        font-style: italic;
+    }
 header > a > img{
     margin: 20px auto 10px;
     height: 55px;
