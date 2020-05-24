@@ -27,7 +27,6 @@ a{
 
 @media (min-width:320px) { 
 .info>p{
-        display: none;
       font-size: smaller;
       color: gray;
 }
@@ -107,6 +106,7 @@ nav > a > img{
 .navy a ~ h4:hover{
     color: #add9e6;
 }
+
 div + p{
     text-align: center;
     font-weight: bold;
@@ -155,9 +155,6 @@ main img{
 
 }
 @media (min-width:641px) {
-.info>p{
-        display: block;
-}
 a h1{
     display: block;
     margin: 30px 50px 10px;
