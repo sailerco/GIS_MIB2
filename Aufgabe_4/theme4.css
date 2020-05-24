@@ -55,6 +55,7 @@ h1{
     padding: 5px 5px 0px 5px;
 }
 header{
+    padding-bottom: 5px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -130,7 +131,7 @@ main img{
     height: auto;
 }
 .shop > div{
-    height: 310px;
+    height: 340px;
     margin:20px;
     background-color: white;
     text-align: center;
