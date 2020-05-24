@@ -65,6 +65,7 @@ h2{
        border: solid white 4px;
        padding: 15px 20px;
        border-radius: 50px;
+       transition: ease-out 0.4s;
 }
 #body{ background-color: #F2F2F2;
     display: grid;
@@ -90,6 +91,8 @@ h2{
 .poke img, .Schule img, .Schule1 img{
     align-self: center;
     width: 400px;
+    max-height: fit-content;
+    margin: 0 10px;
 }
 .Schule{
     grid-column: 2/3;
@@ -194,6 +197,7 @@ background-color: #385D84;
     background-color: #385D84;
     color: #F2F2F2;
     }
+
 .home{
     grid-row: 1/2;
     grid-column: 3/4;
@@ -203,8 +207,8 @@ background-color: #385D84;
     justify-content:center;
 
 }
-.home img:hover{
-    /* background-color:#AED3F2; */
+.home img:hover{margin: 0;
+    transition: ease-out 0.4s;
     border:  solid white 3px;
     padding: 15px;
     border-radius: 50px;
@@ -219,11 +223,13 @@ footer{
     background-color: #385D84;
     grid-row: 12/13;
     grid-column: 1/4;
+    margin-top: 10px;
 }
 footer a{
     font-size: large;
     margin: 5px;
 }
 footer:hover{
+    transition: ease-out 0.4s;
     background-color:#E77557;
 }
