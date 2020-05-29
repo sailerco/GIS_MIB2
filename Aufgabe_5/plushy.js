@@ -205,4 +205,4 @@ var Aufgabe_5;
         }
     }
 })(Aufgabe_5 || (Aufgabe_5 = {}));
-//# sourceMappingURL=plush.js.map
+//# sourceMappingURL=plushy.js.map
