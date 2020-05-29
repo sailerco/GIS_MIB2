@@ -1,0 +1,267 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+html{
+    width: 100%;
+}
+body{
+    background-image: url(grid.jpg);
+    margin: 0;
+    padding: 0;
+    }
+.head{
+    position: sticky;
+    top: 0;
+    padding-bottom: 10px;
+    background-color:white;
+
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+#active{
+    border: dotted #add9e6 3px;
+}
+#activelogo{
+    filter: grayscale(2);
+}
+
+@media screen and (min-width:320px) { 
+p.atikelname{
+    font-weight: 500;
+}
+.artikel>p.beschreibung{
+      font-size: smaller;
+      color: gray;
+}
+.artikel>p.preis{
+    font-size: small;
+    color: gray;
+}
+header > a > img{
+    margin: 20px 10px;
+    height: 55px;
+
+}
+header > a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    display: none;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.nav1{
+    min-width: 100px;
+    margin-top: 10px;
+    padding: 5px 5px 0px 5px;
+}
+header{
+    padding-bottom: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: #add9e6;
+}
+nav{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.cart{
+    width: 250px;
+}
+.cart1{
+    width: 80px;
+}
+.navy{
+    width: 700px;
+}
+.navy, .cart{
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.navy img, .cart img{
+    margin: auto;  
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    align-content: center; 
+    filter: grayscale(100);
+}
+nav > a > img{
+    display: none;
+}
+.cart1, .nav1{
+    margin: auto; 
+    text-align: center;
+}
+.cart1 #heart:hover, .cart1 #cart1:hover{
+     transition: 0.2s;
+     filter: grayscale(0);}
+.cart1:hover,.nav1:hover{
+    transition: 0.2s;
+    border-bottom: dotted 1px;
+    padding-bottom: 0;
+}
+.navy a ~ h4{
+    font-size: medium;
+    font-weight: lighter;
+    margin: 0;
+}
+.navy a ~ h4:hover{
+    color: #add9e6;
+}
+
+div + p{
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    color: #add9e6;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+main img{
+    width: 100%;
+    height: auto;
+}
+.artikel{
+    height: 370px;
+    margin:20px;
+    background-color: white;
+    text-align: center;
+}
+#shop1, #shop2, #shop3, #shop4, #shop5{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+.artikel > img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    width: 200px;
+}
+.drop{
+     opacity: 0;
+}
+.artikel:hover .drop{
+    opacity: 1;
+    transition: 1s;
+}
+.artikel:hover .drop img:hover{
+    transition: 0.2s;
+    filter: grayscale(0);
+}
+.drop img{
+    padding: 5px;
+    width: 25px;
+    filter: grayscale(100);
+}
+
+}
+@media screen and (min-width:641px) {
+a h1{
+    display: block;
+    margin: 20px 50px 20px;
+}
+header > a > img{
+    height: 55px;
+}
+header{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.cart{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.cart1{
+    margin: auto 20px;
+}
+nav > a > img{
+    display: block;
+    height: 70px;
+    margin: 15px 20px ;
+}
+nav{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+     flex: 1 0 10%;
+}
+
+#shop1, #shop2, #shop3, #shop4, #shop5{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.artikel{
+    flex: 1 0 32%;
+    margin: 10px 50px;
+    align-items: baseline;
+    }
+}
+@media screen and (min-width:1025px) { 
+nav{
+    display: grid;
+    grid-template-columns: 20%  20% 20% 20% 20% ;
+    align-items: center;
+    
+}
+nav a{
+    margin: 0px auto;
+}
+.navy{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav img[alt="Logo"]{
+    grid-column: 1/2;
+}
+nav img[alt="Logo1"]{
+    grid-column: 2/3;
+}
+.navy{
+    grid-column: 3/6;
+}
+
+.banner{
+    width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+#shop1, #shop2, #shop3, #shop4, #shop5{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.artikel{
+    flex: 1 0 20%;
+    margin: 10px 50px;
+    margin-bottom: 20px;
+    }
+}
+
+
