@@ -203,12 +203,8 @@ namespace Aufgabe_5 {
         description: "Todesstern Waffeln!"
     };
     const gsmtSortiment: Pokestar[] = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
-
     const hometag: HTMLElement = document.getElementById("shop4") as HTMLDivElement;
 
-
-    /* home();
-    function home(): void { */
     for (let i: number = 0; i <= gsmtSortiment.length - 1; i++) {
         if (gsmtSortiment[i].kategorie2 === "Home") {
             let div: HTMLDivElement = document.createElement("div"); //new div an #shop4
