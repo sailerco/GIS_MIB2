@@ -1,6 +1,6 @@
 namespace Aufgabe_5 {
-    
-    interface Pokestar { 
+
+    interface Pokestar {
         kategorie1: boolean; //true = Pokemon, false =sw
         kategorie2: string;
         name: string;
@@ -42,7 +42,7 @@ namespace Aufgabe_5 {
     };
     let a5: Pokestar = {
         kategorie1: true,
-        kategorie2: "Home",     
+        kategorie2: "Home",
         name: "Evoli Figuren",
         image: "poke/eevee.jpg",
         price: 20,
@@ -202,26 +202,26 @@ namespace Aufgabe_5 {
         price: 30,
         description: "Todesstern Waffeln!"
     };
-    const gsmtSortiment: Pokestar[] = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12]; 
+    const gsmtSortiment: Pokestar[] = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
 
     const clothingtag: HTMLElement = document.getElementById("shop5") as HTMLDivElement;
-    
+
     for (let i: number = 0; i <= gsmtSortiment.length - 1; i++) {
         if (gsmtSortiment[i].kategorie2 === "Clothing") {
             let div: HTMLDivElement = document.createElement("div"); //new div an #shop4
             div.setAttribute("class", "artikel");
-            clothingtag.appendChild(div);                                  
+            clothingtag.appendChild(div);
 
             let img: HTMLImageElement = document.createElement("img"); //bild 
             img.setAttribute("src", gsmtSortiment[i].image);
             img.setAttribute("alt", gsmtSortiment[i].name);
             div.appendChild(img);
-            
+
             let name: HTMLParagraphElement = document.createElement("p"); //Artikelname
             name.setAttribute("class", "atikelname");
             div.appendChild(name).innerHTML = gsmtSortiment[i].name;
 
-            let description: HTMLParagraphElement = document.createElement("p"); 
+            let description: HTMLParagraphElement = document.createElement("p");
             description.setAttribute("class", "beschreibung");
             div.appendChild(description).innerHTML = gsmtSortiment[i].description;
 
@@ -241,7 +241,7 @@ namespace Aufgabe_5 {
             let img3: HTMLImageElement = document.createElement("img");
             img3.setAttribute("src", "heart.png");
             img.setAttribute("alt", "heart");
-            div2.appendChild(img3); 
+            div2.appendChild(img3);
         }
     }
 }        

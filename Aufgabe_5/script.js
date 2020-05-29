@@ -76,6 +76,7 @@ var Aufgabe_5;
     //#enderegion
     const pokemonartikel = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
     const poke = document.getElementById("shop1");
+    //#region for schleife Atikel generieren
     for (let i = 0; i <= pokemonartikel.length - 1; i++) {
         let div = document.createElement("div"); //new div an #shop1
         div.setAttribute("class", "artikel");
@@ -105,5 +106,6 @@ var Aufgabe_5;
         img.setAttribute("alt", "heart");
         div2.appendChild(img3);
     }
+    //#endregion
 })(Aufgabe_5 || (Aufgabe_5 = {}));
 //# sourceMappingURL=script.js.map

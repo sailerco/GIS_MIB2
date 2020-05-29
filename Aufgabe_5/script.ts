@@ -1,12 +1,12 @@
 namespace Aufgabe_5 {
     //#region Produkte 
-    interface Pokestar { 
+    interface Pokestar {
         name: string;
         image: string;
         description: string;
         price: number;
     }
-    let eevee: Pokestar = {   
+    let eevee: Pokestar = {
         name: "Evoli Rucksack",
         image: "poke/bag.jpg",
         description: "Rucksack - Evoli Design",
@@ -48,20 +48,20 @@ namespace Aufgabe_5 {
         description: "Sehr weiches Relaxo",
         price: 15
     };
-    let a8: Pokestar = {   
+    let a8: Pokestar = {
         name: "Wolly Plüschtier",
         image: "poke/plush2.jpg",
         price: 15,
         description: "Sehr weiches Wolly"
     };
     let a9: Pokestar = {
-        
+
         name: "Pikachu Plüschtier",
         image: "poke/plush3.jpg",
         price: 20,
         description: "Pikachu macht sein Abschluss"
     };
-    let a10: Pokestar = {  
+    let a10: Pokestar = {
         name: "Ditto Plüschtier",
         image: "poke/plush4.jpg",
         price: 15,
@@ -81,24 +81,25 @@ namespace Aufgabe_5 {
     };
     //#enderegion
     const pokemonartikel: Pokestar[] = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
-    const poke: HTMLElement = document.getElementById("shop1") as HTMLDivElement; 
-    
+    const poke: HTMLElement = document.getElementById("shop1") as HTMLDivElement;
+
+    //#region for schleife Atikel generieren
     for (let i: number = 0; i <= pokemonartikel.length - 1; i++) {
 
         let div: HTMLDivElement = document.createElement("div"); //new div an #shop1
         div.setAttribute("class", "artikel");
-        poke.appendChild(div);                                  
+        poke.appendChild(div);
 
         let img: HTMLImageElement = document.createElement("img"); //bild 
         img.setAttribute("src", pokemonartikel[i].image);
         img.setAttribute("alt", pokemonartikel[i].name);
         div.appendChild(img);
-        
+
         let name: HTMLParagraphElement = document.createElement("p"); //Artikelname
         name.setAttribute("class", "atikelname");
         div.appendChild(name).innerHTML = pokemonartikel[i].name;
 
-        let description: HTMLParagraphElement = document.createElement("p"); 
+        let description: HTMLParagraphElement = document.createElement("p");
         description.setAttribute("class", "beschreibung");
         div.appendChild(description).innerHTML = pokemonartikel[i].description;
 
@@ -118,7 +119,7 @@ namespace Aufgabe_5 {
         let img3: HTMLImageElement = document.createElement("img");
         img3.setAttribute("src", "heart.png");
         img.setAttribute("alt", "heart");
-        div2.appendChild(img3); 
-      
+        div2.appendChild(img3);
     }
+    //#endregion
 }       
