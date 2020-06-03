@@ -189,8 +189,8 @@ namespace Aufgabe_6 {
     //#region for schleife Atikel generieren
     
     let c: HTMLParagraphElement = document.createElement("p");
-    let z = 0;
-    let kostet = 0;
+    let z: number = 0;
+    let kostet: number = 0;
     
     for (let i: number = 0; i <= pokemonartikel.length - 1; i++) {
 
