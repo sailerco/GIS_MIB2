@@ -10,7 +10,7 @@ namespace Aufgabe_6 {
     let eevee: Pokestar = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
     let relaxo: Pokestar = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
     let a3: Pokestar = { kategorie: true, name: "Detektiv Pikachu", image: "poke/cap.jpg", description: "Mütze mit Pikachu Ohren", price: 15 };
-    let a4: Pokestar = {kategorie: true, name: "Zurrokex Mütze", image: "poke/cap2.jpg", description: "Mütze im Zurrokex Design",price: 15 };
+    let a4: Pokestar = {kategorie: true, name: "Zurrokex Mütze", image: "poke/cap2.jpg", description: "Mütze im Zurrokex Design", price: 15 };
     let a5: Pokestar = { kategorie: true, name: "Evoli Figuren", image: "poke/eevee.jpg", description: "Evolis sind abnehmbar", price: 20};
     let a6: Pokestar = { kategorie: true, name: "Gengar Tasse", image: "poke/mug.jpg", description: "Lila Tasse mit Gengars Gesicht", price: 7};
     let a7: Pokestar = { kategorie: true, name: "Relaxo Plüschtier", image: "poke/plush1.jpg", description: "Sehr weiches Relaxo", price: 15};
