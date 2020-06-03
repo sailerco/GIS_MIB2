@@ -196,8 +196,6 @@ var Aufgabe_5;
     };
     const gsmtSortiment = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
     const hometag = document.getElementById("shop4");
-    /* home();
-    function home(): void { */
     for (let i = 0; i <= gsmtSortiment.length - 1; i++) {
         if (gsmtSortiment[i].kategorie2 === "Home") {
             let div = document.createElement("div"); //new div an #shop4
