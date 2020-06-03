@@ -1,8 +1,8 @@
 "use strict";
 var Aufgabe_6;
 (function (Aufgabe_6) {
-    let eevee = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
-    let relaxo = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
+    let a1 = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
+    let a2 = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
     let a3 = { kategorie: true, name: "Detektiv Pikachu", image: "poke/cap.jpg", description: "Mütze mit Pikachu Ohren", price: 15 };
     let a4 = { kategorie: true, name: "Zurrokex Mütze", image: "poke/cap2.jpg", description: "Mütze im Zurrokex Design", price: 15 };
     let a5 = { kategorie: true, name: "Evoli Figuren", image: "poke/eevee.jpg", description: "Evolis sind abnehmbar", price: 20 };
@@ -26,7 +26,7 @@ var Aufgabe_6;
     let sw11 = { kategorie: false, name: "Darth Vader Toaster", image: "sw/toaster.jpg", description: "Perfekt für jedes Frühstück", price: 30 };
     let sw12 = { kategorie: false, name: "Star Wars Waffeleisen", image: "sw/waffels.jpg", description: "Todesstern Waffeln!", price: 30 };
     //#enderegion
-    const pokemonartikel = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
+    const pokemonartikel = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
     const poke = document.getElementById("shop1");
     const swtag = document.getElementById("shop2");
     const cart1 = document.getElementById("count");
