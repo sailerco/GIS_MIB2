@@ -96,7 +96,7 @@ var Aufgabe_6;
             let a = "" + z;
             cart1.appendChild(c).innerHTML = a;
             kostet = kostet + pokemonartikel[i].price;
-            console.log("Preis" + kostet + "€");
+            console.log("Preis: " + kostet + "€");
         }
     }
     //#endregion

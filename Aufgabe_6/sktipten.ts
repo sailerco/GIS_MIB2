@@ -32,7 +32,7 @@ namespace Aufgabe_6 {
     let sw11: Pokestar = { kategorie: false, name: "Darth Vader Toaster", image: "sw/toaster.jpg", description: "Perfekt für jedes Frühstück", price: 30 };
     let sw12: Pokestar = { kategorie: false, name: "Star Wars Waffeleisen", image: "sw/waffels.jpg", description: "Todesstern Waffeln!", price: 30};
     //#enderegion
-    
+
     const pokemonartikel: Pokestar[] = [eevee, relaxo, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
     const poke: HTMLElement = document.getElementById("shop1") as HTMLDivElement;
     const swtag: HTMLElement = document.getElementById("shop2") as HTMLDivElement;
@@ -116,7 +116,7 @@ namespace Aufgabe_6 {
             let a: string = "" + z;
             cart1.appendChild(c).innerHTML = a;
             kostet = kostet + pokemonartikel[i].price;
-            console.log("Preis" + kostet + "€");
+            console.log("Preis: " + kostet + "€");
         }
     }
     //#endregion
