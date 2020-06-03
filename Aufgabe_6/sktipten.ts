@@ -237,7 +237,7 @@ namespace Aufgabe_6 {
         sw.addEventListener("click", swclick);
         
         function pokclick(): void {
-            if (pokemonartikel[i].kategorie == false){
+            if (pokemonartikel[i].kategorie == false) {
                 swtag.style.display = "none";
                 swp.style.display = "none";
                 poke.style.display = "flex";
@@ -245,7 +245,7 @@ namespace Aufgabe_6 {
             }
         }
         function swclick(): void {
-            if (pokemonartikel[i].kategorie == true){
+            if (pokemonartikel[i].kategorie == true) {
                 poke.style.display = "none";
                 pokep.style.display = "none";
                 swtag.style.display = "flex";
