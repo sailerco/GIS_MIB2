@@ -34,6 +34,7 @@ var Aufgabe_6;
     const sw = document.getElementById("swlogo");
     const pokep = document.getElementById("poke");
     const swp = document.getElementById("sw");
+    const home = document.getElementById("home");
     //#region for schleife Atikel generieren
     let c = document.createElement("p");
     let z = 0;
@@ -72,6 +73,13 @@ var Aufgabe_6;
         div2.appendChild(img3);
         pokemon.addEventListener("click", pokclick);
         sw.addEventListener("click", swclick);
+        home.addEventListener("click", homeclick);
+        function homeclick() {
+            swtag.style.display = "flex";
+            swp.style.display = "block";
+            poke.style.display = "flex";
+            pokep.style.display = "block";
+        }
         function pokclick() {
             if (pokemonartikel[i].kategorie == false) {
                 swtag.style.display = "none";

@@ -41,7 +41,7 @@ namespace Aufgabe_6 {
     const sw: HTMLElement = document.getElementById("swlogo") as HTMLDivElement;
     const pokep: HTMLElement = document.getElementById("poke") as HTMLElement;
     const swp: HTMLElement = document.getElementById("sw") as HTMLElement;
-
+    const home: HTMLElement = document.getElementById("home") as HTMLElement;
     //#region for schleife Atikel generieren
     
     let c: HTMLParagraphElement = document.createElement("p");
@@ -91,7 +91,13 @@ namespace Aufgabe_6 {
         
         pokemon.addEventListener("click", pokclick);
         sw.addEventListener("click", swclick);
-        
+        home.addEventListener("click", homeclick);
+        function homeclick(): void {
+            swtag.style.display = "flex";
+            swp.style.display = "block";
+            poke.style.display = "flex";
+            pokep.style.display = "block";
+        }
         function pokclick(): void {
             if (pokemonartikel[i].kategorie == false) {
                 swtag.style.display = "none";
