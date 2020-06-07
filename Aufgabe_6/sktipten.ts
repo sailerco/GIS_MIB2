@@ -92,6 +92,7 @@ namespace Aufgabe_6 {
         pokemon.addEventListener("click", pokclick);
         sw.addEventListener("click", swclick);
         home.addEventListener("click", homeclick);
+        
         function homeclick(): void {
             swtag.style.display = "flex";
             swp.style.display = "block";
