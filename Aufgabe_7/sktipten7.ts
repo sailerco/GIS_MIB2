@@ -6,7 +6,8 @@ namespace Aufgabe_7 {
         description: string;
         price: number;
     }
-    let pokemonartikel: Pokestar[] = JSON.parse("side.json");
+    let pokemonartikel: Pokestar[];
+    communicate("side.json");
    /*  let pokemonartikel: Pokestar[] = JSON.parse(json); */
    /*  let a1: Pokestar = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
     let a2: Pokestar = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
@@ -47,9 +48,9 @@ namespace Aufgabe_7 {
     async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch("side.json");
         pokemonartikel = JSON.parse(response.toString());
-        let response1: Response = await response.json();
+       /*  let response1: Response = await response.json();
         console.log("Response", response);
-        console.log("Response", response1);
+        console.log("Response", response1); */
       }
     
 
@@ -66,80 +67,83 @@ namespace Aufgabe_7 {
     let c: HTMLParagraphElement = document.createElement("p");
     let z: number = 0;
     let kostet: number = 0;
-    
-    for (let i: number = 0; i <= pokemonartikel.length - 1; i++) {
 
-        let div: HTMLDivElement = document.createElement("div"); //new div an #shop1
-        div.setAttribute("class", "artikel");
-        if (pokemonartikel[i].kategorie)
-            poke.appendChild(div);
-        else
-            swtag.appendChild(div);
+    artikel();
+    function artikel(): void{
+        for (let i: number = 0; i <= pokemonartikel.length - 1; i++) {
 
-        let img: HTMLImageElement = document.createElement("img"); //bild 
-        img.setAttribute("src", pokemonartikel[i].image);
-        img.setAttribute("alt", pokemonartikel[i].name);
-        div.appendChild(img);
+            let div: HTMLDivElement = document.createElement("div"); //new div an #shop1
+            div.setAttribute("class", "artikel");
+            if (pokemonartikel[i].kategorie)
+                poke.appendChild(div);
+            else
+                swtag.appendChild(div);
 
-        let name: HTMLParagraphElement = document.createElement("p"); //Artikelname
-        name.setAttribute("class", "atikelname");
-        div.appendChild(name).innerHTML = pokemonartikel[i].name;
+            let img: HTMLImageElement = document.createElement("img"); //bild 
+            img.setAttribute("src", pokemonartikel[i].image);
+            img.setAttribute("alt", pokemonartikel[i].name);
+            div.appendChild(img);
 
-        let description: HTMLParagraphElement = document.createElement("p");
-        description.setAttribute("class", "beschreibung");
-        div.appendChild(description).innerHTML = pokemonartikel[i].description;
+            let name: HTMLParagraphElement = document.createElement("p"); //Artikelname
+            name.setAttribute("class", "atikelname");
+            div.appendChild(name).innerHTML = pokemonartikel[i].name;
 
-        let price: HTMLParagraphElement = document.createElement("p");
-        price.setAttribute("class", "price");
-        div.appendChild(price).innerHTML = pokemonartikel[i].price + "€";
+            let description: HTMLParagraphElement = document.createElement("p");
+            description.setAttribute("class", "beschreibung");
+            div.appendChild(description).innerHTML = pokemonartikel[i].description;
 
-        let div2: HTMLDivElement = document.createElement("div"); //neue div die dropt
-        div2.setAttribute("class", "drop");
-        div.appendChild(div2);
+            let price: HTMLParagraphElement = document.createElement("p");
+            price.setAttribute("class", "price");
+            div.appendChild(price).innerHTML = pokemonartikel[i].price + "€";
 
-        let img2: HTMLImageElement = document.createElement("img");
-        img2.setAttribute("src", "cart.png");
-        img2.setAttribute("alt", "cart");
-        div2.appendChild(img2);
-        img2.addEventListener("click", cart);
-        
-        let img3: HTMLImageElement = document.createElement("img");
-        img3.setAttribute("src", "heart.png");
-        img3.setAttribute("alt", "heart");
-        div2.appendChild(img3);
-        
-        function cart(): void {
-            z++;
-            if (z > 0) {
-                cart1.style.display = "block";
+            let div2: HTMLDivElement = document.createElement("div"); //neue div die dropt
+            div2.setAttribute("class", "drop");
+            div.appendChild(div2);
+
+            let img2: HTMLImageElement = document.createElement("img");
+            img2.setAttribute("src", "cart.png");
+            img2.setAttribute("alt", "cart");
+            div2.appendChild(img2);
+            img2.addEventListener("click", cart);
+            
+            let img3: HTMLImageElement = document.createElement("img");
+            img3.setAttribute("src", "heart.png");
+            img3.setAttribute("alt", "heart");
+            div2.appendChild(img3);
+            
+            function cart(): void {
+                z++;
+                if (z > 0) {
+                    cart1.style.display = "block";
+                }
+                let a: string = "" + z;
+                cart1.appendChild(c).innerHTML = a;
+                kostet = kostet + pokemonartikel[i].price;
+                console.log("Preis: " + kostet + "€");
             }
-            let a: string = "" + z;
-            cart1.appendChild(c).innerHTML = a;
-            kostet = kostet + pokemonartikel[i].price;
-            console.log("Preis: " + kostet + "€");
         }
-    }
 
-    //#endregion
-    pokemon.addEventListener("click", pokclick);
-    sw.addEventListener("click", swclick);
-    home.addEventListener("click", homeclick);
-    function homeclick(): void {
-        swtag.style.display = "flex";
-        swp.style.display = "block";
-        poke.style.display = "flex";
-        pokep.style.display = "block";
-    }
-    function pokclick(): void {
-        swtag.style.display = "none";
-        swp.style.display = "none";
-        poke.style.display = "flex";
-        pokep.style.display = "block";
-    }
-    function swclick(): void {
-        poke.style.display = "none";
-        pokep.style.display = "none";
-        swtag.style.display = "flex";
-        swp.style.display = "block";  
+        //#endregion
+        pokemon.addEventListener("click", pokclick);
+        sw.addEventListener("click", swclick);
+        home.addEventListener("click", homeclick);
+        function homeclick(): void {
+            swtag.style.display = "flex";
+            swp.style.display = "block";
+            poke.style.display = "flex";
+            pokep.style.display = "block";
+        }
+        function pokclick(): void {
+            swtag.style.display = "none";
+            swp.style.display = "none";
+            poke.style.display = "flex";
+            pokep.style.display = "block";
+        }
+        function swclick(): void {
+            poke.style.display = "none";
+            pokep.style.display = "none";
+            swtag.style.display = "flex";
+            swp.style.display = "block";  
+        }
     }
 }       
