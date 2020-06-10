@@ -6,6 +6,7 @@ namespace Aufgabe_7 {
         description: string;
         price: number;
     }
+    let pokemonartikel: Pokestar[] = JSON.parse("side.json");
    /*  let pokemonartikel: Pokestar[] = JSON.parse(json); */
    /*  let a1: Pokestar = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
     let a2: Pokestar = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
@@ -40,12 +41,15 @@ namespace Aufgabe_7 {
         let response: Response = await fetch(_url);
         console.log("Response", response);
     } */
-    fetch("side.json");
-    let pokemonartikel: Pokestar[] = JSON.parse("side.json");
+   /*  fetch("side.json"); */
+     /* = JSON.parse("side.json"); */
+
     async function communicate(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url);
+        let response: Response = await fetch("side.json");
+        pokemonartikel = JSON.parse(response.toString());
         let response1: Response = await response.json();
         console.log("Response", response);
+        console.log("Response", response1);
       }
     
 
