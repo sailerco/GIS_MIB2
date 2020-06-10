@@ -6,7 +6,7 @@ namespace Aufgabe_7 {
         description: string;
         price: number;
     }
-    let pokemonartikel: Pokestar[] = JSON.parse(json);
+   /*  let pokemonartikel: Pokestar[] = JSON.parse(json); */
    /*  let a1: Pokestar = { kategorie: true, name: "Evoli Rucksack", image: "poke/bag.jpg", description: "Rucksack - Evoli Design", price: 20 };
     let a2: Pokestar = { kategorie: true, name: "Relaxo Sitzsack", image: "poke/beanbag.jpg", description: "1,20m, weich, Relaxo", price: 100 };
     let a3: Pokestar = { kategorie: true, name: "Detektiv Pikachu", image: "poke/cap.jpg", description: "Mütze mit Pikachu Ohren", price: 15 };
@@ -35,11 +35,20 @@ namespace Aufgabe_7 {
 /*     let pokemonartikel: Pokestar[] = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, sw1, sw2, sw3, sw4, sw5, sw6, sw7, sw8, sw9, sw10, sw11, sw12];
     let json = JSON.stringify(pokemonartikel);
     console.log(json); */
-    //#region Produkte 
-    async function communicate(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(side.json);
+    //#region Produkte
+    /* async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
         console.log("Response", response);
-    }
+    } */
+    fetch("side.json");
+    let pokemonartikel: Pokestar[] = JSON.parse("side.json");
+    async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        let response1: Response = await response.json();
+        console.log("Response", response);
+      }
+    
+
     const poke: HTMLElement = document.getElementById("shop1") as HTMLDivElement;
     const swtag: HTMLElement = document.getElementById("shop2") as HTMLDivElement;
     const cart1: HTMLElement = document.getElementById("count") as HTMLImageElement;
