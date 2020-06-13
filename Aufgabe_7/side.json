@@ -1,4 +1,4 @@
-{"artikels": [
+[
     {"kategorie":true,"name":"Evoli Rucksack","image":"poke/bag.jpg","description":"Rucksack - Evoli Design","price":20},
     {"kategorie":true,"name":"Relaxo Sitzsack","image":"poke/beanbag.jpg","description":"1,20m, weich, Relaxo","price":100},
     {"kategorie":true,"name":"Detektiv Pikachu","image":"poke/cap.jpg","description":"Mütze mit Pikachu Ohren","price":15},
@@ -23,5 +23,5 @@
     {"kategorie":false,"name":"R2D2 Reiskocher","image":"sw/Pot.jpg","description":"Ant-Haft-Beschichtet","price":90},
     {"kategorie":false,"name":"Darth Vader Toaster","image":"sw/toaster.jpg","description":"Perfekt für jedes Frühstück","price":30},
     {"kategorie":false,"name":"Star Wars Waffeleisen","image":"sw/waffels.jpg","description":"Todesstern Waffeln!","price":30}
-    ]
-}
+]
+

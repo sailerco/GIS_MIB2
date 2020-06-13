@@ -5,6 +5,23 @@
 html{
     width: 100%;
 }
+button{
+    width: 80px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    color: #add9e6;
+}
+#ware{
+    text-align: center;
+}
+#ware p{
+    font-weight: 1000;
+    padding: 0px 10px;
+    background-color: white;
+    color: #add9e6;
+    font-size: large;
+}
 body{
     background-image: url(grid.jpg);
     margin: 0;
