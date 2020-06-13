@@ -1,7 +1,6 @@
 "use strict";
 var Aufgabe_7;
 (function (Aufgabe_7) {
-    /*  const ware: HTMLElement = document.getElementById("ware") as HTMLElement; */
     const poke = document.getElementById("shop1");
     const swtag = document.getElementById("shop2");
     const cart1 = document.getElementById("count");
@@ -55,17 +54,17 @@ var Aufgabe_7;
                 }
                 let a = "" + z;
                 cart1.appendChild(c).innerHTML = a;
+                localStorage.setItem("zahl", a);
+                if (product) {
+                    product.push(Aufgabe_7.pokemonartikel[i]);
+                }
+                else {
+                    product = [Aufgabe_7.pokemonartikel[i]];
+                }
+                localStorage.setItem("artikel", JSON.stringify(product));
                 kostet = kostet + Aufgabe_7.pokemonartikel[i].price;
                 console.log("Preis: " + kostet + "€");
                 localStorage.setItem("kostet", kostet.toString());
-                if (!product) {
-                    product = [Aufgabe_7.pokemonartikel[i]];
-                }
-                else {
-                    product.push(Aufgabe_7.pokemonartikel[i]);
-                }
-                localStorage.setItem("zahl", a);
-                localStorage.setItem("artikel", JSON.stringify(product));
             }
         }
         //#endregion

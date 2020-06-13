@@ -43,9 +43,9 @@ var Aufgabe_7;
             function loeschenArtikel(_eventbutton) {
                 //neue Preisberechnung
                 let kostet = parseInt(localStorage.getItem("kostet"));
+                kostet -= product[i].price;
                 localStorage.setItem("kostet", kostet.toString());
                 c.innerHTML = "Gesamtpreis: " + kostet + "€";
-                kostet -= product[i].price;
                 anzahl -= 1;
                 localStorage.setItem("zahl", anzahl.toString());
                 localStorage.removeItem("artikel"[i]);

@@ -1,5 +1,4 @@
 namespace Aufgabe_7 {
-   /*  const ware: HTMLElement = document.getElementById("ware") as HTMLElement; */
     const poke: HTMLElement = document.getElementById("shop1") as HTMLDivElement;
     const swtag: HTMLElement = document.getElementById("shop2") as HTMLDivElement;
     const cart1: HTMLElement = document.getElementById("count") as HTMLImageElement;
@@ -64,18 +63,19 @@ namespace Aufgabe_7 {
                 }
                 let a: string = "" + z;
                 cart1.appendChild(c).innerHTML = a;
+                localStorage.setItem("zahl", a);
+
+                if (product) {
+                    product.push(pokemonartikel[i]);
+                } else {
+                    product = [pokemonartikel[i]];
+                }
+                localStorage.setItem("artikel", JSON.stringify(product));
+                
                 kostet = kostet + pokemonartikel[i].price;
                 console.log("Preis: " + kostet + "€");
                 localStorage.setItem("kostet", kostet.toString());
 
-                
-                if (!product) {
-                    product = [pokemonartikel[i]];
-                } else {
-                    product.push(pokemonartikel[i]);
-                }
-                localStorage.setItem("zahl", a);
-                localStorage.setItem("artikel", JSON.stringify(product));
             }
         }
 

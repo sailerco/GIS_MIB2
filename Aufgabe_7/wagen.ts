@@ -48,10 +48,10 @@ namespace Aufgabe_7 {
             function loeschenArtikel(_eventbutton: Event): void {  
                 //neue Preisberechnung
                 let kostet: number =  parseInt(localStorage.getItem("kostet")!);
+                kostet -= product[i].price;
                 localStorage.setItem("kostet", kostet.toString());
                 c.innerHTML = "Gesamtpreis: " + kostet  + "€" ;
-                kostet -= product[i].price;
-
+                
                 anzahl -= 1;
                 localStorage.setItem("zahl", anzahl.toString());
 
@@ -87,6 +87,4 @@ namespace Aufgabe_7 {
         }
         localStorage.clear();
     }
-    
-
 }
