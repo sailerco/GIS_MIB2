@@ -1,17 +1,37 @@
 import * as Http from "http";
 
 namespace Aufgabe_8 {
-  console.log("Starting server");
+ /*  console.log("Starting server");
   let port: number = Number(process.env.PORT);
   if (!port)
-    port = 8100;
+    port = 8100; */
+  let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
+  button.addEventListener("click", buttonclick);
 
-  let server: Http.Server = Http.createServer();
+  async function buttonclick(): Promise<void> {
+    response(await communicate());
+  }
+  /* let server: Http.Server = Http.createServer();
   server.addListener("request", handleRequest);
   server.addListener("listening", handleListen);
-  server.listen(port);
+  server.listen(port); */
+  
+  async function communicate(): Promise<string> {
+    let formData: FormData = new FormData(document.forms[0]);
+    let url: string = "https://dedflake.herokuapp.com/";
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
+    url += url + "?" + query.toString();
+    await fetch(url);
+    return url;
+  }
 
-  function handleListen(): void {
+  async function response(_url: RequestInfo): Promise<void> { //asynchron damit await fetch benutzt werden kann 
+    let response: Response = await fetch(_url);
+    let response2:string = await response.json();
+    console.log(response2);
+}
+
+  /* function handleListen(): void {
     console.log("Listening");
   }
 
@@ -24,5 +44,5 @@ namespace Aufgabe_8 {
     _response.write(_request.url);
 
     _response.end();
-  }
+  } */
 }
