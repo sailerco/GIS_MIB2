@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sailerco/GIS_MIB2/issues"
   },
-  "homepage": "https://github.com/sailerco/GIS_MIB2#readme"
+  "homepage": "https://github.com/sailerco/GIS_MIB2#readme",
+  "dependencies": {
+    "@types/node": "^14.0.13"
+  }
 }
