@@ -1,6 +1,6 @@
 import * as Http from "http";
 
-export namespace Aufgabe_8 {
+namespace Aufgabe_8 {
   console.log("Starting server");
   let port: number = Number(process.env.PORT);
   if (!port)
