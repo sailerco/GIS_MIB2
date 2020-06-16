@@ -22,8 +22,8 @@ namespace Aufgabe_8 {
     console.log("value: " + entry[1]);
   } */
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    /* console.log(port);
-    console.log(formData.get("fname")); */
+    console.log("I hear voices");
+    /* console.log(formData.get("fname")); */
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
