@@ -1,0 +1,19 @@
+{
+  "name": "gis_mib2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node Aufgabe_8/servertest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sailerco/GIS_MIB2.git"
+  },
+  "author": "corinna sailer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sailerco/GIS_MIB2/issues"
+  },
+  "homepage": "https://github.com/sailerco/GIS_MIB2#readme"
+}
