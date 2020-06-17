@@ -1,4 +1,5 @@
 import * as Http from "http";
+//import * as Url from "url";
 
 namespace Aufgabe_8 {
   console.log("Starting server");
@@ -22,14 +23,14 @@ namespace Aufgabe_8 {
     console.log("Listening");
   }
 
-  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void{
     console.log("I hear voices!");
     
-    let url: string = "https://dedflake.herokuapp.com/";
-    let query: URLSearchParams = new URLSearchParams(<any>formData);
-    url += url + "?" + query.toString(); 
-    await fetch(url);
-    console.log(url);
+    for (let entry of formData) {
+      console.log(entry);
+      console.log("name: " + entry[0]);
+      console.log("value: " + entry[1]);
+    }
 
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");

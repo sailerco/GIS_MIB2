@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
+//import * as Url from "url";
 var Aufgabe_8;
 (function (Aufgabe_8) {
     console.log("Starting server");
@@ -22,13 +23,13 @@ var Aufgabe_8;
     function handleListen() {
         console.log("Listening");
     }
-    async function handleRequest(_request, _response) {
+    function handleRequest(_request, _response) {
         console.log("I hear voices!");
-        let url = "https://dedflake.herokuapp.com/";
-        let query = new URLSearchParams(formData);
-        url += url + "?" + query.toString();
-        await fetch(url);
-        console.log(url);
+        for (let entry of formData) {
+            console.log(entry);
+            console.log("name: " + entry[0]);
+            console.log("value: " + entry[1]);
+        }
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url);
