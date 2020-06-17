@@ -7,13 +7,14 @@ var Aufgabe_8;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    let formData = new FormData(document.forms[0]);
+    /* let formData: FormData = new FormData(document.forms[0]);
     console.log(formData.get("fname"));
-    let button = document.getElementById("button");
+    let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
     button.addEventListener("click", buttonclick);
-    function buttonclick() {
-        console.log("button");
-    }
+  
+    function buttonclick(): void {
+      console.log("button");
+    } */
     let server = Http.createServer();
     server.addListener("request", handleRequest);
     server.addListener("listening", handleListen);

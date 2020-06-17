@@ -5,14 +5,14 @@ namespace Aufgabe_8 {
   let port: number = Number(process.env.PORT);
   if (!port)
     port = 8100;
-  let formData: FormData = new FormData(document.forms[0]);
+  /* let formData: FormData = new FormData(document.forms[0]);
   console.log(formData.get("fname"));
   let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
   button.addEventListener("click", buttonclick);
 
   function buttonclick(): void {
     console.log("button");
-  }
+  } */
   let server: Http.Server = Http.createServer();
   server.addListener("request", handleRequest);
   server.addListener("listening", handleListen);
