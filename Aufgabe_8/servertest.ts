@@ -6,7 +6,7 @@ namespace Aufgabe_8 {
   let port: number = Number(process.env.PORT);
   if (!port)
     port = 8100;
-  let formData: FormData = new FormData(document.forms[0]);
+ // let formData: FormData = new FormData(document.forms[0]);
    /* console.log(formData.get("fname"));
   let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
   button.addEventListener("click", buttonclick); 
@@ -26,11 +26,11 @@ namespace Aufgabe_8 {
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void{
     console.log("I hear voices!");
     
-    for (let entry of formData) {
+    /* for (let entry of formData) {
       console.log(entry);
       console.log("name: " + entry[0]);
       console.log("value: " + entry[1]);
-    }
+    } */
 
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
