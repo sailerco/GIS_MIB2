@@ -5,7 +5,7 @@ var Aufgabe_8;
     button.addEventListener("click", buttonclick);
     async function urlAendern() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://whatever.server/path/file";
+        let url = "https://dedflake.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
         await fetch(url);
