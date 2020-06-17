@@ -5,10 +5,10 @@ namespace Aufgabe_8 {
   let port: number = Number(process.env.PORT);
   if (!port)
     port = 8100;
-  /* let formData: FormData = new FormData(document.forms[0]);
-  console.log(formData.get("fname"));
+  let formData: FormData = new FormData(document.forms[0]);
+   /* console.log(formData.get("fname"));
   let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
-  button.addEventListener("click", buttonclick);
+  button.addEventListener("click", buttonclick); 
 
   function buttonclick(): void {
     console.log("button");
@@ -24,10 +24,12 @@ namespace Aufgabe_8 {
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
     console.log("I hear voices!");
-    /* let url: string = "https://dedflake.herokuapp.com/";
+    
+    let url: string = "https://dedflake.herokuapp.com/";
     let query: URLSearchParams = new URLSearchParams(<any>formData);
-    url += url + "?" + query.toString(); */
-   // await fetch(url);
+    url += url + "?" + query.toString(); 
+    console.log(url);
+    
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
