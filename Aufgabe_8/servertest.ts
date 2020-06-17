@@ -23,8 +23,11 @@ namespace Aufgabe_8 {
   }
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    //console.log("I hear voices!");
-
+    console.log("I hear voices!");
+    /* let url: string = "https://dedflake.herokuapp.com/";
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
+    url += url + "?" + query.toString(); */
+   // await fetch(url);
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
