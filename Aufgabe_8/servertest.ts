@@ -22,14 +22,15 @@ namespace Aufgabe_8 {
     console.log("Listening");
   }
 
-  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
     console.log("I hear voices!");
     
     let url: string = "https://dedflake.herokuapp.com/";
     let query: URLSearchParams = new URLSearchParams(<any>formData);
     url += url + "?" + query.toString(); 
+    await fetch(url);
     console.log(url);
-    
+
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
 

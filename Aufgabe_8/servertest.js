@@ -22,11 +22,12 @@ var Aufgabe_8;
     function handleListen() {
         console.log("Listening");
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("I hear voices!");
         let url = "https://dedflake.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
+        await fetch(url);
         console.log(url);
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
