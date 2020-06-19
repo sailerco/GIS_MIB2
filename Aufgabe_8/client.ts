@@ -8,14 +8,9 @@ namespace Aufgabe_8{
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += url + "?" + query.toString();
         
-        let response: Response = await fetch(url);
-        let response2: string = await response.url;
+        /* let response: Response = await fetch(url);
+        let response2: string = await response.url; */
         
-        for (let entry of query) {
-            console.log(entry);
-            console.log("name: " + entry[0]);
-            console.log("value: " + entry[1]);
-        }
-        console.log(response2);
+        console.log((await fetch(url)).url);
     }
 }
