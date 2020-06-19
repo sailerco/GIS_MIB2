@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="client.js" defer></script>
+    <link rel="stylesheet" href="theme8.css">
 </head>
 <body>
+    <h1>Umfrage</h1>
     <form action="https://dedflake.herokuapp.com/" method="GET">
-        <label for="fname">First name:</label><br>
+        <label for="Vorname">Vorname:</label><br>
         <input type="text" id="fname" name="fname" value=""><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value=""><br><br>
-        <button type="submit" id="button">Abgeben</button>
+        <label for="Nachname">Nachname:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        Ananas Pizza?<br>
+        <input type="radio" id="no" name="Ananas" value="no">
+        <label for="no">Ja (falsch)</label><br>
+        <input type="radio" id="ja" name="Ananas" value="ja">
+        <label for="ja">Nein (richtig)</label><br>
+        
+
+        <button type="button" id="button">Abgeben</button>
       </form>
 </body>
 </html>

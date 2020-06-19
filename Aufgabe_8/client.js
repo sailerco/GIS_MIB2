@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-//exports.Aufgabe_8 = void 0;
 var Aufgabe_8;
 (function (Aufgabe_8) {
     let button = document.getElementById("button");
@@ -11,6 +9,11 @@ var Aufgabe_8;
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
         console.log((await fetch(url)).url);
+        for (let entry of query) {
+            console.log(entry);
+            console.log("name: " + entry[0]);
+            console.log("value: " + entry[1]);
+        }
     }
-})(Aufgabe_8 = exports.Aufgabe_8 || (exports.Aufgabe_8 = {}));
+})(Aufgabe_8 || (Aufgabe_8 = {}));
 //# sourceMappingURL=client.js.map
