@@ -8,12 +8,12 @@ var Aufgabe_8;
         let url = "https://dedflake.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
-        console.log((await fetch(url)).url);
         for (let entry of query) {
             console.log(entry);
             console.log("name: " + entry[0]);
             console.log("value: " + entry[1]);
         }
+        console.log((await fetch(url)).url);
     }
 })(Aufgabe_8 || (Aufgabe_8 = {}));
 //# sourceMappingURL=client.js.map
