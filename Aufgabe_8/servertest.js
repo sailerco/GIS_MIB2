@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+//exports.Aufgabe_8 = void 0;
 const Http = require("http");
 //import * as Url from "url";
 var Aufgabe_8;
@@ -22,5 +23,5 @@ var Aufgabe_8;
         _response.write(_request.url);
         _response.end();
     }
-})(Aufgabe_8 || (Aufgabe_8 = {}));
+})(Aufgabe_8 = exports.Aufgabe_8 || (exports.Aufgabe_8 = {}));
 //# sourceMappingURL=servertest.js.map
