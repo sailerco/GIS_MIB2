@@ -15,6 +15,7 @@ var Aufgabe_8;
             console.log("name: " + entry[0]);
             console.log("value: " + entry[1]);
         }
+        console.log(response2);
     }
 })(Aufgabe_8 || (Aufgabe_8 = {}));
 //# sourceMappingURL=client.js.map
