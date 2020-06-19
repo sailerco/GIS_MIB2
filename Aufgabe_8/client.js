@@ -8,7 +8,6 @@ var Aufgabe_8;
         let url = "https://dedflake.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
-<<<<<<< HEAD
         let response = await fetch(url);
         let response2 = await response.url;
         for (let entry of query) {
@@ -17,11 +16,9 @@ var Aufgabe_8;
             console.log("value: " + entry[1]);
         }
         console.log(response2);
-=======
         /* let response: Response = await fetch(url);
         let response2: string = await response.url; */
         console.log((await fetch(url)).url);
->>>>>>> master
     }
 })(Aufgabe_8 || (Aufgabe_8 = {}));
 //# sourceMappingURL=client.js.map
