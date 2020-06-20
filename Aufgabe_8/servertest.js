@@ -20,7 +20,7 @@ var Aufgabe_8;
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url);
-        console.log(_request.url);
+        console.log(URL);
         _response.end();
     }
 })(Aufgabe_8 || (Aufgabe_8 = {}));
