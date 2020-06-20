@@ -1,4 +1,5 @@
 import * as Http from "http";
+import { url } from "inspector";
 //import * as Url from "url";
 
 namespace Aufgabe_8 {
@@ -21,7 +22,7 @@ namespace Aufgabe_8 {
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
     _response.write(_request.url);
-    console.log(URL);
+    console.log(url);
 
     _response.end();
   } 

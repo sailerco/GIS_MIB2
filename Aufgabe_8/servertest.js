@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
+const inspector_1 = require("inspector");
 //import * as Url from "url";
 var Aufgabe_8;
 (function (Aufgabe_8) {
@@ -20,7 +21,7 @@ var Aufgabe_8;
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url);
-        console.log(URL);
+        console.log(inspector_1.url);
         _response.end();
     }
 })(Aufgabe_8 || (Aufgabe_8 = {}));
