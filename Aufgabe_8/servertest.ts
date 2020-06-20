@@ -22,7 +22,7 @@ namespace Aufgabe_8 {
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
     _response.write(_request.url);
-    console.log(url);
+
 
     _response.end();
   } 
