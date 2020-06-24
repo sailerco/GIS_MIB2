@@ -3,7 +3,7 @@ namespace Aufgabe_9 {
     /* let url: string = "https://dedflake.herokuapp.com/"; */
     
     async function buttonclick(): Promise<void> {
-        let url: string = "https://dedflake.herokuapp.com/";
+        let url: string = "https://dedflake.herokuapp.com";
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/html" + "?" + query.toString(); //maybe broken
@@ -20,7 +20,7 @@ namespace Aufgabe_9 {
      
     async function jsonclick(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://dedflake.herokuapp.com/"/* "http://localhost:8100" */;
+        let url: string = "https://dedflake.herokuapp.com"/* "http://localhost:8100" */;
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/json" + "?" + query.toString();
 

@@ -4,7 +4,7 @@ var Aufgabe_9;
     document.getElementById("button").addEventListener("click", buttonclick);
     /* let url: string = "https://dedflake.herokuapp.com/"; */
     async function buttonclick() {
-        let url = "https://dedflake.herokuapp.com/";
+        let url = "https://dedflake.herokuapp.com";
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         url = url + "/html" + "?" + query.toString(); //maybe broken
@@ -17,7 +17,7 @@ var Aufgabe_9;
     document.getElementById("jsonbutton").addEventListener("click", jsonclick);
     async function jsonclick() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://dedflake.herokuapp.com/" /* "http://localhost:8100" */;
+        let url = "https://dedflake.herokuapp.com" /* "http://localhost:8100" */;
         let query = new URLSearchParams(formData);
         url = url + "/json" + "?" + query.toString();
         let response = await fetch(url);
