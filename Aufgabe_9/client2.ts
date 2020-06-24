@@ -6,7 +6,7 @@ namespace Aufgabe_9 {
         let url: string = "https://dedflake.herokuapp.com";
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url + "html" + "?" + query.toString(); //maybe broken
+        url = url + "/html" + "?" + query.toString(); //maybe broken
 
         let response: Response = await fetch(url);
         let reply: string = await response.text();
@@ -22,7 +22,7 @@ namespace Aufgabe_9 {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://dedflake.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url + "json" + "?" + query.toString();
+        url = url + "/json" + "?" + query.toString();
 
         let response: Response = await fetch(url);
         let responseText: string = await response.json();
