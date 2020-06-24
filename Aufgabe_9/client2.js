@@ -7,7 +7,7 @@ var Aufgabe_9;
         let url = "https://dedflake.herokuapp.com";
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        url = url + "/html" + "?" + query.toString(); //maybe broken
+        url = url + "html" + "?" + query.toString(); //maybe broken
         let response = await fetch(url);
         let reply = await response.text();
         let paragraph = document.createElement("p");
@@ -19,7 +19,7 @@ var Aufgabe_9;
         let formData = new FormData(document.forms[0]);
         let url = "https://dedflake.herokuapp.com";
         let query = new URLSearchParams(formData);
-        url = url + "/json" + "?" + query.toString();
+        url = url + "json" + "?" + query.toString();
         let response = await fetch(url);
         let responseText = await response.json();
         console.log(responseText);
