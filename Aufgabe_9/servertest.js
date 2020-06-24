@@ -21,6 +21,7 @@ var Aufgabe_9;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let q = Url.parse(_request.url, true);
+            console.log(q);
             if (q.pathname == "/html") {
                 for (let key in q.query) {
                     _response.write(key + ": " + q.query[key] + "<br/>");
@@ -31,7 +32,7 @@ var Aufgabe_9;
                 _response.write(jsonString);
             }
         }
-        _response.write("This is my response");
+        /* _response.write("This is my response"); */
         _response.end();
     }
 })(Aufgabe_9 || (Aufgabe_9 = {}));

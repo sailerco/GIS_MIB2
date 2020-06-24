@@ -23,6 +23,7 @@ namespace Aufgabe_9 {
    
     if (_request.url) {
       let q: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+      console.log(q);
       if (q.pathname == "/html") {
         for (let key in q.query) {
           _response.write(key + ": " + q.query[key] + "<br/>");
@@ -33,7 +34,7 @@ namespace Aufgabe_9 {
         _response.write(jsonString);
       }
     }
-    _response.write("This is my response");
+    /* _response.write("This is my response"); */
 
     _response.end();
     
