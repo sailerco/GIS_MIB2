@@ -48,8 +48,5 @@ button:hover{
     transition: 1s ease-in; 
 } 
 button:focus{
-    border-radius: 5px;
-    background-color:#003145;
-    transition: 1s ease-in; 
     outline:none;
 }

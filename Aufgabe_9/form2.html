@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formular</title>
-    <script src="client.js" defer></script>
+    <script src="client2.js" defer></script>
     <link rel="stylesheet" href="theme8.css">
 </head>
 <body>
     <h1>Umfrage</h1>
-    <form action="https://dedflake.herokuapp.com/" method="GET">
+    <!-- <form action="https://dedflake.herokuapp.com/" method="GET"> -->
+      <form action="https://dedflake.herokuapp.com/">
         <label for="name" >Vorname:</label><br>
         <input type="text" id="name" name="fname" value=""><br>
         <label for="nachname">Nachname:</label><br>
@@ -19,9 +20,10 @@
         <label for="no">Ja (falsch)</label><br>
         <input type="radio" id="ja" name="Ananas" value="ja">
         <label for="ja">Nein (richtig)</label><br>
-        
-
-        <button type="button" id="button">Abgeben</button>
+        <button type="button" id="button">Abgeben</button><br>
+        <button type="button" id="jsonbutton">json</button>
       </form>
+
+    
 </body>
 </html>
