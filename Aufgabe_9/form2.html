@@ -9,16 +9,15 @@
 </head>
 <body>
     <h1>Umfrage</h1>
-    <!-- <form action="https://dedflake.herokuapp.com/" method="GET"> -->
       <form action="https://dedflake.herokuapp.com" method="GET">
         <label for="name" >Vorname:</label><br>
         <input type="text" id="name" name="fname" value=""><br>
         <label for="nachname">Nachname:</label><br>
         <input type="text" id="nachname" name="lname" value=""><br>
         <input type="radio" id="no" name="Ananas" value="no">
-        <label for="no">Ja (falsch)</label><br>
+        <label for="yes">Ja (falsch)</label><br>
         <input type="radio" id="ja" name="Ananas" value="ja">
-        <label for="ja">Nein (richtig)</label><br>
+        <label for="no">Nein (richtig)</label><br>
         <button type="button" id="button">Abgeben</button><br>
         <button type="button" id="jsonbutton">json</button>
       </form>
