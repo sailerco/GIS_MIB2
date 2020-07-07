@@ -12,7 +12,7 @@ namespace Aufgabe_11 {
     if (!port)
         port = 8100;
     
-    let databaseUrl: string = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
     /* let databaseUrl: string = "mongodb://localhost:27017"; */
     
     startServer(port);
@@ -32,7 +32,7 @@ namespace Aufgabe_11 {
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
 
-        orders = mongoClient.db("Test").collection("Students");
+        orders = mongoClient.db("Test").collection("dudes");
         console.log("Database connection", orders != undefined);
     }
 
@@ -51,20 +51,20 @@ namespace Aufgabe_11 {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let jsonString: string;
             
-            if(url.pathname == "/button") {
+            if (url.pathname == "/button") {
                 /* let s: string = url;
                 storeOrder(url.query); */
                 orders.insertOne(url.query);
                 /* storeOrder(url.query);
                 console.log(url.query); */ 
             }
-            if(url.pathname == "/retrieve"){
+            if (url.pathname == "/retrieve"){
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
-                console.log("AAAAAAAAAAAAAAAAAAA")
+                console.log("AAAAAAAAAAAAAAAAAAA");
                 _response.write(jsonString);
             }
-            if(url.pathname == "/aaa"){
+            if (url.pathname == "/aaa"){
                 orders.drop();
                 /* orders.remove({}); */
             }

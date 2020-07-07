@@ -30,7 +30,7 @@ var Aufgabe_11;
     document.getElementById("aaa").addEventListener("click", deleteall);
     async function deleteall() {
         let url = "https://dedflake.herokuapp.com/" + "aaa";
-        /*  let url: string = "http://localhost:8100/" + "aaa"; */
+        /* let url: string = "http://localhost:8100/" + "aaa"; */
         let response = await fetch(url);
         let paragraph = document.createElement("p");
         paragraph.innerHTML = "Datenbank ist leer";

@@ -30,7 +30,7 @@ namespace Aufgabe_11 {
     document.getElementById("aaa")!.addEventListener("click", deleteall);
     async function deleteall(): Promise <void>{
         let url: string = "https://dedflake.herokuapp.com/" + "aaa";
-       /*  let url: string = "http://localhost:8100/" + "aaa"; */
+        /* let url: string = "http://localhost:8100/" + "aaa"; */
         let response: Response = await fetch(url);
 
         let paragraph: HTMLElement = document.createElement("p");

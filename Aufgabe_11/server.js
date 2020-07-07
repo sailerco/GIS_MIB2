@@ -13,7 +13,7 @@ var Aufgabe_11;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    let databaseUrl = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
     /* let databaseUrl: string = "mongodb://localhost:27017"; */
     startServer(port);
     connectToDatabase(databaseUrl);
@@ -28,7 +28,7 @@ var Aufgabe_11;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        orders = mongoClient.db("Test").collection("Students");
+        orders = mongoClient.db("Test").collection("dudes");
         console.log("Database connection", orders != undefined);
     }
     function handleListen() {
