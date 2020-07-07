@@ -3,9 +3,9 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 namespace Aufgabe_11 {
-    /* interface Formular {
+    interface Formular {
         [type: string]: string | string[];
-    } */
+    }
     console.log("start");
     let orders: Mongo.Collection;
     let port: number = Number(process.env.PORT);
@@ -13,7 +13,7 @@ namespace Aufgabe_11 {
         port = 8100;
     
     let databaseUrl: string = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
-    /* "mongodb://localhost:27017"; */
+    /* let databaseUrl: string = "mongodb://localhost:27017"; */
     
     startServer(port);
 

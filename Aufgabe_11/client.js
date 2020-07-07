@@ -15,7 +15,7 @@ var Aufgabe_11;
     document.getElementById("jsonbutton").addEventListener("click", show);
     async function show() {
         let url = "https://dedflake.herokuapp.com/" + "jsonbutton";
-        /* let url: string = "http://localhost:8100/" + "jsonbutton"; */
+        /*  let url: string = "http://localhost:8100/" + "jsonbutton"; */
         let response = await fetch(url);
         let reply = await response.text();
         let paragraph = document.createElement("p");

@@ -14,7 +14,7 @@ namespace Aufgabe_11 {
     document.getElementById("jsonbutton")!.addEventListener("click", show);
     async function show(): Promise <void>{
         let url: string = "https://dedflake.herokuapp.com/" + "jsonbutton";
-        /* let url: string = "http://localhost:8100/" + "jsonbutton"; */
+       /*  let url: string = "http://localhost:8100/" + "jsonbutton"; */
         let response: Response = await fetch(url);
         let reply: string = await response.text();
         let paragraph: HTMLElement = document.createElement("p");

@@ -5,16 +5,13 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var Aufgabe_11;
 (function (Aufgabe_11) {
-    /* interface Formular {
-        [type: string]: string | string[];
-    } */
     console.log("start");
     let orders;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
     let databaseUrl = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
-    /* "mongodb://localhost:27017"; */
+    /* let databaseUrl: string = "mongodb://localhost:27017"; */
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
