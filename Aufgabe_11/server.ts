@@ -3,9 +3,9 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 namespace Aufgabe_11 {
-    interface Formular {
+    /* interface Formular {
         [type: string]: string | string[];
-    }
+    } */
     console.log("start");
     let orders: Mongo.Collection;
     let port: number = Number(process.env.PORT);
@@ -52,8 +52,9 @@ namespace Aufgabe_11 {
             let jsonString: string;
             
             if(url.pathname == "/button") {
-                storeOrder(url.query);
-                console.log(url.query);
+                orders.insertOne(url.query);
+                /* storeOrder(url.query);
+                console.log(url.query); */
             }
             if(url.pathname == "/jsonbutton"){
                 jsonString = JSON.stringify(await orders.find().toArray());
@@ -71,9 +72,9 @@ namespace Aufgabe_11 {
         }
         _response.end();      
     }
-    function storeOrder(_order: Formular): void {
+    /* function storeOrder(_order: Formular): void {
         orders.insertOne(_order);
-    }
+    } */
     /* function deleteORders(): void{
         orders.remove({});
     } */
