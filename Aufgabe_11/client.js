@@ -12,10 +12,10 @@ var Aufgabe_11;
         /* let form: HTMLFormElement = <HTMLFormElement> document.getElementById("form");
         form.reset(); */
     }
-    document.getElementById("jsonbutton").addEventListener("click", show);
+    document.getElementById("retrieve").addEventListener("click", show);
     async function show() {
-        let url = "https://dedflake.herokuapp.com/" + "jsonbutton";
-        /*  let url: string = "http://localhost:8100/" + "jsonbutton"; */
+        let url = "https://dedflake.herokuapp.com/" + "retrieve";
+        /* let url: string = "http://localhost:8100/" + "retrieve"; */
         let response = await fetch(url);
         let reply = await response.text();
         let paragraph = document.createElement("p");
@@ -29,7 +29,8 @@ var Aufgabe_11;
     }
     document.getElementById("aaa").addEventListener("click", deleteall);
     async function deleteall() {
-        let url = "http://localhost:8100/" + "aaa";
+        let url = "https://dedflake.herokuapp.com/" + "aaa";
+        /*  let url: string = "http://localhost:8100/" + "aaa"; */
         let response = await fetch(url);
         let paragraph = document.createElement("p");
         paragraph.innerHTML = "Datenbank ist leer";

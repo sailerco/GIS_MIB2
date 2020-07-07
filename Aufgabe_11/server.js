@@ -5,6 +5,9 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var Aufgabe_11;
 (function (Aufgabe_11) {
+    /* interface Formular {
+        [type: string]: string | string[] | undefined; ;
+    } */
     console.log("start");
     let orders;
     let port = Number(process.env.PORT);
@@ -39,13 +42,16 @@ var Aufgabe_11;
             let url = Url.parse(_request.url, true);
             let jsonString;
             if (url.pathname == "/button") {
+                /* let s: string = url;
+                storeOrder(url.query); */
                 orders.insertOne(url.query);
                 /* storeOrder(url.query);
                 console.log(url.query); */
             }
-            if (url.pathname == "/jsonbutton") {
+            if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
+                console.log("AAAAAAAAAAAAAAAAAAA");
                 _response.write(jsonString);
             }
             if (url.pathname == "/aaa") {
@@ -58,6 +64,10 @@ var Aufgabe_11;
     }
     /* function storeOrder(_order: Formular): void {
         orders.insertOne(_order);
+    } */
+    /* async function retrieveOrders(): Promise<string>{
+        let auslesen: string = JSON.stringify(await orders.find().toArray());
+        return auslesen;
     } */
     /* function deleteORders(): void{
         orders.remove({});
