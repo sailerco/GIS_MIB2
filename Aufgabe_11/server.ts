@@ -1,11 +1,10 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
-import { count } from "console";
 
 namespace Aufgabe_11 {
     interface Formular {
-        [type: string]: string | string[] | undefined;
+        [type: string]: string | string[];
     }
     console.log("start");
     let orders: Mongo.Collection;
@@ -13,8 +12,9 @@ namespace Aufgabe_11 {
     if (!port)
         port = 8100;
     
-    let databaseUrl: string = "mongodb://localhost:27017";
-
+    let databaseUrl: string = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    /* "mongodb://localhost:27017"; */
+    
     startServer(port);
 
     connectToDatabase(databaseUrl);
@@ -56,13 +56,8 @@ namespace Aufgabe_11 {
                 console.log(url.query);
             }
             if(url.pathname == "/jsonbutton"){
-                if(!orders.find()){
-                    jsonString = "Die Datenbank ist noch leer";
-                    console.log("why ist this");
-                }else{
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
-                }
                 _response.write(jsonString);
             }
             if(url.pathname == "/aaa"){

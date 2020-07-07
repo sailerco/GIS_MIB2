@@ -10,7 +10,8 @@ var Aufgabe_11;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    let databaseUrl = "mongodb://localhost:27017";
+    let databaseUrl = "mongodb+srv://cocosailer:<password>@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    /* "mongodb://localhost:27017"; */
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
@@ -42,14 +43,8 @@ var Aufgabe_11;
                 console.log(url.query);
             }
             if (url.pathname == "/jsonbutton") {
-                if (!orders.find()) {
-                    jsonString = "Die Datenbank ist noch leer";
-                    console.log("why ist this");
-                }
-                else {
-                    jsonString = JSON.stringify(await orders.find().toArray());
-                    jsonString += "<br>";
-                }
+                jsonString = JSON.stringify(await orders.find().toArray());
+                jsonString += "<br>";
                 _response.write(jsonString);
             }
             if (url.pathname == "/aaa") {
