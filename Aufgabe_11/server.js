@@ -42,29 +42,34 @@ var Aufgabe_11;
             let url = Url.parse(_request.url, true);
             let jsonString;
             if (url.pathname == "/button") {
+                storeOrder(url.query);
                 /* let s: string = url;
                 storeOrder(url.query); */
-                orders.insertOne(url.query);
+                /*  orders.insertOne(url.query); */
                 /* storeOrder(url.query);
                 console.log(url.query); */
             }
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
-                console.log("AAAAAAAAAAAAAAAAAAA");
-                _response.write(jsonString);
+                /*                 console.log("AAAAAAAAAAAAAAAAAAA");
+                 */ _response.write(jsonString);
             }
-            if (url.pathname == "/aaa") {
-                orders.drop();
+            if (url.pathname == "/delete") {
+                deleteOrder();
+                /* orders.drop(); */
                 /* orders.remove({}); */
             }
             /* storeOrder(url.query); */
         }
         _response.end();
     }
-    /* function storeOrder(_order: Formular): void {
-        orders.insertOne(_order);
-    } */
+    function storeOrder(_url) {
+        orders.insertOne(_url);
+    }
+    function deleteOrder() {
+        orders.drop();
+    }
     /* async function retrieveOrders(): Promise<string>{
         let auslesen: string = JSON.stringify(await orders.find().toArray());
         return auslesen;

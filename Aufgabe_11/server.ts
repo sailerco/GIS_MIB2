@@ -1,6 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
+import { ParsedUrlQuery } from "querystring";
 
 namespace Aufgabe_11 {
     /* interface Formular {
@@ -52,20 +53,22 @@ namespace Aufgabe_11 {
             let jsonString: string;
             
             if (url.pathname == "/button") {
+                storeOrder(url.query);
                 /* let s: string = url;
                 storeOrder(url.query); */
-                orders.insertOne(url.query);
+               /*  orders.insertOne(url.query); */
                 /* storeOrder(url.query);
                 console.log(url.query); */ 
             }
-            if (url.pathname == "/retrieve"){
+            if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
-                console.log("AAAAAAAAAAAAAAAAAAA");
-                _response.write(jsonString);
+/*                 console.log("AAAAAAAAAAAAAAAAAAA");
+ */             _response.write(jsonString);
             }
-            if (url.pathname == "/aaa"){
-                orders.drop();
+            if (url.pathname == "/delete"){
+                deleteOrder();
+                /* orders.drop(); */
                 /* orders.remove({}); */
             }
             
@@ -75,9 +78,12 @@ namespace Aufgabe_11 {
         }
         _response.end();      
     }
-    /* function storeOrder(_order: Formular): void {
-        orders.insertOne(_order);
-    } */
+    function storeOrder(_url: ParsedUrlQuery): void {
+        orders.insertOne(_url);
+    }
+    function deleteOrder(): void {
+        orders.drop();
+    }
     /* async function retrieveOrders(): Promise<string>{
         let auslesen: string = JSON.stringify(await orders.find().toArray());
         return auslesen;

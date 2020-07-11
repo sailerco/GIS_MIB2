@@ -27,9 +27,9 @@ namespace Aufgabe_11 {
         
         document.body.appendChild(paragraph);
     }
-    document.getElementById("aaa")!.addEventListener("click", deleteall);
+    document.getElementById("delete")!.addEventListener("click", deleteall);
     async function deleteall(): Promise <void>{
-        let url: string = "https://dedflake.herokuapp.com/" + "aaa";
+        let url: string = "https://dedflake.herokuapp.com/" + "delete";
         /* let url: string = "http://localhost:8100/" + "aaa"; */
         let response: Response = await fetch(url);
 

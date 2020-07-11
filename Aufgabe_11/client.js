@@ -27,9 +27,9 @@ var Aufgabe_11;
         /* } */
         document.body.appendChild(paragraph);
     }
-    document.getElementById("aaa").addEventListener("click", deleteall);
+    document.getElementById("delete").addEventListener("click", deleteall);
     async function deleteall() {
-        let url = "https://dedflake.herokuapp.com/" + "aaa";
+        let url = "https://dedflake.herokuapp.com/" + "delete";
         /* let url: string = "http://localhost:8100/" + "aaa"; */
         let response = await fetch(url);
         let paragraph = document.createElement("p");
