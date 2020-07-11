@@ -5,9 +5,6 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var Aufgabe_11;
 (function (Aufgabe_11) {
-    /* interface Formular {
-        [type: string]: string | string[] | undefined; ;
-    } */
     console.log("start");
     let orders;
     let port = Number(process.env.PORT);
@@ -43,11 +40,6 @@ var Aufgabe_11;
             let jsonString;
             if (url.pathname == "/button") {
                 storeOrder(url.query);
-                /* let s: string = url;
-                storeOrder(url.query); */
-                /*  orders.insertOne(url.query); */
-                /* storeOrder(url.query);
-                console.log(url.query); */
             }
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
@@ -57,10 +49,8 @@ var Aufgabe_11;
             }
             if (url.pathname == "/delete") {
                 deleteOrder();
-                /* orders.drop(); */
                 /* orders.remove({}); */
             }
-            /* storeOrder(url.query); */
         }
         _response.end();
     }
@@ -70,12 +60,5 @@ var Aufgabe_11;
     function deleteOrder() {
         orders.drop();
     }
-    /* async function retrieveOrders(): Promise<string>{
-        let auslesen: string = JSON.stringify(await orders.find().toArray());
-        return auslesen;
-    } */
-    /* function deleteORders(): void{
-        orders.remove({});
-    } */
 })(Aufgabe_11 || (Aufgabe_11 = {}));
 //# sourceMappingURL=server.js.map

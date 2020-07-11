@@ -4,9 +4,6 @@ import * as Mongo from "mongodb";
 import { ParsedUrlQuery } from "querystring";
 
 namespace Aufgabe_11 {
-    /* interface Formular {
-        [type: string]: string | string[] | undefined; ;
-    } */
     console.log("start");
     let orders: Mongo.Collection;
     let port: number = Number(process.env.PORT);
@@ -54,11 +51,6 @@ namespace Aufgabe_11 {
             
             if (url.pathname == "/button") {
                 storeOrder(url.query);
-                /* let s: string = url;
-                storeOrder(url.query); */
-               /*  orders.insertOne(url.query); */
-                /* storeOrder(url.query);
-                console.log(url.query); */ 
             }
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
@@ -68,12 +60,9 @@ namespace Aufgabe_11 {
             }
             if (url.pathname == "/delete"){
                 deleteOrder();
-                /* orders.drop(); */
                 /* orders.remove({}); */
             }
             
-        
-            /* storeOrder(url.query); */
         
         }
         _response.end();      
@@ -84,12 +73,4 @@ namespace Aufgabe_11 {
     function deleteOrder(): void {
         orders.drop();
     }
-    /* async function retrieveOrders(): Promise<string>{
-        let auslesen: string = JSON.stringify(await orders.find().toArray());
-        return auslesen;
-    } */
-    
-    /* function deleteORders(): void{
-        orders.remove({});
-    } */
 }
