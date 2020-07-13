@@ -55,12 +55,10 @@ namespace Aufgabe_11 {
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray());
                 jsonString += "<br>";
-/*                 console.log("AAAAAAAAAAAAAAAAAAA");
- */             _response.write(jsonString);
+                _response.write(jsonString);
             }
             if (url.pathname == "/delete"){
                 deleteOrder();
-                /* orders.remove({}); */
             }
             
         
