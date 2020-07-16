@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="responsivetheme.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <script src="main.js" defer></script>
+    <script src="client.js" defer></script>
+</head>
+<body>
+    <div id="start">
+        <img src="img/head2.png" alt="head" id="head">
+        <img src="img/Logo4.png" alt="logo" id="logo">
+        <p> "You can't buy happiness, but you can buy ice cream <br> and that is pretty much the same thing."</p>
+        <div class="next">
+            <a href="#becher"><button id="button"> Start</button></a>
+        </div>
+    </div>
+    <div id="becher">
+        <img src="img/head5.png" alt="head" id="head">
+        <h1>Waffel oder Becher?</h1>
+        <div id="auswahl">
+        </div>
+        <div class="next">
+            <a href="#kugel"><button id="button1"> Next</button></a></div>
+        </div>
+    </div>
+    <div id="kugel">
+        <img src="img/head5.png" alt="head" id="head">
+        <div class="headline"><h1>Wie viele Kugeln?</h1><h2>1.10 pro Kugel</h2></div>
+        <div id="zahl"></div>
+        
+        <div class="next">
+            <a href="#eis"><button id="button11"> Next</button></a></div>
+        </div>
+    </div>
+    <div id="eis">
+        <h1 id="fighter">Choose your fighter</h1>
+        <div id="sorten">
+        </div>
+        <div class="next">
+            <a href="#saucetopping"><button id="button2"> Next</button></a></div>
+        </div>
+    </div>
+    <div id="saucetopping">
+        <h1>And the sidekick?</h1>
+        <h2>Such dir eine Soße aus<br>(1 Euro)</h2>
+        <div id="sauce"></div>
+        <div class="next">
+            <a href="#realtoppings"><button id="button3"> Next!</button></a></div>
+        </div>
+    </div>
+    <div id="realtoppings">
+        <h1>And the sidekick?</h1>
+        <h2>and go crazy with the toppings</h2>
+        <div id="top"></div>
+        <div class="next">
+            <a href="#order"><button id="button4"> Order!</button></a></div>
+        </div>
+    </div>
+    <div id="order">
+        <div id="form">
+            <form action="http://localhost:8100">
+            <label for="name" >Vorname:</label><br>
+            <input type="text" id="name" name="Vorname" value=""><br>
+            <label for="nachname">Nachname:</label><br>
+            <input type="text" id="nachname" name="Nachname" value=""><br>
+            <label for="Straße" >Straße:</label><br>
+            <input type="text" id="Straße" name="Straße" value=""><br>
+            <label for="Ort" >Wohnort:</label><br>
+            <input type="text" id="Ort" name="Ort" value=""><br>
+            <label for="Kommentar" >Extra Wünsche:</label><br>
+            <input type="text" id="Kommentar" name="Kommentar" value=""><br>
+            <button type="button" id="abgeben" >Abgeben</button>
+            </form>
+        </div>
+        <a href="#start"><button type="button" id="exit" >Abbrechen</button></a>
+        <button type="button" id="surprise" >Überraschung</button>
+    </div>
+</body>
+</html>

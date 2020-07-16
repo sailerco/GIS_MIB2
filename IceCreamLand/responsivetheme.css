@@ -1,0 +1,767 @@
+*{  /* overflow: hidden; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+div#lineart{
+    position: relative;
+    z-index: 1;
+    width: 300px;   
+}
+
+#reminder{
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+    font-size: 40px;
+    font-family: Brush Script MT, Brush Script Std;
+}
+#side{
+   height: 400px;
+   width: 300px;
+   position: absolute;
+   top: 40%;
+   left: -4%;
+}
+/* #sauceimg{
+    position: absolute;
+    width: 150px;
+    top: 2.5%;
+    left: 30%;
+} */
+.sauce h1, #top h1{
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    font-size: 50px;
+    font-weight: 150;
+}
+button:focus{
+    outline:none;
+}
+input:focus{
+    outline:none;
+}
+@media screen and (min-width:320px) {
+/* Kugeln */
+.toppingonice{
+    top: 0;
+    left: 9%;
+    width: 35px;
+    position: absolute;
+    z-index: 1;
+}
+#sauceimg{
+    position: absolute;
+    width: 70px;
+    top: 4%;
+    left: 12%;
+} 
+#side{
+    height: 300px;
+    width: 100px;
+    position: absolute;
+    top: 40%;
+    left: 2%;
+ }
+#kugel1, #kugel2, #kugel3, #kugel4{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+#kugel1{
+    position: absolute;
+    top: 9%;
+    left: 8%;
+    background-size: cover;
+    background-color: white;
+}
+#kugel2{position: absolute;
+    top: 9%;
+    left: 40%;
+    background-color: rgb(250, 250, 250);
+    background-size: cover;
+}
+#kugel3{
+    position: absolute;
+    top: 0%;
+    left: 25%; 
+    background-color: rgb(240, 240, 240);
+    background-size: cover;
+}
+#kugel4{
+    position: absolute;
+    top: 0%;
+    left: 40%; 
+    background-color: rgb(230, 230, 230);
+    background-size: cover;
+}
+/* Kugeln ende */
+#lineart {
+    top: 20%;
+    left: 5%;
+    width: 85px;
+}
+div#lineart{
+    width: 100px;
+}
+h1{ 
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    padding-top: 50px;
+}
+h1#fighter{
+    padding-top: 20px;
+}
+h2.sortentext {
+    font-weight: 100;
+    font-size: 40px;
+}
+#sorten p{
+    color: white;
+}
+h2{ 
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+}
+/*div größen*/
+#start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
+    width: 100%;
+    height: 100vh;
+}
+/* #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
+    display: none;
+} */
+#start, #staff{
+    background-color: rgb(204, 224, 255);
+    position: relative;
+}
+#staff{
+    height:100vh;
+    background-size: cover;
+}
+#becher{
+    background-color: rgb(255, 217, 246);
+    position: relative;
+}
+#kugel{
+    background-color: rgb(204, 224, 255);
+    position: relative;
+}
+#eis{
+    background-color: rgb(255, 217, 246);
+    position: relative;
+}
+#saucetopping{
+    background-color: rgb(204, 224, 255);
+    /* height: 130vh;  */
+    /* overflow: visible; */
+    position: relative;
+}
+#realtoppings{
+    background-color: rgb(255, 217, 246);
+    position: relative;
+    height: 100vh;
+}
+#order{
+    background-color: rgb(204, 224, 255);
+    position: relative;
+}
+/*sonstiges*/
+#start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
+    display: none;
+}
+#start img{
+    height: 300px;
+    display: block; /*probier das mal bei button*/
+    margin: 0 auto;
+    padding: 80px 0px 50px;
+}
+#start p{
+    display: none;
+}
+#auswahl{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+    flex-flow: column wrap;
+}
+#auswahl img{
+    height: 180px;
+    justify-content: center;
+}
+button{
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+}
+.next button{
+    font-size: larger;
+    width: 100px;
+    height: 40px;
+    
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); /*IMPORTANT*/
+}
+
+#zahl{
+    text-align: center;
+    display: flex;
+    margin: 15px 0px;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+#zahl div{
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(204, 224, 255);
+    display: block;
+    margin: 5px auto;
+}
+#sorten{    
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    padding: 20px 0px; 
+}
+#sauce, #top{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+.flavour, .topper, .sauce{
+    text-align: center;
+    flex: 1 0 40%;
+}
+#sauce h1, #top h1{
+    font-size: 30px;
+    font-weight: 100;
+}
+.flavour > img, .topper > img, .sauce > img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    margin-top: 10px;
+    width: 70px;
+}
+.flavour p, .topper p{
+    margin: auto 0;
+    font-size: medium;
+}
+.flavour button, .topper button{
+    margin: 5px;
+    text-align: center;
+    font-size: medium;
+}
+.buttons{ /*minus und plus*/
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: center;
+    
+}
+.plus, .minus{
+    color: white;
+    font-size: x-large;
+    width: 25px;
+    background-color: transparent;
+}
+#form{
+    text-align: center;
+    padding-top: 50px;
+}
+#form input{
+    margin-bottom: 10px;
+    height: 20px;
+    border-radius: 20px;
+    border-style: none;
+}
+#form button{
+    margin: 0px 20px;
+    font-size: larger;
+    height: 30px;
+    width: 100px;
+}
+#exit{
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: larger;
+    position: absolute;
+    margin-top: 30px;
+    left: 50%;
+    margin-right: -50px;
+    transform: translate(-50%, -50%);
+}
+#surprise{
+    display: none;
+}
+
+}
+
+@media screen and (min-width:641px) {
+h2.sortentext {
+    font-weight: 100;
+    font-size: 60px;
+}
+#exit{
+    margin-top: 30px;
+    width: 170px;
+    height: 40px;
+    font-size: x-large;
+}
+#sauceimg{
+    width: 140px;
+    top: 0%;
+    left: 8%;
+} 
+.toppingonice{
+    width: 60px;
+}
+#side{
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    top: 42%;
+    left: 2%;
+}
+#kugel1, #kugel2, #kugel3, #kugel4{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+} 
+#kugel1{
+    top: 9%;
+    left: 8%;
+}
+#kugel2{
+    top: 9%;
+    left: 40%;
+}
+#kugel3{
+    top: 0%;
+    left: 20%; 
+}
+#kugel4{
+    top: 0%;
+    left: 40%; 
+} 
+#start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
+    width: 100vw;
+    height: 100vh;
+}
+#lineart {
+    width: 150px;
+    top: 20%;
+}
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 50px;
+}
+#start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#becher img[alt = "head"],  #kugel img[alt = "head"]{
+    height: 250px;
+}
+#becher h1{
+    color: white;
+    padding: 0;
+}
+#auswahl{
+    flex-flow: row nowrap;
+}
+#auswahl img{
+    height: 400px;
+}
+#zahl{
+    flex-flow: row wrap;
+    width: 300px;
+    margin: 50px 250px;
+}
+#zahl div{
+    font-size: 100px;
+    width: 120px;
+    height: 120px;
+}
+button{
+    font-size: x-large;
+    width: 140px;
+    
+}
+.next button{
+    position: absolute;
+    bottom: 3%;
+    right: 46.5%;
+}
+.flavour > img, .topper > img, .sauce > img{
+    width: 180px;
+}
+#sauce h1{
+    font-size: 45px;
+}
+
+.flavour button, .topper button{
+    font-size: x-large;
+}
+.flavour p, .topper p{
+    font-size: x-large;
+}
+.plus, .minus{
+    width: 20%;
+}
+#sauce, #top{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+#form{
+    font-size: x-large;
+}
+#form input{
+    margin-bottom: 20px;
+    height: 30px;
+}
+#form button{
+    font-size: larger;
+    width: 140px;
+    height: 40px;
+}
+#surprise {
+    display: block;
+}
+button#surprise {
+    width: 180px;
+    height: 40px;
+    font-size: x-large;
+    position: absolute;
+    left: 39.5%;
+    margin-right: 50px;
+    margin-top: 70px;
+    transform:translate(-50px -50px);
+}
+#surprisememe img{
+    width: 300px;
+    padding-top: 100px;
+    padding-left: 50px;
+}
+}
+@media screen and (min-width:1025px) {
+#becher, #kugel, #eis, #saucetopping,#order, #realtoppings{
+    display: none;
+}
+.plus, .minus{
+    color: black;
+    font-size: x-large;
+    width: 25px;
+    background-color: transparent;
+}
+.toppingonice img{
+    width: 50px;
+}
+.toppingonice{
+    width: 90px;
+    position: absolute;
+    top: 0;
+    left: 34%;
+}
+#side{
+    height: 400px;
+    width: 300px;
+    left: 0%;
+}
+#sauceimg{
+    position: absolute;
+    width: 150px;
+    top: 4%;
+    left: 0%;
+}
+.sauce > img{
+    width: 100px;
+}
+#kugel1, #kugel2, #kugel3, #kugel4{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+} 
+#kugel1{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    background-size: cover;
+    background-color: white;
+}
+#kugel2{position: absolute;
+    top: 10%;
+    left: 56%;
+    background-color: rgb(250, 250, 250);
+    background-size: cover;
+}
+#kugel3{
+    position: absolute;
+    top: 0%;
+    left: 39%; 
+    background-color: rgb(240, 240, 240);
+    background-size: cover;
+}
+#kugel4{
+    position: absolute;
+    top: 0%;
+    left: 56%; 
+    background-color: rgb(230, 230, 230);
+    background-size: cover;
+}
+div#lineart{
+    position: relative;
+    z-index: 1;
+    width: 300px;   
+}
+#lineart {
+    top: 0%;
+    left: -3%;
+    width: 85px;
+}
+#reminder{
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+    font-size: 40px;
+    font-family: Brush Script MT, Brush Script Std;
+}
+.sauce h1, .topp h1{
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    font-size: 50px;
+    font-weight: 150;
+}
+#top h1{
+    font-size: 50px;
+}
+#lineart{
+    width: 200px;
+    float: left;
+    margin: 60px 0px 20px 50px;
+}
+#eis, #saucetopping, #realtoppings{
+    height: 100vh;
+}
+#start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
+    height: 250px;
+    width: 100%;
+}
+#start img[alt="logo"]{
+    padding: 30px ;
+}
+#start p{
+    display: block;
+    text-align: center;
+    font: 200 50px/1.3 'Lobster Two', Helvetica, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}  
+#becher h1{
+    color: #FED9F6;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    padding: 20px;
+}
+#auswahl img{height: 500px;}
+#auswahl{
+    justify-content: space-evenly;
+    margin: 20px 200px 0;
+} 
+#zahl{
+    flex-flow: row nowrap;
+    width: initial;
+    margin: 50px 200px;
+}
+#sauce, #top{
+    margin-top: 100px;
+    margin-left: 250px;
+    margin-right: 200px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+#top{
+    align-items: baseline;
+}
+#sorten{
+    margin-top: 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+#sorten{
+    background-color: white;
+    border: rgb(255, 217, 246) double 5px;
+    border-radius: 40px 0 40px 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.flavour{
+    background-color: white;
+}
+.flavour, .topper, .sauce{
+    text-align: center;
+    flex: 1 0 21%;
+    margin: 10px 0;
+    width: 260px;
+}
+.flavour > img, .topper > img, .sauce > img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    width: 175px;
+}
+
+#eis h1{
+    padding-top: 5px;
+    color:white;
+}
+h1#fighter{
+    padding-top: 50px;
+}
+/*4*/
+#saucetopping{
+    height: 100vh;
+    position: relative;
+}
+#saucetopping img, #realtoppings img{
+
+    flex-flow: row wrap;
+    flex: 1 0 21%;
+}
+.next3{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;  
+}
+/*5*/
+#order{
+    height: 100vh;
+    position: relative;
+}
+form{
+    font-size: 20px;
+    padding: 40px;
+    text-align: center;
+}
+#form button{
+    margin-top: 20px;
+}
+#form input{
+    margin-bottom: 10px;
+    border-radius: 50px;
+    height: 30px;
+    border: none;
+}
+.buttons{
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: center;
+}
+.topper button{
+    background-color: #CCE0FF;;
+}
+.flavour button, .topper button{
+    margin: 5px;
+    text-align: center;
+    font-size: x-large;
+}
+.flavour p, .topper p{
+    margin: auto 0;
+    font-size: x-large;
+}
+#formular{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 350px;
+}
+#staff p{
+    color: rgb(204, 224, 255);
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+}
+#staff button{
+    width: 200px;
+}
+.vorschau{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+#surprisememe{
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 2%;
+}
+#surprisememe img{
+    padding: 0;
+}
+#order > div > a {
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+button#surprise{
+    width: 170px;
+    height: 40px;
+    font-size: x-large;
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+}
+#exit{
+    margin-top: 20px;
+    width: 170px;
+    height: 40px;
+    font-size: x-large;
+}
+#order > div > img{
+    width: 400px;
+}
+#Bestellungen{
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+}
+img#trash {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+}

@@ -1,0 +1,244 @@
+*{  /* overflow: hidden; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1{ 
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    padding-top: 50px;
+}
+h2{
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+/* nav{
+    background-image: url(img/head.png);
+    background-p
+} */
+/* header{
+    background-image: url(img/head.png);
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    display: none;
+} */
+img[alt = "head"]{
+    width: 100%;
+}
+#start img[alt = "logo"]{
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    padding: 50px 0px 50px;
+}
+#start p{
+    text-align: center;
+    font: 200 50px/1.3 'Lobster Two', Helvetica, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+#start{
+    min-height: 970px;
+    background-color: rgb(204, 224, 255);
+    position: relative;
+}
+.next{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+button{
+    font-size: larger;
+    margin: 0 47%;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    border: none;
+}
+
+/*2. Seite*/
+#becher{
+    height: 970px;
+    background-color: rgb(255, 217, 246);
+    position: relative;
+   
+   /*  background-size: cover; */
+    /* display: flex; */
+}
+#becher h1{
+    color: #FED9F6;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    padding: 20px;
+}
+#auswahl{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 200px 0;
+}
+#auswahl img{
+    height: 500px;
+    justify-content: center;
+}
+.next1{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+/*2.2*/
+#kugel h1{
+    color: rgb(204, 224, 255);
+    position: absolute;
+    top: 0;
+    left: 40%;
+    padding: 20px;
+}
+#kugel{
+    text-align: center;
+    color: white;
+    height: 970px;
+    background-color: rgb(204, 224, 255);
+    position: relative;
+   /*  background-size: cover; */
+    /* display: flex; */
+}
+#zahl{
+    text-align: center;
+    display: flex;
+    margin: 200px 500px; 
+    justify-content: space-evenly;
+}
+#zahl div{
+    font-size: 100px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    flex-direction: row nowrap;
+    border-radius: 50%;
+    background-color: palevioletred;
+}
+.nexto{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+/*3*/
+#eis{
+    height: 970px;
+    background-color: rgb(255, 217, 246);
+    position: relative;
+}
+.next2{
+    position: absolute;
+    bottom: 40px;
+    width: 100%; 
+}
+
+/* #sorten div > img{
+    width: 100px;
+} */
+#sorten, #top, #sauce{
+    margin-top: 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    /* width: 1100px;
+    padding-top: 20px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; */
+}
+/* #sorten img,  #top img{
+    margin: 20px 10px;
+    width: 100px;
+    flex-flow: row wrap;
+    flex: 1 0 21%;
+}*/
+#sorten{
+    background-color: white;
+    border: rgb(255, 217, 246) dashed 5px;
+    margin-top: 50px;
+}
+.flavour{
+    background-color: white;
+}
+.flavour, .topper, .sauce{
+    text-align: center;
+    flex: 1 0 21%;
+    margin: 10px 0;
+    width: 260px;
+}
+.flavour > img, .topper > img, .sauce > img{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    width: 200px;
+}
+.topper > img, .sauce > img{
+    width: 250px;
+}
+#eis h1{
+    color:white;
+}
+/*4*/
+#toppings{
+    height: 970px;
+    position: relative;
+    background-color: rgb(204, 224, 255);
+}
+#toppings img{
+
+    flex-flow: row wrap;
+    flex: 1 0 21%;
+}
+.next3{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;  
+}
+/*5*/
+#order{
+    height: 970px;
+    position: relative;
+    background-color: rgb(255, 217, 246);
+}
+form{
+    padding: 40px;
+    text-align: center;
+}
+#form button{
+    margin-top: 20px;
+}
+.buttons{
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: center;
+}
+.topper button{
+    background-color: #CCE0FF;;
+}
+.flavour button, .topper button{
+    margin: 5px;
+    text-align: center;
+    font-size: x-large;
+}
+.flavour p, .topper p{
+    margin: auto 0;
+    font-size: x-large;
+}
