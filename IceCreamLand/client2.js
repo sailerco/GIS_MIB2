@@ -129,7 +129,8 @@ var IceCreamLand;
         let h1 = document.getElementById("headofstaff");
         h1.append(preisp);
         document.getElementById("b" + _index).style.color = "red";
-        let url = "http://localhost:8100/getthemoney" + "?_id=" + _id;
+        let url = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         /* document.getElementById("Gewinn" + _index)?.remove(); */
         await fetch(url);
         show();

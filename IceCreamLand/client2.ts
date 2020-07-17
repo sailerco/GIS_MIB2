@@ -157,7 +157,8 @@ namespace IceCreamLand {
         let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
         h1.append(preisp);
         document.getElementById("b" + _index)!.style.color = "red";
-        let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id;
+        let url: string = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         /* document.getElementById("Gewinn" + _index)?.remove(); */
         await fetch(url); 
         show();
