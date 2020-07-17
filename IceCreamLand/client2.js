@@ -116,7 +116,9 @@ var IceCreamLand;
     }
     async function getthemoney(_id, _preis, _index) {
         /*         money += parseFloat(_preis);
-         */ if (localStorage.getItem("money")) {
+         */ let url = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        await fetch(url);
+        if (localStorage.getItem("money")) {
             let m = parseFloat(localStorage.getItem("money")) + parseFloat(_preis);
             localStorage.setItem("money", m.toString());
         }
@@ -129,10 +131,7 @@ var IceCreamLand;
         let h1 = document.getElementById("headofstaff");
         h1.append(preisp);
         document.getElementById("b" + _index).style.color = "red";
-        let url = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
         /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
-        /* document.getElementById("Gewinn" + _index)?.remove(); */
-        await fetch(url);
         /* show(); */
     }
 })(IceCreamLand || (IceCreamLand = {}));

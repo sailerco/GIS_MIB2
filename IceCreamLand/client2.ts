@@ -143,7 +143,9 @@ namespace IceCreamLand {
     }    
     async function getthemoney(_id: string, _preis: string, _index: number): Promise <void> {
 /*         money += parseFloat(_preis);  
- */     if (localStorage.getItem("money")) {
+ */     let url: string = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        await fetch(url); 
+        if (localStorage.getItem("money")) {
             let m = parseFloat(localStorage.getItem("money")!) + parseFloat(_preis);
             localStorage.setItem("money", m.toString());
         } else{
@@ -157,10 +159,9 @@ namespace IceCreamLand {
         let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
         h1.append(preisp);
         document.getElementById("b" + _index)!.style.color = "red";
-        let url: string = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        
         /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
-        /* document.getElementById("Gewinn" + _index)?.remove(); */
-        await fetch(url); 
+        
         /* show(); */
     }
 }    
