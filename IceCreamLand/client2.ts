@@ -24,6 +24,10 @@ namespace IceCreamLand {
     document.getElementById("retrieve")!.addEventListener("click", show);
     let staff: HTMLElement = document.getElementById("Bestellungen") as HTMLElement;
     let preisp: HTMLElement = document.createElement("h2");
+    preisp.innerHTML = "Ich habe so viel verdient: " + parseFloat(localStorage.getItem("money")!).toFixed(2) + "€";
+    preisp.setAttribute("id", "Verdienst");
+    let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
+    h1.append(preisp);
     /* let count: number = 1; */
     async function show(): Promise <void> {
         let formData: FormData = new FormData(document.forms[0]); 
@@ -148,20 +152,18 @@ namespace IceCreamLand {
         if (localStorage.getItem("money")) {
             let m = parseFloat(localStorage.getItem("money")!) + parseFloat(_preis);
             localStorage.setItem("money", m.toString());
-        } else{
+        } else {
             localStorage.setItem("money", _preis);
         }
-        
-        
-        money.toFixed(2);
+        /* money.toFixed(2); */
         preisp.innerHTML = "Ich habe so viel verdient: " + parseFloat(localStorage.getItem("money")!).toFixed(2) + "€";
         preisp.setAttribute("id", "Verdienst");
         let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
         h1.append(preisp);
-        document.getElementById("b" + _index)!.style.color = "red";
+        /* document.getElementById("b" + _index)!.style.color = "red"; */
         
         /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         
-        /* show(); */
+        show();
     }
 }    
