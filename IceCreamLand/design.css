@@ -1,0 +1,19 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width:320px) {
+#start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
+    width: 100%;
+    height: 100vh;
+}
+#staff{
+    height:100%;
+    background-size: cover;
+}
+}
+@media screen and (min-width:641px) {
+}
+@media screen and (min-width:1025px) {
+}
