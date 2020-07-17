@@ -92,7 +92,7 @@ namespace IceCreamLand {
                     /* let id: string = key; */
                     let value: string = <string>urli[key]; 
                     let object: Mongo.ObjectID = new Mongo.ObjectID(value);
-                    orders.update({"_id": object}, {$set:{"preis" : "I got the money"}});
+                    orders.update({"_id": object}, {$set: {"preis" : "I got the money"}});
                 }
             }
         }

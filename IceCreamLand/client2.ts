@@ -161,6 +161,6 @@ namespace IceCreamLand {
         /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         /* document.getElementById("Gewinn" + _index)?.remove(); */
         await fetch(url); 
-        show();
+        /* show(); */
     }
 }    
