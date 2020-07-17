@@ -9,8 +9,8 @@ var IceCreamLand;
     /* let count: number = 1; */
     async function show() {
         let formData = new FormData(document.forms[0]);
-        /* let url: string = "https://dedflake.herokuapp.com/" + "retrieve"; */
-        let url = "http://localhost:8100/" + "retrieve";
+        let url = "https://dedflake.herokuapp.com/" + "retrieve";
+        /* let url: string = "http://localhost:8100/" + "retrieve"; */
         let response = await fetch(url);
         let reply = JSON.parse(await response.text());
         while (id.firstChild) {
@@ -61,20 +61,27 @@ var IceCreamLand;
             img.addEventListener("click", deletelast);
             let divforbutton = document.createElement("div");
             divforbutton.setAttribute("id", "Gewinn" + index);
-            let button = document.createElement("button");
+            /* divforbutton.innerHTML = "Get Money"; */
+            /* let button: HTMLElement = document.createElement("button");
             button.innerHTML = "Get Money";
             button.setAttribute("id", "b" + index);
+            divforbutton.appendChild(button); */
+            if (reply[index].preis != "I got the money") {
+                let button = document.createElement("button");
+                button.innerHTML = "Get Money";
+                button.setAttribute("id", "b" + index);
+                divforbutton.appendChild(button);
+                button.addEventListener("click", getPrice);
+            }
             div.appendChild(p);
             div.appendChild(img);
-            divforbutton.appendChild(button);
             div.appendChild(divforbutton);
             staff.appendChild(div);
-            button.addEventListener("click", getPrice);
             function deletelast() {
                 deleteOne(reply[index]._id);
             }
             function getPrice() {
-                document.getElementById("Gewinn" + index)?.removeChild(document.getElementById("b" + index));
+                document.getElementById("b" + index)?.removeEventListener("click", getPrice, false);
                 getthemoney(reply[index]._id, reply[index].preis, index);
             }
         }
@@ -89,8 +96,8 @@ var IceCreamLand;
     }
     document.getElementById("delete").addEventListener("click", deleteall);
     async function deleteall() {
-        /* let url: string = "https://dedflake.herokuapp.com/" + "delete"; */
-        let url = "http://localhost:8100/" + "delete";
+        let url = "https://dedflake.herokuapp.com/" + "delete";
+        /* let url: string = "http://localhost:8100/" + "delete"; */
         let response = await fetch(url);
         while (staff.firstChild) {
             staff.removeChild(staff.firstChild);
@@ -102,18 +109,28 @@ var IceCreamLand;
     }
     /* document.getElementById("deletelast")!.addEventListener("click", deletelast); */
     async function deleteOne(_idtodelete) {
-        let url = "http://localhost:8100/deleteOne" + "?_id=" + _idtodelete;
+        let url = "https://dedflake.herokuapp.com/deleteOne" + "?_id=" + _idtodelete;
+        /* let url: string = "http://localhost:8100/deleteOne" + "?_id=" + _idtodelete; */
         await fetch(url);
         show();
     }
     async function getthemoney(_id, _preis, _index) {
-        money += parseFloat(_preis);
-        money.toLocaleString();
-        preisp.innerHTML = "Bisher habe ich so viel verdient: " + money + "0€";
+        /*         money += parseFloat(_preis);
+         */ if (localStorage.getItem("money")) {
+            let m = parseFloat(localStorage.getItem("money")) + parseFloat(_preis);
+            localStorage.setItem("money", m.toString());
+        }
+        else {
+            localStorage.setItem("money", _preis);
+        }
+        money.toFixed(2);
+        preisp.innerHTML = "Ich habe so viel verdient: " + parseFloat(localStorage.getItem("money")).toFixed(2) + "€";
         preisp.setAttribute("id", "Verdienst");
         let h1 = document.getElementById("headofstaff");
         h1.append(preisp);
+        document.getElementById("b" + _index).style.color = "red";
         let url = "http://localhost:8100/getthemoney" + "?_id=" + _id;
+        /* document.getElementById("Gewinn" + _index)?.remove(); */
         await fetch(url);
         show();
     }

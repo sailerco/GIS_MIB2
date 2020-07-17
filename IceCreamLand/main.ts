@@ -20,35 +20,55 @@ namespace IceCreamLand {
         Preis: 4.40
     };
     const eispreis: Eis[] = [eineKugel, zweiKugel, dreiKugel, vierKugel];
-    let order: HTMLElement = document.getElementById("order") as HTMLElement;
-    let kugelanzahl: HTMLElement = document.getElementById("zahl") as HTMLElement;
-    let coneorcup: boolean;
-    let auswahl: HTMLElement = document.getElementById("auswahl") as HTMLElement;
-    let kugel: HTMLElement = document.getElementById("kugel") as HTMLElement;
-    let eis: HTMLElement = document.getElementById("eis") as HTMLElement;
-    let becher: HTMLElement = document.getElementById("becher") as HTMLElement;
-    let start: HTMLElement = document.getElementById("start") as HTMLElement;
-    let head: HTMLElement = document.getElementById("head") as HTMLElement;
-    let sorten: HTMLElement = document.getElementById("sorten") as HTMLElement;
-
-    let top: HTMLElement = document.getElementById("top") as HTMLElement;
-    let topsauce: HTMLElement = document.getElementById("sauce") as HTMLElement;
-
-    let saucetop: HTMLElement = document.getElementById("saucetopping") as HTMLElement;
-    let toppingtest: HTMLElement = document.getElementById("realtoppings") as HTMLElement;
-
     let sauce: string[] = ["erdbeersauce", "karamell", "vanillesauce", "schokosauce", "trash"];
     let toppings: string[] = ["erdbeeren", "keks", "chocolate sprinkles", "rainbow sprinkles", "trash"];
     let flavour: string[] = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
     let flavourklein: string[] = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
-    let howmany: number;
     
+    let start: HTMLElement = document.getElementById("start") as HTMLElement;
+    let becher: HTMLElement = document.getElementById("becher") as HTMLElement;
+    let kugel: HTMLElement = document.getElementById("kugel") as HTMLElement;
+    let eis: HTMLElement = document.getElementById("eis") as HTMLElement;
+    let saucetop: HTMLElement = document.getElementById("saucetopping") as HTMLElement;
+    let toppingtest: HTMLElement = document.getElementById("realtoppings") as HTMLElement;
+    let order: HTMLElement = document.getElementById("order") as HTMLElement;
+
+    let kugelanzahl: HTMLElement = document.getElementById("zahl") as HTMLElement;
+    let sorten: HTMLElement = document.getElementById("sorten") as HTMLElement;
+    let auswahl: HTMLElement = document.getElementById("auswahl") as HTMLElement;
+    let top: HTMLElement = document.getElementById("top") as HTMLElement;
+    let topsauce: HTMLElement = document.getElementById("sauce") as HTMLElement;
+
+    let howmany: number;
+    let coneorcup: boolean;
+    
+    let side: HTMLElement = document.createElement("div");
+    side.setAttribute("id", "side");
+    kugel.insertBefore(side, kugelanzahl);
+
+    let eisside: HTMLElement = document.createElement("div");
+    eisside.setAttribute("id", "eisside");
+    eis.insertBefore(eisside, sorten);
+
+    let sauceside: HTMLElement = document.createElement("div");
+    sauceside.setAttribute("id", "sauceside");
+    saucetop.insertBefore(sauceside, topsauce);
+
+    let topside: HTMLElement = document.createElement("div");
+    topside.setAttribute("id", "topside");
+    toppingtest.insertBefore(topside, top);
+
+    let orderside: HTMLElement = document.createElement("div");
+    orderside.setAttribute("id", "orderside");
+    order.insertBefore(orderside, document.getElementById("form")!);
+
     document.getElementById("button1")!.style.display = "none";
     document.getElementById("button11")!.style.display = "none";
     document.getElementById("button2")!.style.display = "none";
     let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
     button.addEventListener("click", buttonclick); 
     function buttonclick(): void {
+        document.location.href = "#becher";
         becher.style.display = "block";
         becher.style.maxWidth = becher.style.maxHeight = "100%";
         start.style.display = "none";
@@ -95,30 +115,11 @@ namespace IceCreamLand {
     }
     //#endregion
     //#region Eventlistener
-    let side: HTMLElement = document.createElement("div");
-    side.setAttribute("id", "side");
-    kugel.insertBefore(side, kugelanzahl);
-
-    let eisside: HTMLElement = document.createElement("div");
-    eisside.setAttribute("id", "eisside");
-    eis.insertBefore(eisside, sorten);
-
-    let sauceside: HTMLElement = document.createElement("div");
-    sauceside.setAttribute("id", "sauceside");
-    saucetop.insertBefore(sauceside, topsauce);
-
-    let topside: HTMLElement = document.createElement("div");
-    topside.setAttribute("id", "topside");
-    toppingtest.insertBefore(topside, top);
-
-    let orderside: HTMLElement = document.createElement("div");
-    orderside.setAttribute("id", "orderside");
-    order.insertBefore(orderside, document.getElementById("form")!);
-
     let y: number = 0;
     /* let side: HTMLElement = document.getElementById("side") as HTMLElement;  */
     document.getElementById("button1")!.addEventListener("click", buttonclick1);
     function buttonclick1(): void {
+        document.location.href = "#kugel";
         if (y > 0) {
             /* eisside.removeChild(eisside.lastChild!); */
             side.removeChild(side.lastChild!);
@@ -178,10 +179,8 @@ namespace IceCreamLand {
                 localStorage.setItem("preis", eispreis[i - 1].Preis.toString());
                 howmany = parseInt(localStorage.getItem("kugel")!);
                 counter++;
-
                 kugelnzeichnen(i);
             }
-
         }
     }
     let countkugel: number = 0;
@@ -222,6 +221,7 @@ namespace IceCreamLand {
     }
     document.getElementById("button11")!.addEventListener("click", buttonclick2);
     function buttonclick2(): void {
+        document.location.href = "#eis";
         if (window.matchMedia("(min-width: 320px)").matches) {
             side.style.position = "absolute";
             side.style.left = "0%";
@@ -251,6 +251,7 @@ namespace IceCreamLand {
     }
     document.getElementById("button2")!.addEventListener("click", buttonclick3);
     function buttonclick3(): void {
+        document.location.href = "#saucetopping";
         if (window.matchMedia("(min-width: 641px)").matches) {  
             side.style.left = "0%";
             side.style.top = "70%";
@@ -267,6 +268,7 @@ namespace IceCreamLand {
     }
     document.getElementById("button3")!.addEventListener("click", buttonclick4);
     function buttonclick4(): void {
+        document.location.href = "#realtoppings";
         topside.appendChild(side);
         saucetop.style.display = "none";
         toppingtest.style.display = "block";
@@ -275,6 +277,7 @@ namespace IceCreamLand {
     }
     document.getElementById("button4")!.addEventListener("click", buttonclick5);
     function buttonclick5(): void {
+        document.location.href = "#order";
         if (window.matchMedia("(min-width: 1025px)").matches) {  
             side.style.left = "60%";
             side.style.top = "20%";
@@ -286,7 +289,8 @@ namespace IceCreamLand {
         order.style.height = "100%vh";
     }
     document.getElementById("exit")!.addEventListener("click", exit);
-    function exit(): void{
+    function exit(): void {
+        document.location.href = "#start";
         order.style.display = "none";
         start.style.display = "block";
         start.style.width = "100%vw";
@@ -421,7 +425,7 @@ namespace IceCreamLand {
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "sauce");
             topsauce.appendChild(div);
-            
+
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "img/" + sauce[i] + ".png");
             img.setAttribute("alt", sauce[i]);
@@ -434,10 +438,8 @@ namespace IceCreamLand {
             }
             div.addEventListener("click", sauceontop);
             function sauceontop(): void {
-                
                 zeichnesauce(sauce[i]);
                 countsauce++;   
-                
                 if (wahl == false) {
                     let preis: number = parseFloat(localStorage.getItem("preis")!);
                     preis = preis + 1.0;
@@ -461,7 +463,6 @@ namespace IceCreamLand {
             countsauce = 0;
             trash++;
         }
-        
         if (_sauce == "erdbeersauce") {
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "sauceimg/" + "erdbeere" + howmany + ".png");
@@ -469,7 +470,11 @@ namespace IceCreamLand {
             img.setAttribute("alt", _sauce);
             if (howmany == 3) {
                 img.style.top = "0%";
-                img.style.left = "33%";
+                img.style.left = "36%";
+            }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             side.appendChild(img);
             trash = 0;
@@ -484,8 +489,8 @@ namespace IceCreamLand {
                 img.style.left = "33%";
             }
             if (howmany == 4) {
-                img.style.top = "0%";
-                /* img.style.left = "33%"; */
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             trash = 0;
             side.appendChild(img);
@@ -499,6 +504,10 @@ namespace IceCreamLand {
                 img.style.top = "0%";
                 img.style.left = "33%";
             }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
+            }
             side.appendChild(img);
             trash = 0;
         }
@@ -510,6 +519,10 @@ namespace IceCreamLand {
             if (howmany == 3) {
                 img.style.top = "0%";
                 img.style.left = "33%";
+            }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             trash = 0;
             side.appendChild(img);

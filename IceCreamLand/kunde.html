@@ -15,25 +15,25 @@
         <img src="img/Logo4.png" alt="logo" id="logo">
         <p> "You can't buy happiness, but you can buy ice cream <br> and that is pretty much the same thing."</p>
         <div class="next">
-            <a href="#becher"><button id="button"> Start</button></a>
+            <button id="button">Start</button>
         </div>
     </div>
     <div id="becher">
-        <img src="img/head5.png" alt="head" id="head">
+        <img src="img/head5.png" alt="head" id="header">
         <h1>Waffel oder Becher?</h1>
         <div id="auswahl">
         </div>
         <div class="next">
-            <a href="#kugel"><button id="button1"> Next</button></a></div>
+            <button id="button1" type="button">Next</button>
         </div>
     </div>
     <div id="kugel">
-        <img src="img/head5.png" alt="head" id="head">
+        <img src="img/head5.png" alt="head" id="heady">
         <div class="headline"><h1>Wie viele Kugeln?</h1><h2>1.10 pro Kugel</h2></div>
         <div id="zahl"></div>
         
         <div class="next">
-            <a href="#eis"><button id="button11"> Next</button></a></div>
+            <button id="button11" type="button">Next</button>
         </div>
     </div>
     <div id="eis">
@@ -41,7 +41,7 @@
         <div id="sorten">
         </div>
         <div class="next">
-            <a href="#saucetopping"><button id="button2"> Next</button></a></div>
+            <button id="button2" type="button">Next</button>
         </div>
     </div>
     <div id="saucetopping">
@@ -49,7 +49,7 @@
         <h2>Such dir eine Soße aus<br>(1 Euro)</h2>
         <div id="sauce"></div>
         <div class="next">
-            <a href="#realtoppings"><button id="button3"> Next!</button></a></div>
+            <button id="button3" type="button">Next</button>
         </div>
     </div>
     <div id="realtoppings">
@@ -57,12 +57,13 @@
         <h2>and go crazy with the toppings</h2>
         <div id="top"></div>
         <div class="next">
-            <a href="#order"><button id="button4"> Order!</button></a></div>
+            <button id="button4" type="button">Next</button>
         </div>
     </div>
     <div id="order">
         <div id="form">
-            <form action="http://localhost:8100">
+            <form action="//dedflake.herokuapp.com">
+            <!-- <form action="http://localhost:8100"> -->
             <label for="name" >Vorname:</label><br>
             <input type="text" id="name" name="Vorname" value=""><br>
             <label for="nachname">Nachname:</label><br>
@@ -76,7 +77,7 @@
             <button type="button" id="abgeben" >Abgeben</button>
             </form>
         </div>
-        <a href="#start"><button type="button" id="exit" >Abbrechen</button></a>
+        <button id="exit" type="button">Abbrechen</button>
         <button type="button" id="surprise" >Überraschung</button>
     </div>
 </body>

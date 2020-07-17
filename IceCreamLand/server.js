@@ -12,8 +12,8 @@ var IceCreamLand;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    /* let databaseUrl: string = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority"; */
-    let databaseUrl = "mongodb://localhost:27017";
+    let databaseUrl = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    /* let databaseUrl: string = "mongodb://localhost:27017"; */
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
@@ -73,6 +73,7 @@ var IceCreamLand;
             }
             if (url.pathname == "/getthemoney") {
                 let urli = url.query;
+                console.log("Wieso ist das so");
                 for (let key in urli) {
                     /* let id: string = key; */
                     let value = urli[key];

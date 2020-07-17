@@ -18,31 +18,46 @@ var IceCreamLand;
         Preis: 4.40
     };
     const eispreis = [eineKugel, zweiKugel, dreiKugel, vierKugel];
-    let order = document.getElementById("order");
-    let kugelanzahl = document.getElementById("zahl");
-    let coneorcup;
-    let auswahl = document.getElementById("auswahl");
-    let kugel = document.getElementById("kugel");
-    let eis = document.getElementById("eis");
-    let becher = document.getElementById("becher");
-    let start = document.getElementById("start");
-    let head = document.getElementById("head");
-    let sorten = document.getElementById("sorten");
-    let top = document.getElementById("top");
-    let topsauce = document.getElementById("sauce");
-    let saucetop = document.getElementById("saucetopping");
-    let toppingtest = document.getElementById("realtoppings");
     let sauce = ["erdbeersauce", "karamell", "vanillesauce", "schokosauce", "trash"];
     let toppings = ["erdbeeren", "keks", "chocolate sprinkles", "rainbow sprinkles", "trash"];
     let flavour = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
     let flavourklein = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
+    let start = document.getElementById("start");
+    let becher = document.getElementById("becher");
+    let kugel = document.getElementById("kugel");
+    let eis = document.getElementById("eis");
+    let saucetop = document.getElementById("saucetopping");
+    let toppingtest = document.getElementById("realtoppings");
+    let order = document.getElementById("order");
+    let kugelanzahl = document.getElementById("zahl");
+    let sorten = document.getElementById("sorten");
+    let auswahl = document.getElementById("auswahl");
+    let top = document.getElementById("top");
+    let topsauce = document.getElementById("sauce");
     let howmany;
+    let coneorcup;
+    let side = document.createElement("div");
+    side.setAttribute("id", "side");
+    kugel.insertBefore(side, kugelanzahl);
+    let eisside = document.createElement("div");
+    eisside.setAttribute("id", "eisside");
+    eis.insertBefore(eisside, sorten);
+    let sauceside = document.createElement("div");
+    sauceside.setAttribute("id", "sauceside");
+    saucetop.insertBefore(sauceside, topsauce);
+    let topside = document.createElement("div");
+    topside.setAttribute("id", "topside");
+    toppingtest.insertBefore(topside, top);
+    let orderside = document.createElement("div");
+    orderside.setAttribute("id", "orderside");
+    order.insertBefore(orderside, document.getElementById("form"));
     document.getElementById("button1").style.display = "none";
     document.getElementById("button11").style.display = "none";
     document.getElementById("button2").style.display = "none";
     let button = document.getElementById("button");
     button.addEventListener("click", buttonclick);
     function buttonclick() {
+        document.location.href = "#becher";
         becher.style.display = "block";
         becher.style.maxWidth = becher.style.maxHeight = "100%";
         start.style.display = "none";
@@ -83,25 +98,11 @@ var IceCreamLand;
     }
     //#endregion
     //#region Eventlistener
-    let side = document.createElement("div");
-    side.setAttribute("id", "side");
-    kugel.insertBefore(side, kugelanzahl);
-    let eisside = document.createElement("div");
-    eisside.setAttribute("id", "eisside");
-    eis.insertBefore(eisside, sorten);
-    let sauceside = document.createElement("div");
-    sauceside.setAttribute("id", "sauceside");
-    saucetop.insertBefore(sauceside, topsauce);
-    let topside = document.createElement("div");
-    topside.setAttribute("id", "topside");
-    toppingtest.insertBefore(topside, top);
-    let orderside = document.createElement("div");
-    orderside.setAttribute("id", "orderside");
-    order.insertBefore(orderside, document.getElementById("form"));
     let y = 0;
     /* let side: HTMLElement = document.getElementById("side") as HTMLElement;  */
     document.getElementById("button1").addEventListener("click", buttonclick1);
     function buttonclick1() {
+        document.location.href = "#kugel";
         if (y > 0) {
             /* eisside.removeChild(eisside.lastChild!); */
             side.removeChild(side.lastChild);
@@ -198,6 +199,7 @@ var IceCreamLand;
     }
     document.getElementById("button11").addEventListener("click", buttonclick2);
     function buttonclick2() {
+        document.location.href = "#eis";
         if (window.matchMedia("(min-width: 320px)").matches) {
             side.style.position = "absolute";
             side.style.left = "0%";
@@ -227,6 +229,7 @@ var IceCreamLand;
     }
     document.getElementById("button2").addEventListener("click", buttonclick3);
     function buttonclick3() {
+        document.location.href = "#saucetopping";
         if (window.matchMedia("(min-width: 641px)").matches) {
             side.style.left = "0%";
             side.style.top = "70%";
@@ -243,6 +246,7 @@ var IceCreamLand;
     }
     document.getElementById("button3").addEventListener("click", buttonclick4);
     function buttonclick4() {
+        document.location.href = "#realtoppings";
         topside.appendChild(side);
         saucetop.style.display = "none";
         toppingtest.style.display = "block";
@@ -251,6 +255,7 @@ var IceCreamLand;
     }
     document.getElementById("button4").addEventListener("click", buttonclick5);
     function buttonclick5() {
+        document.location.href = "#order";
         if (window.matchMedia("(min-width: 1025px)").matches) {
             side.style.left = "60%";
             side.style.top = "20%";
@@ -263,6 +268,7 @@ var IceCreamLand;
     }
     document.getElementById("exit").addEventListener("click", exit);
     function exit() {
+        document.location.href = "#start";
         order.style.display = "none";
         start.style.display = "block";
         start.style.width = "100%vw";
@@ -432,7 +438,11 @@ var IceCreamLand;
             img.setAttribute("alt", _sauce);
             if (howmany == 3) {
                 img.style.top = "0%";
-                img.style.left = "33%";
+                img.style.left = "36%";
+            }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             side.appendChild(img);
             trash = 0;
@@ -447,8 +457,8 @@ var IceCreamLand;
                 img.style.left = "33%";
             }
             if (howmany == 4) {
-                img.style.top = "0%";
-                /* img.style.left = "33%"; */
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             trash = 0;
             side.appendChild(img);
@@ -462,6 +472,10 @@ var IceCreamLand;
                 img.style.top = "0%";
                 img.style.left = "33%";
             }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
+            }
             side.appendChild(img);
             trash = 0;
         }
@@ -473,6 +487,10 @@ var IceCreamLand;
             if (howmany == 3) {
                 img.style.top = "0%";
                 img.style.left = "33%";
+            }
+            if (howmany == 4) {
+                img.style.top = "-2%";
+                img.style.left = "42%";
             }
             trash = 0;
             side.appendChild(img);

@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 import { ParsedUrlQuery } from "querystring";
 
 namespace IceCreamLand {
-    interface Bestellung{
+    interface Bestellung {
         [type: string]: string| string[]| undefined;
     }
     let gettheorder: Bestellung[];
@@ -15,8 +15,8 @@ namespace IceCreamLand {
     if (!port)
         port = 8100;
     
-    /* let databaseUrl: string = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority"; */
-    let databaseUrl: string = "mongodb://localhost:27017";
+    let databaseUrl: string = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority";
+    /* let databaseUrl: string = "mongodb://localhost:27017"; */
     
     startServer(port);
 
@@ -87,6 +87,7 @@ namespace IceCreamLand {
             }
             if (url.pathname == "/getthemoney") {
                 let urli: Bestellung = <Bestellung> url.query;
+                console.log("Wieso ist das so");
                 for (let key in urli) {
                     /* let id: string = key; */
                     let value: string = <string>urli[key]; 

@@ -492,7 +492,7 @@ button#surprise {
     position: absolute;
     width: 150px;
     top: 4%;
-    left: 0%;
+    left: 39%;
 }
 .sauce > img{
     width: 100px;
@@ -705,6 +705,20 @@ form{
     justify-content: space-evenly;
     margin: 0 350px;
 }
+#formular button{
+    height: 50px
+}
+#formular button:hover{
+    color: white;
+    background-color: rgb(190,210,255);
+}
+#form button{
+    width: 170px;
+}
+button#abgeben:hover{
+    color: white;
+    background-color: rgb(190,210,255);
+}
 #staff p{
     color: rgb(204, 224, 255);
     background-color: white;
@@ -754,8 +768,8 @@ button#surprise{
 }
 #Bestellungen{
     display: flex;
-    width: 500px;
-    flex-direction: row;
+    flex-flow: row wrap;
+    flex: 21% 0 1;
 }
 img#trash {
     width: 70px;

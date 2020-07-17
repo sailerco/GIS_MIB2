@@ -7,8 +7,8 @@ var IceCreamLand;
     async function senden() {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        /* let url: string = "https://dedflake.herokuapp.com/"  + "button"; */
-        let url = "http://localhost:8100/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel");
+        let url = "https://dedflake.herokuapp.com/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel");
+        /* let url: string = "http://localhost:8100/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel"); */
         for (let i = 0; i <= sortenstring.length - 1; i++) {
             let zahl = i + 1;
             url = url + "&Sorte" + zahl.toString() + "=" + sortenstring[i];
