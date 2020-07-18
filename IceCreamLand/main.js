@@ -65,6 +65,11 @@ var IceCreamLand;
     //region choose one
     addcup();
     function addcup() {
+        let img = document.createElement("img");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        img.setAttribute("src", "home.png");
+        document.getElementById("becher").appendChild(img);
         let div = document.createElement("div"); //new div an #shop1
         div.setAttribute("class", "cone");
         auswahl.appendChild(div);
@@ -109,7 +114,7 @@ var IceCreamLand;
             y = 0;
         }
         let div = document.createElement("div");
-        div.setAttribute("id", "lineart");
+        div.setAttribute("id", "lineart_container");
         let behaelter = document.createElement("img");
         /* side.removeChild(side.lastChild!); */
         if (coneorcup) {
@@ -136,6 +141,11 @@ var IceCreamLand;
     //#region kugel
     addkugel();
     function addkugel() {
+        let img = document.createElement("img");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        img.setAttribute("src", "home.png");
+        kugel.appendChild(img);
         for (let i = 1; i <= 4; i++) {
             let div = document.createElement("div");
             div.setAttribute("class", "k");
@@ -190,7 +200,7 @@ var IceCreamLand;
             if (anzahl == 1 && window.matchMedia("(min-width: 1025px)").matches) {
                 div.style.width = div.style.height = "185px";
                 div.style.borderRadius = "100px";
-                div.style.left = "33%";
+                div.style.left = "8%";
                 div.style.top = "5%";
             }
             kugelzeichnen.appendChild(div);
@@ -216,8 +226,13 @@ var IceCreamLand;
             side.style.transform = "(-50%, -50%)";
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.top = "40%";
-            side.style.left = "-4%";
+            side.style.top = "33%";
+            side.style.left = "-1%";
+            side.style.marginRight = "0px";
+        }
+        if (window.matchMedia("(min-width: 1370px)").matches) {
+            side.style.top = "42%";
+            side.style.left = "0%";
             side.style.marginRight = "0px";
         }
         kugel.style.display = "none";
@@ -235,8 +250,8 @@ var IceCreamLand;
             side.style.top = "70%";
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.left = "-4%";
-            side.style.top = "40%";
+            side.style.left = "0%";
+            side.style.top = "50%";
         }
         sauceside.appendChild(side);
         eis.style.display = "none";
@@ -267,6 +282,9 @@ var IceCreamLand;
         order.style.height = "100%vh";
     }
     document.getElementById("exit").addEventListener("click", exit);
+    for (let i = 0; i <= document.getElementsByClassName("home").length; i++) {
+        document.getElementsByClassName("home")[i].addEventListener("click", exit);
+    }
     function exit() {
         document.location.href = "#start";
         order.style.display = "none";
@@ -286,6 +304,11 @@ var IceCreamLand;
     let check = false;
     addflavour();
     function addflavour() {
+        let img = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        eis.appendChild(img);
         console.log("kugel" + howmany);
         for (let i = 0; i < flavour.length; i++) {
             let div = document.createElement("div");
@@ -390,6 +413,11 @@ var IceCreamLand;
     let countsauce = 0;
     addtop();
     function addtop() {
+        let img = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        saucetop.appendChild(img);
         for (let i = 0; i < sauce.length; i++) {
             let div = document.createElement("div");
             div.setAttribute("class", "sauce");
@@ -436,13 +464,25 @@ var IceCreamLand;
             img.setAttribute("src", "sauceimg/" + "erdbeere" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "36%";
+            if (!window.matchMedia("(min-width: 320px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "-6%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if (window.matchMedia("(min-width: 1025px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             side.appendChild(img);
             trash = 0;
@@ -452,13 +492,25 @@ var IceCreamLand;
             img.setAttribute("src", "sauceimg/" + "karamell" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if (window.matchMedia("(min-width: 1025px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             trash = 0;
             side.appendChild(img);
@@ -468,13 +520,25 @@ var IceCreamLand;
             img.setAttribute("src", "sauceimg/" + "schoko" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if (window.matchMedia("(min-width: 1025px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             side.appendChild(img);
             trash = 0;
@@ -484,13 +548,25 @@ var IceCreamLand;
             img.setAttribute("src", "sauceimg/" + "vanille" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if (window.matchMedia("(min-width: 1025px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             trash = 0;
             side.appendChild(img);
@@ -501,6 +577,11 @@ var IceCreamLand;
     buildtopping();
     let toppingcount = 0;
     function buildtopping() {
+        let img = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        toppingtest.appendChild(img);
         for (let i = 0; i < toppings.length; i++) {
             let div = document.createElement("div");
             div.setAttribute("class", "topper");

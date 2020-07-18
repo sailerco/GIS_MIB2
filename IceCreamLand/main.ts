@@ -76,6 +76,12 @@ namespace IceCreamLand {
     //region choose one
     addcup();
     function addcup(): void {
+        let img: HTMLImageElement = document.createElement("img");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        img.setAttribute("src", "home.png");
+        document.getElementById("becher")!.appendChild(img);
+        
         let div: HTMLDivElement = document.createElement("div"); //new div an #shop1
         div.setAttribute("class", "cone");
         auswahl.appendChild(div);
@@ -126,7 +132,7 @@ namespace IceCreamLand {
             y = 0;
         }
         let div: HTMLElement = document.createElement("div");
-        div.setAttribute("id", "lineart");
+        div.setAttribute("id", "lineart_container");
         let behaelter: HTMLImageElement = document.createElement("img");
         /* side.removeChild(side.lastChild!); */
         if (coneorcup) {
@@ -154,7 +160,11 @@ namespace IceCreamLand {
     //#region kugel
     addkugel();
     function addkugel(): void {
-
+        let img: HTMLImageElement = document.createElement("img");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        img.setAttribute("src", "home.png");
+        kugel.appendChild(img);
         for (let i: number = 1; i <= 4; i++) {
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "k");
@@ -211,7 +221,7 @@ namespace IceCreamLand {
             if (anzahl == 1 && window.matchMedia("(min-width: 1025px)").matches) {
                 div.style.width = div.style.height = "185px";
                 div.style.borderRadius = "100px";
-                div.style.left = "33%";
+                div.style.left = "8%";
                 div.style.top = "5%";
             }
             
@@ -238,8 +248,13 @@ namespace IceCreamLand {
             side.style.transform = "(-50%, -50%)";  
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.top = "40%";
-            side.style.left = "-4%";
+            side.style.top = "33%";
+            side.style.left = "-1%";
+            side.style.marginRight = "0px";  
+        }
+        if (window.matchMedia("(min-width: 1370px)").matches) {
+            side.style.top = "42%";
+            side.style.left = "0%";
             side.style.marginRight = "0px";  
         }
         kugel.style.display = "none";
@@ -257,8 +272,8 @@ namespace IceCreamLand {
             side.style.top = "70%";
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {  
-            side.style.left = "-4%";
-            side.style.top = "40%";
+            side.style.left = "0%";
+            side.style.top = "50%";
         }
         sauceside.appendChild(side);
         eis.style.display = "none";
@@ -289,6 +304,9 @@ namespace IceCreamLand {
         order.style.height = "100%vh";
     }
     document.getElementById("exit")!.addEventListener("click", exit);
+    for(let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
+        document.getElementsByClassName("home")[i].addEventListener("click", exit);
+    }
     function exit(): void {
         document.location.href = "#start";
         order.style.display = "none";
@@ -311,6 +329,12 @@ namespace IceCreamLand {
     let check: boolean = false;
     addflavour();
     function addflavour(): void {
+        let img: HTMLImageElement = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        eis.appendChild(img);
+        
         console.log("kugel" + howmany);
         for (let i: number = 0; i < flavour.length; i++) {
             let div: HTMLDivElement = document.createElement("div");
@@ -421,6 +445,12 @@ namespace IceCreamLand {
     let countsauce: number = 0;
     addtop();
     function addtop(): void {
+        let img: HTMLImageElement = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        saucetop.appendChild(img);
+        
         for (let i: number = 0; i < sauce.length; i++) {
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "sauce");
@@ -446,7 +476,7 @@ namespace IceCreamLand {
                     localStorage.setItem("preis", preis.toString());
                     wahl = true;
                 }
-                if (sauce[i] == "trash" && wahl == true){
+                if (sauce[i] == "trash" && wahl == true) {
                     let preis: number = parseFloat(localStorage.getItem("preis")!);
                     preis = preis - 1.0;
                     localStorage.setItem("preis", preis.toString());
@@ -468,13 +498,25 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "erdbeere" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "36%";
+            if (!window.matchMedia("(min-width: 320px)").matches) {
+                if (howmany == 3) {
+                    img.style.top = "-6%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if(window.matchMedia("(min-width: 1025px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             side.appendChild(img);
             trash = 0;
@@ -484,13 +526,25 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "karamell" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if(window.matchMedia("(min-width: 1025px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             trash = 0;
             side.appendChild(img);
@@ -500,13 +554,25 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "schoko" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if(window.matchMedia("(min-width: 1025px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             side.appendChild(img);
             trash = 0;
@@ -516,13 +582,25 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "vanille" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (howmany == 3) {
-                img.style.top = "0%";
-                img.style.left = "33%";
+            if (!window.matchMedia("(min-width: 320px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "33%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "42%";
+                }
             }
-            if (howmany == 4) {
-                img.style.top = "-2%";
-                img.style.left = "42%";
+            if(window.matchMedia("(min-width: 1025px)").matches){
+                if (howmany == 3) {
+                    img.style.top = "0%";
+                    img.style.left = "20%";
+                }
+                if (howmany == 4) {
+                    img.style.top = "-2%";
+                    img.style.left = "24%";
+                }
             }
             trash = 0;
             side.appendChild(img);
@@ -534,6 +612,11 @@ namespace IceCreamLand {
     buildtopping();
     let toppingcount: number = 0;
     function buildtopping(): void {
+        let img: HTMLImageElement = document.createElement("img");
+        img.setAttribute("src", "home.png");
+        img.setAttribute("class", "home");
+        img.setAttribute("alt", "home");
+        toppingtest.appendChild(img); 
         for (let i: number = 0; i < toppings.length; i++) {
 
             let div: HTMLDivElement = document.createElement("div");
@@ -544,7 +627,7 @@ namespace IceCreamLand {
             img.setAttribute("src", "img/" + toppings[i] + ".png");
             img.setAttribute("alt", toppings[i]);
             div.appendChild(img);
-            if(toppings[i] != "trash"){
+            if (toppings[i] != "trash") {
                 let topname: HTMLElement = document.createElement("h1");
                 topname.setAttribute("class", "topp");
                 topname.innerHTML = toppings[i];

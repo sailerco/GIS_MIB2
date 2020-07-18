@@ -57,7 +57,7 @@ namespace IceCreamLand {
             if (url.pathname == "/order") {
                 /* console.log("aa");
                 console.log(url.query); */
-                for(let key in url.query){
+                for (let key in url.query) {
                     _response.write(key + ":" + url.query[key]);
                     console.log("log:" + key + "" + url.query[key]);
                 }

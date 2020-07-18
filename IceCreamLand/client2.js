@@ -65,15 +65,11 @@ var IceCreamLand;
             img.addEventListener("click", deletelast);
             let divforbutton = document.createElement("div");
             divforbutton.setAttribute("id", "Gewinn" + index);
-            /* divforbutton.innerHTML = "Get Money"; */
-            /* let button: HTMLElement = document.createElement("button");
-            button.innerHTML = "Get Money";
-            button.setAttribute("id", "b" + index);
-            divforbutton.appendChild(button); */
             if (reply[index].preis != "I got the money") {
                 let button = document.createElement("button");
                 button.innerHTML = "Get Money";
                 button.setAttribute("id", "b" + index);
+                button.setAttribute("class", "vorschau_button");
                 divforbutton.appendChild(button);
                 button.addEventListener("click", getPrice);
             }
@@ -119,8 +115,7 @@ var IceCreamLand;
         show();
     }
     async function getthemoney(_id, _preis, _index) {
-        /*         money += parseFloat(_preis);
-         */ let url = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        let url = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
         await fetch(url);
         if (localStorage.getItem("money")) {
             let m = parseFloat(localStorage.getItem("money")) + parseFloat(_preis);
@@ -129,13 +124,10 @@ var IceCreamLand;
         else {
             localStorage.setItem("money", _preis);
         }
-        /* money.toFixed(2); */
         preisp.innerHTML = "Ich habe so viel verdient: " + parseFloat(localStorage.getItem("money")).toFixed(2) + "€";
         preisp.setAttribute("id", "Verdienst");
         let h1 = document.getElementById("headofstaff");
         h1.append(preisp);
-        /* document.getElementById("b" + _index)!.style.color = "red"; */
-        /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         show();
     }
 })(IceCreamLand || (IceCreamLand = {}));

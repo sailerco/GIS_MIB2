@@ -88,15 +88,12 @@ namespace IceCreamLand {
 
             let divforbutton: HTMLDivElement = document.createElement("div");  
             divforbutton.setAttribute("id", "Gewinn" + index);
-            /* divforbutton.innerHTML = "Get Money"; */
-            /* let button: HTMLElement = document.createElement("button");
-            button.innerHTML = "Get Money";
-            button.setAttribute("id", "b" + index);
-            divforbutton.appendChild(button); */
+
             if (reply[index].preis != "I got the money") {
                 let button: HTMLElement = document.createElement("button");
                 button.innerHTML = "Get Money";
                 button.setAttribute("id", "b" + index);
+                button.setAttribute("class", "vorschau_button");
                 divforbutton.appendChild(button);
                 button.addEventListener("click", getPrice); 
             } 
@@ -146,23 +143,18 @@ namespace IceCreamLand {
         show();
     }    
     async function getthemoney(_id: string, _preis: string, _index: number): Promise <void> {
-/*         money += parseFloat(_preis);  
- */     let url: string = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
+        let url: string = "https://dedflake.herokuapp.com/getthemoney" + "?_id=" + _id;
         await fetch(url); 
         if (localStorage.getItem("money")) {
-            let m = parseFloat(localStorage.getItem("money")!) + parseFloat(_preis);
+            let m: number = parseFloat(localStorage.getItem("money")!) + parseFloat(_preis);
             localStorage.setItem("money", m.toString());
         } else {
             localStorage.setItem("money", _preis);
         }
-        /* money.toFixed(2); */
         preisp.innerHTML = "Ich habe so viel verdient: " + parseFloat(localStorage.getItem("money")!).toFixed(2) + "€";
         preisp.setAttribute("id", "Verdienst");
         let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
         h1.append(preisp);
-        /* document.getElementById("b" + _index)!.style.color = "red"; */
-        
-        /* let url: string = "http://localhost:8100/getthemoney" + "?_id=" + _id; */
         
         show();
     }
