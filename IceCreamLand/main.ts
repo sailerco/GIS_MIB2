@@ -341,7 +341,7 @@ namespace IceCreamLand {
             div.setAttribute("class", "flavour");
             sorten.appendChild(div);
 
-            if ( window.matchMedia("(min-width: 1025px)").matches){
+            if ( window.matchMedia("(min-width: 1025px)").matches) {
                 let img: HTMLImageElement = document.createElement("img");
                 img.setAttribute("src", "img/" + flavour[i] + ".png");
                 img.setAttribute("alt", flavour[i]);
@@ -508,7 +508,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches){
+            if (window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
@@ -536,7 +536,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches) {
+            if (window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
@@ -564,7 +564,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches) {
+            if (window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
@@ -592,7 +592,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches) {
+            if (window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
