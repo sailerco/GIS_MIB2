@@ -307,9 +307,7 @@ namespace IceCreamLand {
         order.style.height = "100%vh";
     }
     document.getElementById("exit")!.addEventListener("click", exit);
-    /* for (let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
-        document.getElementsByClassName("home")[i].addEventListener("click", exit);
-    } */
+    
     function exit(): void {
         document.location.href = "#start";
         order.style.display = "none";
