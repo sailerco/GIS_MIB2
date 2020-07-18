@@ -20,8 +20,8 @@ namespace IceCreamLand {
         Preis: 4.40
     };
     const eispreis: Eis[] = [eineKugel, zweiKugel, dreiKugel, vierKugel];
-    let sauce: string[] = ["erdbeersauce", "karamell", "vanillesauce", "schokosauce", "trash"];
-    let toppings: string[] = ["erdbeeren", "keks", "chocolate sprinkles", "rainbow sprinkles", "trash"];
+    let sauce: string[] = ["Erdbeere", "Karamell", "Vanille", "Schoko", "trash"];
+    let toppings: string[] = ["Erdbeeren", "Kekse", "Streusel", "Regenbogen", "trash"];
     let flavour: string[] = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
     let flavourklein: string[] = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
     
@@ -80,6 +80,7 @@ namespace IceCreamLand {
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
         img.setAttribute("src", "home.png");
+        img.addEventListener("click", exit);
         document.getElementById("becher")!.appendChild(img);
         
         let div: HTMLDivElement = document.createElement("div"); //new div an #shop1
@@ -164,6 +165,8 @@ namespace IceCreamLand {
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
         img.setAttribute("src", "home.png");
+        img.addEventListener("click", exit);
+
         kugel.appendChild(img);
         for (let i: number = 1; i <= 4; i++) {
             let div: HTMLDivElement = document.createElement("div");
@@ -273,7 +276,7 @@ namespace IceCreamLand {
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {  
             side.style.left = "0%";
-            side.style.top = "50%";
+            side.style.top = "40%";
         }
         sauceside.appendChild(side);
         eis.style.display = "none";
@@ -304,9 +307,9 @@ namespace IceCreamLand {
         order.style.height = "100%vh";
     }
     document.getElementById("exit")!.addEventListener("click", exit);
-    for (let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
+    /* for (let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
         document.getElementsByClassName("home")[i].addEventListener("click", exit);
-    }
+    } */
     function exit(): void {
         document.location.href = "#start";
         order.style.display = "none";
@@ -333,15 +336,17 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
+        img.addEventListener("click", exit);
         eis.appendChild(img);
         
         console.log("kugel" + howmany);
         for (let i: number = 0; i < flavour.length; i++) {
+            console.log("i arr");
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "flavour");
             sorten.appendChild(div);
 
-            if ( window.matchMedia("(min-width: 1025px)").matches) {
+            if ( window.matchMedia("(min-width: 1025px)").matches){
                 let img: HTMLImageElement = document.createElement("img");
                 img.setAttribute("src", "img/" + flavour[i] + ".png");
                 img.setAttribute("alt", flavour[i]);
@@ -401,7 +406,9 @@ namespace IceCreamLand {
                     insgesamt--;
                     if (window.matchMedia("(min-width: 1025px)").matches)
                         reminder.innerHTML = "";
-                    
+                }
+                if(insgesamt != howmany){
+                    document.getElementById("button2")!.style.display = "none";
                 }
             }
             function addArtikel(): void {
@@ -449,6 +456,7 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
+        img.addEventListener("click", exit);
         saucetop.appendChild(img);
         
         for (let i: number = 0; i < sauce.length; i++) {
@@ -457,7 +465,7 @@ namespace IceCreamLand {
             topsauce.appendChild(div);
 
             let img: HTMLImageElement = document.createElement("img");
-            img.setAttribute("src", "img/" + sauce[i] + ".png");
+            img.setAttribute("src", "sauceimg/" + sauce[i] + ".png");
             img.setAttribute("alt", sauce[i]);
             div.appendChild(img);
             if (sauce[i] != "trash") {
@@ -493,7 +501,7 @@ namespace IceCreamLand {
             countsauce = 0;
             trash++;
         }
-        if (_sauce == "erdbeersauce") {
+        if (_sauce == "Erdbeere") {
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "sauceimg/" + "erdbeere" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
@@ -521,7 +529,7 @@ namespace IceCreamLand {
             side.appendChild(img);
             trash = 0;
         }
-        if (_sauce == "karamell") {
+        if (_sauce == "Karamell") {
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "sauceimg/" + "karamell" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
@@ -549,7 +557,7 @@ namespace IceCreamLand {
             trash = 0;
             side.appendChild(img);
         }
-        if (_sauce == "schokosauce") {
+        if (_sauce == "Schoko") {
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "sauceimg/" + "schoko" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
@@ -577,7 +585,7 @@ namespace IceCreamLand {
             side.appendChild(img);
             trash = 0;
         }
-        if (_sauce == "vanillesauce") {
+        if (_sauce == "Vanille") {
             let img: HTMLImageElement = document.createElement("img");
             img.setAttribute("src", "sauceimg/" + "vanille" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
@@ -616,6 +624,7 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
+        img.addEventListener("click", exit);
         toppingtest.appendChild(img); 
         for (let i: number = 0; i < toppings.length; i++) {
 
@@ -666,21 +675,21 @@ namespace IceCreamLand {
         img.setAttribute("src", "toppingimg/" + _topping + ".png");
         img.setAttribute("class", "toppingonice");
         if (window.matchMedia("(min-width: 320px)").matches) {
-            if (_topping == "chocolate sprinkles" || _topping == "rainbow sprinkles")
+            if (_topping == "Streusel" || _topping == "Regenbogen")
             img.style.width = "70px";
-            if (_topping == "erdbeeren")
+            if (_topping == "Erdbeeren")
             img.style.left = "50%";
         }
         if (window.matchMedia("(min-width: 641px)").matches) {
-            if (_topping == "chocolate sprinkles" || _topping == "rainbow sprinkles")
+            if (_topping == "Streusel" || _topping == "Regenbogen")
             img.style.width = "120px";
-            if (_topping == "erdbeeren")
+            if (_topping == "Erdbeeren")
             img.style.left = "50%";
         }
         if (window.matchMedia("(min-width: 1025px)").matches) {
-            if (_topping == "chocolate sprinkles" || _topping == "rainbow sprinkles")
+            if (_topping == "Streusel" || _topping == "Regenbogen")
             img.style.width = "150px";
-            if (_topping == "erdbeeren")
+            if (_topping == "Erdbeeren")
             img.style.left = "60%";
         }
         side.appendChild(img);
