@@ -9,7 +9,7 @@ var IceCreamLand;
         let query = new URLSearchParams(formData);
         let url = "https://dedflake.herokuapp.com/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel");
         /* let url: string = "http://localhost:8100/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel"); */
-        for (let i = 0; i <= sortenstring.length - 1; i++) {
+        for (let i = 0; i < sortenstring.length - 1; i++) {
             let zahl = i + 1;
             url = url + "&Sorte" + zahl.toString() + "=" + sortenstring[i];
         }
