@@ -306,17 +306,6 @@ namespace IceCreamLand {
         order.style.width = "100%vw";
         order.style.height = "100%vh";
     }
-    document.getElementById("exit")?.addEventListener("click", exit);
-    
-    function exit(): void {
-        document.location.href = "#start";
-        order.style.display = "none";
-        start.style.display = "block";
-        start.style.width = "100%vw";
-        start.style.height = "100%vh";
-        localStorage.clear();
-        window.location.reload();
-    }
     //#endregion kugel
 
     //#region flavour
@@ -334,7 +323,7 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-        /* img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         eis.appendChild(img);
         
         console.log("kugel" + howmany);
@@ -454,7 +443,7 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-        /* img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         saucetop.appendChild(img);
         
         for (let i: number = 0; i < sauce.length; i++) {
@@ -622,7 +611,7 @@ namespace IceCreamLand {
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-       /*  img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         toppingtest.appendChild(img); 
         for (let i: number = 0; i < toppings.length; i++) {
 
@@ -706,5 +695,16 @@ namespace IceCreamLand {
         a.innerHTML = "Inspiration";
         div.append(a);
         order.appendChild(div);
+    }
+    document.getElementById("exit")?.addEventListener("click", exit);
+    
+    function exit(): void {
+        document.location.href = "#start";
+        order.style.display = "none";
+        start.style.display = "block";
+        start.style.width = "100%vw";
+        start.style.height = "100%vh";
+        localStorage.clear();
+        window.location.reload();
     }
 }

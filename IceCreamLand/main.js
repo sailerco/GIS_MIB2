@@ -283,16 +283,6 @@ var IceCreamLand;
         order.style.width = "100%vw";
         order.style.height = "100%vh";
     }
-    document.getElementById("exit")?.addEventListener("click", exit);
-    function exit() {
-        document.location.href = "#start";
-        order.style.display = "none";
-        start.style.display = "block";
-        start.style.width = "100%vw";
-        start.style.height = "100%vh";
-        localStorage.clear();
-        window.location.reload();
-    }
     //#endregion kugel
     //#region flavour
     let reminder = document.createElement("p");
@@ -307,7 +297,7 @@ var IceCreamLand;
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-        /* img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         eis.appendChild(img);
         console.log("kugel" + howmany);
         for (let i = 0; i < flavour.length; i++) {
@@ -421,7 +411,7 @@ var IceCreamLand;
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-        /* img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         saucetop.appendChild(img);
         for (let i = 0; i < sauce.length; i++) {
             let div = document.createElement("div");
@@ -586,7 +576,7 @@ var IceCreamLand;
         img.setAttribute("src", "home.png");
         img.setAttribute("class", "home");
         img.setAttribute("alt", "home");
-        /*  img.addEventListener("click", exit); */
+        img.addEventListener("click", exit);
         toppingtest.appendChild(img);
         for (let i = 0; i < toppings.length; i++) {
             let div = document.createElement("div");
@@ -666,6 +656,16 @@ var IceCreamLand;
         a.innerHTML = "Inspiration";
         div.append(a);
         order.appendChild(div);
+    }
+    document.getElementById("exit")?.addEventListener("click", exit);
+    function exit() {
+        document.location.href = "#start";
+        order.style.display = "none";
+        start.style.display = "block";
+        start.style.width = "100%vw";
+        start.style.height = "100%vh";
+        localStorage.clear();
+        window.location.reload();
     }
 })(IceCreamLand || (IceCreamLand = {}));
 //# sourceMappingURL=main.js.map
