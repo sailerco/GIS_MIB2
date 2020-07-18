@@ -304,7 +304,7 @@ namespace IceCreamLand {
         order.style.height = "100%vh";
     }
     document.getElementById("exit")!.addEventListener("click", exit);
-    for(let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
+    for (let i: number = 0; i <= document.getElementsByClassName("home").length; i++) {
         document.getElementsByClassName("home")[i].addEventListener("click", exit);
     }
     function exit(): void {
@@ -526,7 +526,7 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "karamell" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches){
+            if (!window.matchMedia("(min-width: 320px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "33%";
@@ -536,7 +536,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches){
+            if(window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
@@ -554,7 +554,7 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "schoko" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches){
+            if (!window.matchMedia("(min-width: 320px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "33%";
@@ -564,7 +564,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches){
+            if(window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
@@ -582,7 +582,7 @@ namespace IceCreamLand {
             img.setAttribute("src", "sauceimg/" + "vanille" + howmany + ".png");
             img.setAttribute("id", "sauceimg");
             img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches){
+            if (!window.matchMedia("(min-width: 320px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "33%";
@@ -592,7 +592,7 @@ namespace IceCreamLand {
                     img.style.left = "42%";
                 }
             }
-            if(window.matchMedia("(min-width: 1025px)").matches){
+            if(window.matchMedia("(min-width: 1025px)").matches) {
                 if (howmany == 3) {
                     img.style.top = "0%";
                     img.style.left = "20%";
