@@ -8,9 +8,8 @@ var IceCreamLand;
         let url = "https://dedflake.herokuapp.com/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel");
         /* let url: string = "http://localhost:8100/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel"); */
         let sortenstring = JSON.parse(localStorage.getItem("sorten"));
-        console.log(sortenstring);
         let toppingstring = JSON.parse(localStorage.getItem("Topping"));
-        for (let i = 0; i <= sortenstring.length; i++) {
+        for (let i = 0; i <= sortenstring.length - 1; i++) {
             let zahl = i + 1;
             url = url + "&Sorte" + zahl.toString() + "=" + sortenstring[i];
         }

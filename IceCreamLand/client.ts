@@ -7,9 +7,8 @@ namespace IceCreamLand {
         let url: string = "https://dedflake.herokuapp.com/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel");
         /* let url: string = "http://localhost:8100/order?" + query.toString() + "&Behaelter=" + localStorage.getItem("Behälter") + "&kugeln=" + localStorage.getItem("kugel"); */
         let sortenstring: String[] = JSON.parse(localStorage.getItem("sorten")!);
-        console.log(sortenstring);
         let toppingstring: String[] = JSON.parse(localStorage.getItem("Topping")!);
-        for (let i: number = 0; i <= sortenstring.length; i++) {
+        for (let i: number = 0; i <= sortenstring.length - 1; i++) {
             let zahl: number = i + 1;
             url = url + "&Sorte" + zahl.toString() + "=" + sortenstring[i]; 
         }
