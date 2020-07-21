@@ -1,4 +1,4 @@
-*{  /* overflow: hidden; */
+*{  
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -14,7 +14,6 @@
     bottom: 5%;
     font-size: 40px;
     font-family: 'Damion', cursive;
-
 }
 .flavour{
     border-radius: 100px;
@@ -26,20 +25,14 @@
    top: 40%;
    left: -4%;
 }
-/* #sauceimg{
-    position: absolute;
-    width: 150px;
-    top: 2.5%;
-    left: 30%;
-} */
-.sauce h1, #top h1{
+/* .sauce h1, #top h1{
     padding: 0;
     text-align: center;
     margin: 0;
     width: auto;
     font-size: 50px;
     font-weight: 200;
-}
+} */
 button:focus{
     outline:none;
 }
@@ -51,11 +44,15 @@ input:focus{
 }
 @media screen and (min-width:320px) {
 /* Kugeln */
-.home{
+.home,  .staff{
     width: 30px;
     position: absolute;
     bottom: 0;
     right: 0;
+}
+#start .staff{
+    height: 30px;
+    padding: 5px;
 }
 .toppingonice{
     top: 0;
@@ -80,32 +77,31 @@ input:focus{
     top: 40%;
     left: 2%;
  }
- #kugel1, #kugel2, #kugel3, #kugel4{
+ #kugel1,#kugel2, #kugel3, #kugel4 {
     width: 50px;
     height: 50px;
     border-radius: 50px;
     position: absolute;
     background-size: cover;
 }
-#kugel1{
+#kugel1 {
     top: 9%;
     left: 8%;
     background-color: white;
 }
-#kugel2{
+#kugel2 {
     top: 9%;
     left: 40%;
     background-color: rgb(250, 250, 250);
-    
 }
-#kugel3{
+#kugel3 {
     top: 0%;
-    left: 25%; 
+    left: 25%;
     background-color: rgb(240, 240, 240);
 }
-#kugel4{
+#kugel4 {
     top: 0%;
-    left: 40%; 
+    left: 40%;
     background-color: rgb(230, 230, 230);
 }
 /* Kugeln ende */
@@ -153,9 +149,6 @@ h2{
     width: 100%;
     height: 100vh;
 }
-/* #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
-    display: none;
-} */
 #start, #staff{
     background-color: rgb(204, 224, 255);
     position: relative;
@@ -264,9 +257,13 @@ button{
     text-align: center;
     flex: 1 0 40%;
 }
-#sauce h1, #top h1{
-    font-size: 40px;
+#sauce h2, #realtoppings h2{
+    font-size: 30px;
     font-weight: 100;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    width: auto;
 }
 .flavour > img, .topper > img, .sauce > img{
     margin-left: auto;
@@ -337,6 +334,11 @@ button{
 @media screen and (min-width:641px) {
 .home{
     width: 40px;
+}
+#start .staff{
+    height: 40px;
+    width: 40px;
+    padding: 5px;
 }
 #saucetopping h2{
     font-size: 40px;
@@ -444,7 +446,7 @@ button{
 .flavour > img, .topper > img, .sauce > img{
     width: 180px;
 }
-#sauce h1{
+#sauce h2{
     font-size: 45px;
 }
 
@@ -544,17 +546,14 @@ button#surprise {
 #kugel2{
     top: 10%;
     left: 43%;
-    background-color: rgb(250, 250, 250);
 }
 #kugel3{
     top: 0%;
     left: 26%; 
-    background-color: rgb(240, 240, 240);
 }
 #kugel4{
     top: 0%;
     left: 40%; 
-    background-color: rgb(230, 230, 230);
 }
 #lineart_container{
     /* position: relative; */
@@ -579,7 +578,7 @@ button#surprise {
     font-family: 'Damion', cursive;
     color: white;
 }
-.sauce h1, .topp h1{
+.sauce h2, #realtoppings h2{
     padding: 0;
     text-align: center;
     margin: 0;
@@ -615,11 +614,11 @@ button#surprise {
     left: 50%;
     transform: translate(-50%, -50%);
     /* padding: 20px; */
-}
-/* #auswahl img{
-    /* height: 500px; 
+} 
+#auswahl img{
+    /* height: 500px; */
     height: 30%;
-} */
+} 
 #auswahl{
     justify-content: space-evenly;
     margin: 0 200px ;
@@ -770,12 +769,6 @@ form{
 #form button{
     width: 170px;
 }
-/* button#abgeben:hover{
-    color: white;
-    background-color: rgb(190,210,255);
-    transition: ease-in-out;
-    transition-duration: 1s;
-} */
 #staff p{
     color: rgb(204, 224, 255);
     background-color: white;
@@ -894,5 +887,10 @@ img#trash {
 }
 .home{
     width: 50px;
+}
+#start .staff{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
 }
 }

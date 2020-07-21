@@ -17,7 +17,7 @@ var IceCreamLand;
         Kugeln: 4,
         Preis: 4.40
     };
-    const eispreis = [eineKugel, zweiKugel, dreiKugel, vierKugel];
+    let eispreis = [eineKugel, zweiKugel, dreiKugel, vierKugel];
     let sauce = ["Erdbeere", "Karamell", "Vanille", "Schoko", "trash"];
     let toppings = ["Erdbeeren", "Kekse", "Streusel", "Regenbogen", "trash"];
     let flavour = ["brownie", "schoko", "oreo", "vanille", "erdbeere", "cookie", "mango", "mint"];
@@ -422,7 +422,7 @@ var IceCreamLand;
             img.setAttribute("alt", sauce[i]);
             div.appendChild(img);
             if (sauce[i] != "trash") {
-                let saucename = document.createElement("h1");
+                let saucename = document.createElement("h2");
                 saucename.setAttribute("class", "sauce");
                 saucename.innerHTML = sauce[i];
                 div.appendChild(saucename);
@@ -587,7 +587,7 @@ var IceCreamLand;
             img.setAttribute("alt", toppings[i]);
             div.appendChild(img);
             if (toppings[i] != "trash") {
-                let topname = document.createElement("h1");
+                let topname = document.createElement("h2");
                 topname.setAttribute("class", "topp");
                 topname.innerHTML = toppings[i];
                 div.appendChild(topname);
