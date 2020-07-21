@@ -50,47 +50,44 @@ namespace IceCreamLand {
         _response.setHeader("Access-Control-Allow-Origin", "*");
         
         if (_request.url) {
-            console.log("AAAAAAAAA");
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            /* let jsonString: string; */
             console.log(url);
+
             if (url.pathname == "/order") {
-                /* console.log("aa");
-                console.log(url.query); */
+                console.log("Daten aufnehmen");
                 for (let key in url.query) {
                     _response.write(key + ":" + url.query[key]);
-                    console.log("log:" + key + "" + url.query[key]);
                 }
                 storeOrder(url.query);
                 
             }
             if (url.pathname == "/retrieve") {
-                console.log("AAAAAAAAAA");
+                console.log("Daten zurückgeben");
                 gettheorder = await orders.find().toArray();
                 console.log(gettheorder);
                 _response.write(JSON.stringify(gettheorder));
             
             }
             if (url.pathname == "/delete") {
+                console.log("Datenbank löschen");
                 deleteOrder();
             }
             if (url.pathname == "/deleteOne") {
-                let urli: Bestellung = <Bestellung> url.query;
-                for (let key in urli) {
-                    /* let id: string = key; */
-                    let value: string = <string>urli[key]; 
+                console.log("Bestimme id aus der Datenbank entfernen");
+                /* let urli: Bestellung = <Bestellung> url.query; */
+                for (let key in url.query) { //auf richtige id zugreifen
+                    let value: string = <string>url.query[key]; 
+                    /*inspired by https://stackoverflow.com/questions/12901593/remove-record-by-id*/
                     let object: Mongo.ObjectID = new Mongo.ObjectID(value);
                     let deleteOrder: string = JSON.stringify(await orders.deleteOne({"_id": object}));
-                    console.log("bto" + deleteOrder);
                     _response.write(deleteOrder);
                 }
             }
             if (url.pathname == "/getthemoney") {
-                let urli: Bestellung = <Bestellung> url.query;
-                console.log("Wieso ist das so");
-                for (let key in urli) {
-                    /* let id: string = key; */
-                    let value: string = <string>urli[key]; 
+                /* let urli: Bestellung = <Bestellung> url.query; */
+                console.log("Geld einsammeln");
+                for (let key in url.query) {
+                    let value: string = <string>url.query[key]; 
                     let object: Mongo.ObjectID = new Mongo.ObjectID(value);
                     orders.update({"_id": object}, {$set: {"preis" : "I got the money"}});
                 }
