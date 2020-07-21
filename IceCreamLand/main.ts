@@ -293,19 +293,7 @@ namespace IceCreamLand {
         toppingtest.style.width = "100%vw";
         toppingtest.style.height = "100%vh";
     }
-    document.getElementById("button4")!.addEventListener("click", buttonclick5);
-    function buttonclick5(): void {
-        document.location.href = "#order";
-        if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.left = "60%";
-            side.style.top = "20%";
-            orderside.appendChild(side);
-        }
-        toppingtest.style.display = "none";
-        order.style.display = "block";
-        order.style.width = "100%vw";
-        order.style.height = "100%vh";
-    }
+    
     //#endregion kugel
 
     //#region flavour
@@ -635,7 +623,7 @@ namespace IceCreamLand {
             function toptop(): void {
                 let string: string = toppings[i];
                 if (toppings[i] != "trash" && savetopping.indexOf(string) == -1) {
-                    console.log("im here");
+                    counttopping += 0.1;
                     drawtop(toppings[i]);
                     if (savetopping) {
                         savetopping.push(toppings[i]);
@@ -649,6 +637,7 @@ namespace IceCreamLand {
                         side.removeChild(side.lastChild!);
                         toppingcount--;
                     }
+                    counttopping = 0;
                     localStorage.removeItem("Topping");
                     savetopping = [];
                 }
@@ -680,6 +669,25 @@ namespace IceCreamLand {
                 img.style.left = "60%";
         }
         side.appendChild(img);
+    }
+    document.getElementById("button4")!.addEventListener("click", buttonclick5);
+    function buttonclick5(): void {
+        counttopping = parseFloat(localStorage.getItem("preis")!) + counttopping;
+        localStorage.setItem("preis", counttopping.toString());
+        let h2: HTMLElement = document.createElement("h2");
+        h2.innerHTML = "Du musst " + counttopping.toFixed(2) + "€ zahlen";
+        h2.setAttribute("id", "orderhead");
+        order.insertBefore(h2, document.getElementById("form"));
+        document.location.href = "#order";
+        if (window.matchMedia("(min-width: 1025px)").matches) {
+            side.style.left = "60%";
+            side.style.top = "20%";
+            orderside.appendChild(side);
+        }
+        toppingtest.style.display = "none";
+        order.style.display = "block";
+        order.style.width = "100%vw";
+        order.style.height = "100%vh";
     }
     document.getElementById("surprise")?.addEventListener("click", surpriseclick);
     function surpriseclick(): void {
