@@ -25,14 +25,6 @@
    top: 40%;
    left: -4%;
 }
-/* .sauce h1, #top h1{
-    padding: 0;
-    text-align: center;
-    margin: 0;
-    width: auto;
-    font-size: 50px;
-    font-weight: 200;
-} */
 button:focus{
     outline:none;
 }
@@ -44,6 +36,13 @@ input:focus{
 }
 @media screen and (min-width:320px) {
 /* Kugeln */
+#sauceimg.alignsauce3{
+    top: 0%;
+}
+#sauceimg.alignsauce4{
+    top: -2%;
+    left: 24%;
+}
 .home,  .staff{
     width: 30px;
     position: absolute;
@@ -64,6 +63,12 @@ input:focus{
     position: absolute;
     z-index: 1;
 }
+#streusel, #rainbow {
+    width: 70px;
+}
+#erdbeere{
+    left: 50%;
+}
 .vorschau_button{
     width: 50px;
 }
@@ -73,13 +78,6 @@ input:focus{
     top: 0%;
     left: 16%;
 } 
-#side{
-    height: 300px;
-    width: 100px;
-    position: absolute;
-    top: 40%;
-    left: 2%;
- }
  #kugel1,#kugel2, #kugel3, #kugel4 {
     width: 50px;
     height: 50px;
@@ -106,6 +104,13 @@ input:focus{
     top: 0%;
     left: 40%;
     background-color: rgb(230, 230, 230);
+}
+#kugel1.singleOne{
+    width: 77px;
+    height: 77px;
+    border-radius: 40px;
+    left: 9%;
+    top: 6%;
 }
 /* Kugeln ende */
 #lineart {
@@ -148,43 +153,41 @@ h2{
 
 }
 /*div größen*/
-#start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
+#start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppings{
     width: 100%;
     height: 100vh;
-}
-#start, #staff{
-    background-color: rgb(204, 224, 255);
     position: relative;
 }
+#start, #staff, #kugel, #saucetopping, #order{
+    background-color: rgb(204, 224, 255);
+}
 #staff{
+    position: relative;
     height:100vh;
     background-size: cover;
 }
-#becher{
+#becher, #eis, #realtoppings{
     background-color: rgb(255, 217, 246);
-    position: relative;
+
 }
-#kugel{
-    background-color: rgb(204, 224, 255);
-    position: relative;
-}
-#eis{
-    background-color: rgb(255, 217, 246);
-    position: relative;
-}
-#saucetopping{
-    background-color: rgb(204, 224, 255);
-    position: relative;
-}
-#realtoppings{
-    background-color: rgb(255, 217, 246);
-    position: relative;
-    height: 100vh;
-}
-#order{
-    background-color: rgb(204, 224, 255);
-    position: relative;
-}
+#side{
+    height: 250px;
+    width: 100px;
+    position: absolute;
+    top: 40%;
+    left: 2%;
+ }
+ #side.sortenside{
+    position: absolute;
+    height: 250px;
+    top: 95%;
+    left: 15%;
+    margin-right: -50px;
+    transform: translate(-50%, -50%);
+ }
+ #side.sauceside{
+    top: 70%;
+ }
 /*sonstiges*/
 #start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
     display: none;
@@ -276,6 +279,9 @@ button{
     /* margin-top: 10px; */
     width: 70px;
 }
+.flavour img{
+    display: none;
+}
 .flavour p, .topper p{
     margin: auto 0;
     font-size: medium;
@@ -363,12 +369,25 @@ h2.sortentext {
 .toppingonice{
     width: 60px;
 }
+#streusel, #rainbow {
+    width: 120px;
+}
 #side{
     height: 400px;
     width: 200px;
     position: absolute;
     top: 42%;
     left: 2%;
+}
+#side.sortenside{
+    height: 400px;
+    top: 70%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+ }
+#side.sauceside{
+    left: 0%;
+    top: 70%;
 }
 #kugel1, #kugel2, #kugel3, #kugel4{
     width: 80px;
@@ -390,6 +409,13 @@ h2.sortentext {
     top: 0%;
     left: 40%; 
 } 
+#kugel1.singleOne{
+    width: 145px;
+    height: 145px;
+    border-radius: 150px;
+    left: 7%;
+    top: 0%;
+}
 #start, #becher, #kugel, #eis, #saucetopping,#order, #realtoppingss{
     width: 100%;
     height: 100vh;
@@ -498,6 +524,15 @@ button#surprise {
 }
 }
 @media screen and (min-width:1025px) {
+#sauceimg.alignsauce3, #sauceimg.alignsauce4{
+    top: -1%;
+}   
+.flavour img{
+    display: inline;
+}
+.flavour h2{
+    display: none;
+}
 #becher, #kugel, #eis, #saucetopping,#order, #realtoppings{
     display: none;
 }
@@ -522,10 +557,25 @@ button#surprise {
     top: 2%;
     left: 22%;
 }
+#streusel, #rainbow {
+    width: 150px;
+}
+#erdbeere{
+    left: 60%;
+}
 #side{
     height: 400px;
     width: 220px;
     left: 0%;
+}
+#side.sortenside{
+    top: 55%;
+    left: 8%;
+    margin-right: 0px;
+}
+#side.sauceside{
+    left: 0%;
+    top: 40%;
 }
 #sauceimg{
     position: absolute;
@@ -556,6 +606,12 @@ button#surprise {
 #kugel4{
     top: 0%;
     left: 40%; 
+}
+#kugel1.singleOne{
+    width: 185px;
+    height: 185px;
+    left: 8%;
+    top: 5%;
 }
 #lineart_container{
     /* position: relative; */
@@ -877,8 +933,8 @@ img#trash {
 #sorten{
     margin-top: 2%;
 }
-#saucetopping h2{
-    font-size:50px;
+#saucetopping h2, #realtoppings h2{
+    font-size: 50px;
 }
 #saucetopping > h1, #realtoppings > h1{
     padding-top: 4%;

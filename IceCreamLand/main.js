@@ -36,12 +36,10 @@ var IceCreamLand;
     let topsauce = document.getElementById("sauce");
     let howmany;
     let coneorcup;
+    //#region vortlaufende darstellung platzieren 
     let side = document.createElement("div");
     side.setAttribute("id", "side");
     kugel.insertBefore(side, kugelanzahl);
-    let eisside = document.createElement("div");
-    eisside.setAttribute("id", "eisside");
-    eis.insertBefore(eisside, sorten);
     let sauceside = document.createElement("div");
     sauceside.setAttribute("id", "sauceside");
     saucetop.insertBefore(sauceside, topsauce);
@@ -62,13 +60,20 @@ var IceCreamLand;
         becher.style.maxWidth = becher.style.maxHeight = "100%";
         start.style.display = "none";
     }
-    //region choose one
+    function setAttributes(_element, _number, _classOrId, _alt, _src) {
+        if (_number == 1)
+            _element.setAttribute("class", _classOrId);
+        if (_number == 2)
+            _element.setAttribute("id", _classOrId);
+        _element.setAttribute("alt", _alt);
+        _element.setAttribute("src", _src);
+    }
+    //#endregion
+    //#region choose one
     addcup();
     function addcup() {
         let img = document.createElement("img");
-        img.setAttribute("class", "home");
-        img.setAttribute("alt", "home");
-        img.setAttribute("src", "home.png");
+        setAttributes(img, 1, "home", "home", "home.png");
         img.addEventListener("click", exit);
         document.getElementById("becher").appendChild(img);
         let div = document.createElement("div"); //new div an #shop1
@@ -95,9 +100,9 @@ var IceCreamLand;
             document.getElementById("button1").style.display = "block";
         }
         function cupAdd() {
+            coneorcup = false;
             document.getElementById("button1").style.display = "block";
             localStorage.setItem("Behälter", "Cup");
-            coneorcup = false;
             cup.style.filter = "grayscale(100%)";
             cone.style.filter = "grayscale(0%)";
         }
@@ -105,37 +110,27 @@ var IceCreamLand;
     //#endregion
     //#region Eventlistener
     let y = 0;
-    /* let side: HTMLElement = document.getElementById("side") as HTMLElement;  */
     document.getElementById("button1").addEventListener("click", buttonclick1);
     function buttonclick1() {
         document.location.href = "#kugel";
         if (y > 0) {
-            /* eisside.removeChild(eisside.lastChild!); */
             side.removeChild(side.lastChild);
             y = 0;
         }
         let div = document.createElement("div");
         div.setAttribute("id", "lineart_container");
         let behaelter = document.createElement("img");
-        /* side.removeChild(side.lastChild!); */
         if (coneorcup) {
-            behaelter.setAttribute("src", "img/cone_img.png");
-            behaelter.setAttribute("alt", "cup");
-            behaelter.setAttribute("id", "lineart");
+            setAttributes(behaelter, 2, "lineart", "cone", "img/cone_img.png");
             y++;
         }
         else {
-            behaelter.setAttribute("src", "img/cup_img.png");
-            behaelter.setAttribute("alt", "cup");
-            behaelter.setAttribute("id", "lineart");
+            setAttributes(behaelter, 2, "lineart", "cup", "img/cup_img.png");
             y++;
         }
         side.appendChild(div);
-        /*  eisside.appendChild(div); */
         div.appendChild(behaelter);
         kugel.style.display = "block";
-        kugel.style.width = "100vw";
-        kugel.style.height = "100vh";
         becher.style.display = "none";
     }
     let counter = 0;
@@ -143,9 +138,7 @@ var IceCreamLand;
     addkugel();
     function addkugel() {
         let img = document.createElement("img");
-        img.setAttribute("class", "home");
-        img.setAttribute("alt", "home");
-        img.setAttribute("src", "home.png");
+        setAttributes(img, 1, "home", "home", "home.png");
         img.addEventListener("click", exit);
         kugel.appendChild(img);
         for (let i = 1; i <= 4; i++) {
@@ -186,24 +179,8 @@ var IceCreamLand;
         for (let i = 1; i <= anzahl; i++) {
             let div = document.createElement("div");
             div.setAttribute("id", "kugel" + i + "");
-            /*  div.style.width = div.style.height = "100px"; */
-            if (anzahl == 1 && window.matchMedia("(min-width: 320px)").matches) {
-                div.style.width = div.style.height = "77px";
-                div.style.borderRadius = "40px";
-                div.style.left = "9%";
-                div.style.top = "6%";
-            }
-            if (anzahl == 1 && window.matchMedia("(min-width: 641px)").matches) {
-                div.style.width = div.style.height = "145px";
-                div.style.borderRadius = "100px";
-                div.style.left = "7%";
-                div.style.top = "0%";
-            }
-            if (anzahl == 1 && window.matchMedia("(min-width: 1025px)").matches) {
-                div.style.width = div.style.height = "185px";
-                div.style.borderRadius = "100px";
-                div.style.left = "8%";
-                div.style.top = "5%";
+            if (anzahl == 1) {
+                div.setAttribute("class", "singleOne");
             }
             kugelzeichnen.appendChild(div);
         }
@@ -212,54 +189,18 @@ var IceCreamLand;
     document.getElementById("button11").addEventListener("click", buttonclick2);
     function buttonclick2() {
         document.location.href = "#eis";
-        if (window.matchMedia("(min-width: 320px)").matches) {
-            side.style.position = "absolute";
-            side.style.left = "0%";
-            side.style.top = "70%";
-            side.style.height = "250px";
-            side.style.marginRight = "-50px";
-            side.style.transform = "(-50%, -50%)";
-        }
-        if (window.matchMedia("(min-width: 641px)").matches) {
-            side.style.height = "400px";
-            side.style.top = "50%";
-            side.style.left = "39%";
-            side.style.marginRight = "-50px";
-            side.style.transform = "(-50%, -50%)";
-        }
-        if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.top = "33%";
-            side.style.left = "-1%";
-            side.style.marginRight = "0px";
-        }
-        if (window.matchMedia("(min-width: 1370px)").matches) {
-            side.style.top = "42%";
-            side.style.left = "0%";
-            side.style.marginRight = "0px";
-        }
+        side.setAttribute("class", "sortenside");
         kugel.style.display = "none";
         eis.style.display = "block";
-        eis.style.width = "100%vw";
-        eis.style.height = "100%vh";
-        eisside.appendChild(side);
-        /* document.overflow = "scroll"; */
+        eis.insertBefore(side, sorten);
     }
     document.getElementById("button2").addEventListener("click", buttonclick3);
     function buttonclick3() {
         document.location.href = "#saucetopping";
-        if (window.matchMedia("(min-width: 641px)").matches) {
-            side.style.left = "0%";
-            side.style.top = "70%";
-        }
-        if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.left = "0%";
-            side.style.top = "40%";
-        }
+        side.setAttribute("class", "sauceside");
         sauceside.appendChild(side);
         eis.style.display = "none";
         saucetop.style.display = "block";
-        saucetop.style.width = "100%vw";
-        saucetop.style.height = "100%vh";
     }
     document.getElementById("button3").addEventListener("click", buttonclick4);
     function buttonclick4() {
@@ -267,8 +208,6 @@ var IceCreamLand;
         topside.appendChild(side);
         saucetop.style.display = "none";
         toppingtest.style.display = "block";
-        toppingtest.style.width = "100%vw";
-        toppingtest.style.height = "100%vh";
     }
     //#endregion kugel
     //#region flavour
@@ -281,28 +220,20 @@ var IceCreamLand;
     addflavour();
     function addflavour() {
         let img = document.createElement("img");
-        img.setAttribute("src", "home.png");
-        img.setAttribute("class", "home");
-        img.setAttribute("alt", "home");
+        setAttributes(img, 1, "home", "home", "home.png");
         img.addEventListener("click", exit);
         eis.appendChild(img);
         console.log("kugel" + howmany);
         for (let i = 0; i < flavour.length; i++) {
-            console.log("i arr");
             let div = document.createElement("div");
             div.setAttribute("class", "flavour");
             sorten.appendChild(div);
-            if (window.matchMedia("(min-width: 1025px)").matches) {
-                let img = document.createElement("img");
-                img.setAttribute("src", "img/" + flavour[i] + ".png");
-                img.setAttribute("alt", flavour[i]);
-                div.appendChild(img);
-            }
-            else {
-                let text = document.createElement("h2");
-                text.setAttribute("class", "sortentext");
-                div.appendChild(text).innerHTML = flavour[i];
-            }
+            let img = document.createElement("img");
+            setAttributes(img, 0, "", flavour[i], "img/" + flavour[i] + ".png");
+            div.appendChild(img);
+            let text = document.createElement("h2");
+            text.setAttribute("class", "sortentext");
+            div.appendChild(text).innerHTML = flavour[i];
             let buttondiv = document.createElement("div");
             buttondiv.setAttribute("class", "buttons");
             div.appendChild(buttondiv);
@@ -344,7 +275,7 @@ var IceCreamLand;
                         }
                     }
                     localStorage.setItem("sorten", JSON.stringify(sorte));
-                    flavourentfernen(flavour[i], insgesamt, sorte);
+                    flavourentfernen(insgesamt, sorte);
                     insgesamt--;
                     if (window.matchMedia("(min-width: 1025px)").matches)
                         reminder.innerHTML = "";
@@ -377,10 +308,10 @@ var IceCreamLand;
             }
         }
     }
-    function flavourzeichnen(flavour, _zahl) {
-        document.getElementById("kugel" + _zahl).style.backgroundImage = "url(flavourimg/" + flavour + ".png)";
+    function flavourzeichnen(_flavour, _zahl) {
+        document.getElementById("kugel" + _zahl).style.backgroundImage = "url(flavourimg/" + _flavour + ".png)";
     }
-    function flavourentfernen(flavour, _zahl, _flav) {
+    function flavourentfernen(_zahl, _flav) {
         let sortenstring = JSON.parse(localStorage.getItem("sorten"));
         console.log(sortenstring);
         document.getElementById("kugel" + _zahl).style.backgroundImage = "none";
@@ -388,16 +319,14 @@ var IceCreamLand;
             document.getElementById("kugel" + i).style.backgroundImage = "url(flavourimg/" + sortenstring[i - 1] + ".png)";
         }
     }
+    //#region top
     let wahl = false;
     let trash = 0;
-    //#region top
     let countsauce = 0;
     addtop();
     function addtop() {
         let img = document.createElement("img");
-        img.setAttribute("src", "home.png");
-        img.setAttribute("class", "home");
-        img.setAttribute("alt", "home");
+        setAttributes(img, 1, "home", "home", "home.png");
         img.addEventListener("click", exit);
         saucetop.appendChild(img);
         for (let i = 0; i < sauce.length; i++) {
@@ -405,8 +334,7 @@ var IceCreamLand;
             div.setAttribute("class", "sauce");
             topsauce.appendChild(div);
             let img = document.createElement("img");
-            img.setAttribute("src", "sauceimg/" + sauce[i] + ".png");
-            img.setAttribute("alt", sauce[i]);
+            setAttributes(img, 0, "", sauce[i], "sauceimg/" + sauce[i] + ".png");
             div.appendChild(img);
             if (sauce[i] != "trash") {
                 let saucename = document.createElement("h2");
@@ -443,126 +371,52 @@ var IceCreamLand;
         }
         if (_sauce == "Erdbeere") {
             let img = document.createElement("img");
-            img.setAttribute("src", "sauceimg/" + "erdbeere" + howmany + ".png");
-            img.setAttribute("id", "sauceimg");
-            img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "-6%";
-                    img.style.left = "33%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "42%";
-                }
-            }
-            if (window.matchMedia("(min-width: 1025px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "20%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "24%";
-                }
-            }
-            side.appendChild(img);
+            setAttributes(img, 2, "sauceimg", _sauce, "sauceimg/erdbeere" + howmany + ".png");
+            if (howmany == 3)
+                img.setAttribute("class", "alignsauce3");
+            if (howmany == 4)
+                img.setAttribute("class", "alignsauce4");
             trash = 0;
+            side.appendChild(img);
         }
         if (_sauce == "Karamell") {
             let img = document.createElement("img");
-            img.setAttribute("src", "sauceimg/" + "karamell" + howmany + ".png");
-            img.setAttribute("id", "sauceimg");
-            img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "33%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "42%";
-                }
-            }
-            if (window.matchMedia("(min-width: 1025px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "20%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "24%";
-                }
-            }
+            setAttributes(img, 2, "sauceimg", _sauce, "sauceimg/karamell" + howmany + ".png");
+            if (howmany == 3)
+                img.setAttribute("class", "alignsauce3");
+            if (howmany == 4)
+                img.setAttribute("class", "alignsauce4");
             trash = 0;
             side.appendChild(img);
         }
         if (_sauce == "Schoko") {
             let img = document.createElement("img");
-            img.setAttribute("src", "sauceimg/" + "schoko" + howmany + ".png");
-            img.setAttribute("id", "sauceimg");
-            img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "33%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "42%";
-                }
-            }
-            if (window.matchMedia("(min-width: 1025px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "20%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "24%";
-                }
-            }
-            side.appendChild(img);
+            setAttributes(img, 2, "sauceimg", _sauce, "sauceimg/schoko" + howmany + ".png");
+            if (howmany == 3)
+                img.setAttribute("class", "alignsauce3");
+            if (howmany == 4)
+                img.setAttribute("class", "alignsauce4");
             trash = 0;
+            side.appendChild(img);
         }
         if (_sauce == "Vanille") {
             let img = document.createElement("img");
-            img.setAttribute("src", "sauceimg/" + "vanille" + howmany + ".png");
-            img.setAttribute("id", "sauceimg");
-            img.setAttribute("alt", _sauce);
-            if (!window.matchMedia("(min-width: 320px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "33%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "42%";
-                }
-            }
-            if (window.matchMedia("(min-width: 1025px)").matches) {
-                if (howmany == 3) {
-                    img.style.top = "0%";
-                    img.style.left = "20%";
-                }
-                if (howmany == 4) {
-                    img.style.top = "-2%";
-                    img.style.left = "24%";
-                }
-            }
+            setAttributes(img, 2, "sauceimg", _sauce, "sauceimg/vanille" + howmany + ".png");
+            if (howmany == 3)
+                img.setAttribute("class", "alignsauce3");
+            if (howmany == 4)
+                img.setAttribute("class", "alignsauce4");
             trash = 0;
             side.appendChild(img);
         }
     }
     let savetopping = [];
     let counttopping = 0;
-    buildtopping();
     let toppingcount = 0;
+    buildtopping();
     function buildtopping() {
         let img = document.createElement("img");
-        img.setAttribute("src", "home.png");
-        img.setAttribute("class", "home");
-        img.setAttribute("alt", "home");
+        setAttributes(img, 1, "home", "home", "home.png");
         img.addEventListener("click", exit);
         toppingtest.appendChild(img);
         for (let i = 0; i < toppings.length; i++) {
@@ -570,8 +424,7 @@ var IceCreamLand;
             div.setAttribute("class", "topper");
             top.appendChild(div);
             let img = document.createElement("img");
-            img.setAttribute("src", "img/" + toppings[i] + ".png");
-            img.setAttribute("alt", toppings[i]);
+            setAttributes(img, 0, "", toppings[i], "img/" + toppings[i] + ".png");
             div.appendChild(img);
             if (toppings[i] != "trash") {
                 let topname = document.createElement("h2");
@@ -608,26 +461,13 @@ var IceCreamLand;
     }
     function drawtop(_topping) {
         let img = document.createElement("img");
-        img.setAttribute("src", "toppingimg/" + _topping + ".png");
-        img.setAttribute("class", "toppingonice");
-        if (window.matchMedia("(min-width: 320px)").matches) {
-            if (_topping == "Streusel" || _topping == "Regenbogen")
-                img.style.width = "70px";
-            if (_topping == "Erdbeeren")
-                img.style.left = "50%";
-        }
-        if (window.matchMedia("(min-width: 641px)").matches) {
-            if (_topping == "Streusel" || _topping == "Regenbogen")
-                img.style.width = "120px";
-            if (_topping == "Erdbeeren")
-                img.style.left = "50%";
-        }
-        if (window.matchMedia("(min-width: 1025px)").matches) {
-            if (_topping == "Streusel" || _topping == "Regenbogen")
-                img.style.width = "150px";
-            if (_topping == "Erdbeeren")
-                img.style.left = "60%";
-        }
+        setAttributes(img, 1, "toppingonice", _topping, "toppingimg/" + _topping + ".png");
+        if (_topping == "Streusel")
+            img.setAttribute("id", "streusel");
+        if (_topping == "Regenbogen")
+            img.setAttribute("id", "rainbow");
+        if (_topping == "Erdbeeren")
+            img.setAttribute("id", "erdbeere");
         side.appendChild(img);
     }
     document.getElementById("button4").addEventListener("click", buttonclick5);
@@ -646,16 +486,13 @@ var IceCreamLand;
         }
         toppingtest.style.display = "none";
         order.style.display = "block";
-        order.style.width = "100%vw";
-        order.style.height = "100%vh";
     }
-    document.getElementById("surprise")?.addEventListener("click", surpriseclick);
+    document.getElementById("surprise").addEventListener("click", surpriseclick);
     function surpriseclick() {
         let div = document.createElement("div");
         div.setAttribute("id", "surprisememe");
         let img = document.createElement("img");
-        img.setAttribute("src", "GIS_Meme.png");
-        img.setAttribute("alt", "meme");
+        setAttributes(img, 0, "", "meme", "GIS_Meme.png");
         div.appendChild(img);
         let a = document.createElement("a");
         a.setAttribute("href", "https://en.wikipedia.org/wiki/Distracted_boyfriend_meme#/media/File:Disloyal_man_with_his_girlfriend_looking_at_another_girl.jpg");
@@ -668,9 +505,6 @@ var IceCreamLand;
     function exit() {
         document.location.href = "#start";
         order.style.display = "none";
-        start.style.display = "block";
-        start.style.width = "100%vw";
-        start.style.height = "100%vh";
         localStorage.clear();
         window.location.reload();
     }
