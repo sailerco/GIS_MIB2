@@ -20,7 +20,7 @@ namespace IceCreamLand {
                 url = url + "&Topping" + zahl.toString() + "=" + toppingstring[i]; 
             }
         }
-        url = url + "&preis=" + localStorage.getItem("preis");
+        url = url + "&preis=" +  parseFloat(localStorage.getItem("preis")!).toFixed(2);
         await fetch(url);
     }
 }
