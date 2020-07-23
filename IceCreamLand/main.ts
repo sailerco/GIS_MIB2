@@ -508,7 +508,7 @@ namespace IceCreamLand {
     document.getElementById("button4")!.addEventListener("click", buttonclick5);
     function buttonclick5(): void {
         counttopping = parseFloat(localStorage.getItem("preis")!) + counttopping;
-        localStorage.setItem("preis", counttopping.toString());
+        localStorage.setItem("preis", counttopping.toFixed(2));
         let h2: HTMLElement = document.createElement("h2");
         h2.innerHTML = "Du musst " + counttopping.toFixed(2) + "€ zahlen";
         h2.setAttribute("id", "orderhead");
