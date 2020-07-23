@@ -74,7 +74,6 @@ namespace IceCreamLand {
             }
             if (url.pathname == "/deleteOne") {
                 console.log("Bestimme id aus der Datenbank entfernen");
-                /* let urli: Bestellung = <Bestellung> url.query; */
                 for (let key in url.query) { //auf richtige id zugreifen
                     let value: string = <string>url.query[key]; 
                     /*inspired by https://stackoverflow.com/questions/12901593/remove-record-by-id*/
@@ -84,7 +83,6 @@ namespace IceCreamLand {
                 }
             }
             if (url.pathname == "/getthemoney") {
-                /* let urli: Bestellung = <Bestellung> url.query; */
                 console.log("Geld einsammeln");
                 for (let key in url.query) {
                     let value: string = <string>url.query[key]; 

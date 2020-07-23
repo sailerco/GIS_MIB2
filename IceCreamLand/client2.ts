@@ -77,7 +77,6 @@ namespace IceCreamLand {
                 p.innerHTML += ", " + reply[index].Topping4;
             p.innerHTML += "<br> Extra Wünsche: " + reply[index].Kommentar + "<br>";
             console.log("test: " + parseFloat("AAA"));
-            
             p.innerHTML += "<br> PREIS: " + reply[index].preis + "<br>";
             
             let img: HTMLElement = document.createElement("img");
