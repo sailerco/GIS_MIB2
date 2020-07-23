@@ -479,11 +479,12 @@ var IceCreamLand;
         h2.setAttribute("id", "orderhead");
         order.insertBefore(h2, document.getElementById("form"));
         document.location.href = "#order";
-        if (window.matchMedia("(min-width: 1025px)").matches) {
+        /* if (window.matchMedia("(min-width: 1025px)").matches) {
             side.style.left = "60%";
-            side.style.top = "20%";
-            orderside.appendChild(side);
-        }
+            side.style.top = "20%"; */
+        side.setAttribute("class", "orderside");
+        orderside.appendChild(side);
+        /* } */
         toppingtest.style.display = "none";
         order.style.display = "block";
     }

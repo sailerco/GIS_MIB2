@@ -40,8 +40,8 @@ input:focus{
     top: 0%;
 }
 #sauceimg.alignsauce4{
-    top: -2%;
-    left: 24%;
+    top: -1%;
+    left: 20%;
 }
 .home,  .staff{
     width: 30px;
@@ -58,7 +58,7 @@ input:focus{
 }
 .toppingonice{
     top: 0;
-    left: 9%;
+    left: 20%;
     width: 35px;
     position: absolute;
     z-index: 1;
@@ -163,12 +163,37 @@ h2{
 }
 #staff{
     position: relative;
-    height:100vh;
+    height: 100vh;
     background-size: cover;
+}
+#Bestellungen{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(204, 224, 255);
+}
+#staff .vorschau > p{
+    color: rgb(204, 224, 255);
+    background-color: white;
+    width: 200px;
+}
+#staff p + img{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+#staff img ~ div > button{
+    color: rgb(190,210,255);
+    width: 75%;
+    margin-left: 5%;
+}
+.vorschau{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
 }
 #becher, #eis, #realtoppings{
     background-color: rgb(255, 217, 246);
-
 }
 #side{
     height: 250px;
@@ -185,8 +210,8 @@ h2{
     margin-right: -50px;
     transform: translate(-50%, -50%);
  }
- #side.sauceside{
-    top: 70%;
+ #side.sauceside, #side.orderside{
+    top: 73%;
  }
 /*sonstiges*/
 #start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
@@ -228,7 +253,6 @@ button{
     margin-right: -50%;
     transform: translate(-50%, -50%); /*IMPORTANT*/
 }
-
 #zahl{
     text-align: center;
     display: flex;
@@ -276,7 +300,6 @@ button{
     margin-right: auto;
     display: flex;
     align-content: center;
-    /* margin-top: 10px; */
     width: 70px;
 }
 .flavour img{
@@ -314,7 +337,7 @@ button{
     border-style: none;
 }
 #form input:invalid{
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgb(200, 209, 250);
 }
 #form button{
     margin: 0px 20px;
@@ -322,27 +345,55 @@ button{
     height: 30px;
     width: 100px;
 }
-#exit{
-    width: 120px;
-    height: 30px;
+/* #exit{
+    
     margin-top: 20px;
-    font-size: larger;
+    
     position: absolute;
     margin-top: 30px;
     left: 50%;
     margin-right: -50px;
     transform: translate(-50%, -50%);
+} */
+#last_buttons{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+#last_buttons button{  
+    font-size: 20px;
+    width: 120px;
+    height: 30px;
 }
 #surprise{
     display: none;
 }
-
+#formular{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#formular button{
+    height: 33px;
+}
+#formular button:hover{
+    color: white;
+    background-color: rgb(190,210,255);
+}
+button#surprise:hover, #form button:hover, #exit:hover {
+    transition: all 500ms ease-in-out;
+    color: black;
+    box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+}
 }
 
 @media screen and (min-width:641px) {
 .home{
     width: 40px;
 }
+
 #start .staff{
     height: 40px;
     width: 40px;
@@ -355,14 +406,8 @@ h2.sortentext {
     font-weight: 100;
     font-size: 60px;
 }
-#exit{
-    margin-top: 30px;
-    width: 170px;
-    height: 40px;
-    font-size: x-large;
-}
 #sauceimg{
-    width: 140px;
+    width: 130px;
     top: 0%;
     left: 8%;
 } 
@@ -388,6 +433,10 @@ h2.sortentext {
 #side.sauceside{
     left: 0%;
     top: 70%;
+}
+#side.orderside{
+    left: 62%;
+    top: 20%;
 }
 #kugel1, #kugel2, #kugel3, #kugel4{
     width: 80px;
@@ -498,29 +547,40 @@ button{
     margin-bottom: 20px;
     height: 30px;
 }
-#form button{
-    font-size: larger;
-    width: 140px;
+#form button, #last_buttons button{
+    font-size: 25px;
+    width: 180px;
     height: 40px;
+}
+#last_buttons{
+    flex-flow: column nowrap;
+}
+#last_buttons button{
+    margin-bottom: 10px;
 }
 #surprise {
     display: block;
 }
-button#surprise {
-    width: 180px;
-    height: 40px;
-    font-size: x-large;
-    position: absolute;
-    top: 75%;
-    left: 45%;
-    margin-right: -50px;
-    margin-top: 70px;
-    transform: translate(-50px, -50px);
-}
 #surprisememe img{
     width: 300px;
-    padding-top: 100px;
-    padding-left: 50px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+#formular button{
+    height: 55px;
+}
+#staff p + img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+#order > div > a {
+    color: white;
+    font-size: large;
+    font-weight: 200;
+}
+#sauceimg.alignsauce4{
+    left: 15%;
 }
 }
 @media screen and (min-width:1025px) {
@@ -553,8 +613,7 @@ button#surprise {
 }
 .toppingonice{
     width: 90px;
-    position: absolute;
-    top: 2%;
+    top: 0%;
     left: 22%;
 }
 #streusel, #rainbow {
@@ -614,7 +673,6 @@ button#surprise {
     top: 5%;
 }
 #lineart_container{
-    /* position: relative; */
     position: absolute;
     z-index: 1;
     width: 220px;   
@@ -653,8 +711,7 @@ button#surprise {
 }
 #start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
     height: 29%;
-    /* width: 100%; */
-}/*aaa*/
+}
 #start img[alt="logo"]{
     padding: 0px 30px 20px;
 }
@@ -671,10 +728,8 @@ button#surprise {
     top: 7%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* padding: 20px; */
 } 
 #auswahl img{
-    /* height: 500px; */
     height: 60vh;
 } 
 #auswahl{
@@ -685,14 +740,6 @@ button#surprise {
     width: initial;
     margin: 50px 200px;
 }
-/* #sauce, */ /* #top{
-    margin-top: 100px;
-    margin-left: 250px;
-    margin-right: 200px;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-} */
 #sauce, #top{
     margin: 0 200px;
 }
@@ -810,19 +857,6 @@ form{
     margin: auto 0;
     font-size: x-large;
 }
-#formular{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0 350px;
-}
-#formular button{
-    height: 50px
-}
-#formular button:hover{
-    color: white;
-    background-color: rgb(190,210,255);
-}
 #form button{
     width: 170px;
 }
@@ -845,7 +879,7 @@ form{
 #surprisememe{
     width: 400px;
     position: absolute;
-    top: 40%;
+    top: 38%;
     left: 2%;
 }
 #surprisememe img{
@@ -862,11 +896,6 @@ button#surprise{
     transform: translate(-50%, -50%);
     color: black;
     box-shadow: 0 0 40px 40px white inset, 0 0 0 0 white;
-}
-button#surprise:hover, #form button:hover, #exit:hover {
-    transition: all 500ms ease-in-out;
-    color: black;
-    box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
 }
 #exit{
     margin-top: 20px;
@@ -894,6 +923,9 @@ img#trash {
 }
 }
 @media screen and (min-width: 1370px){
+#surprisememe{
+    top: 40%;
+}    
 #start img[alt="head"], #becher img[alt = "head"],  #kugel img[alt = "head"]{
     height: 250px;
     width: 100%;
@@ -921,11 +953,6 @@ img#trash {
 }
 #realtoppings > h1{
     font-size: 60px;
-}
-#staff .vorschau_button{
-    margin-top: 100px;
-    margin-bottom: auto;
-    width: 100px
 }
 #start img[alt="logo"]{
     padding: 0px 30px 2%;
