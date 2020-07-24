@@ -1,7 +1,6 @@
 "use strict";
 var IceCreamLand;
 (function (IceCreamLand) {
-    let money = 0;
     let id = document.getElementById("Bestellungen");
     document.getElementById("retrieve").addEventListener("click", show);
     let staff = document.getElementById("Bestellungen");
@@ -10,7 +9,6 @@ var IceCreamLand;
     preisp.setAttribute("id", "Verdienst");
     let h1 = document.getElementById("headofstaff");
     h1.append(preisp);
-    /* let count: number = 1; */
     async function show() {
         let formData = new FormData(document.forms[0]);
         let url = "https://dedflake.herokuapp.com/" + "retrieve";
@@ -107,7 +105,6 @@ var IceCreamLand;
         paragraph.innerHTML = "Es gibt keine Bestellungen";
         staff.appendChild(paragraph);
     }
-    /* document.getElementById("deletelast")!.addEventListener("click", deletelast); */
     async function deleteOne(_idtodelete) {
         let url = "https://dedflake.herokuapp.com/deleteOne" + "?_id=" + _idtodelete;
         /* let url: string = "http://localhost:8100/deleteOne" + "?_id=" + _idtodelete; */

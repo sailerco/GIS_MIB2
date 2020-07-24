@@ -6,7 +6,6 @@ const Mongo = require("mongodb");
 var IceCreamLand;
 (function (IceCreamLand) {
     let gettheorder;
-    /* let currentOrder: String; */
     console.log("start");
     let orders;
     let port = Number(process.env.PORT);

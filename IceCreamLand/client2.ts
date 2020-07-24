@@ -19,7 +19,6 @@ namespace IceCreamLand {
         Topping4?: string;
         preis: string;
     }
-    let money: number = 0;
     let id: HTMLElement = document.getElementById("Bestellungen") as HTMLElement;
     document.getElementById("retrieve")!.addEventListener("click", show);
     let staff: HTMLElement = document.getElementById("Bestellungen") as HTMLElement;
@@ -28,7 +27,6 @@ namespace IceCreamLand {
     preisp.setAttribute("id", "Verdienst");
     let h1: HTMLElement = document.getElementById("headofstaff") as HTMLElement;
     h1.append(preisp);
-    /* let count: number = 1; */
     async function show(): Promise <void> {
         let formData: FormData = new FormData(document.forms[0]); 
         let url: string = "https://dedflake.herokuapp.com/" + "retrieve";
@@ -127,14 +125,12 @@ namespace IceCreamLand {
         while (staff.firstChild) {
             staff.removeChild(staff.firstChild);
         }
-
         staff.setAttribute("id", "Bestellung");
         let paragraph: HTMLElement = document.createElement("p");
         paragraph.innerHTML = "Es gibt keine Bestellungen";
         staff.appendChild(paragraph);
     }
 
-    /* document.getElementById("deletelast")!.addEventListener("click", deletelast); */
     async function deleteOne(_idtodelete: string): Promise <void> {
         let url: string = "https://dedflake.herokuapp.com/deleteOne" + "?_id=" + _idtodelete;
         /* let url: string = "http://localhost:8100/deleteOne" + "?_id=" + _idtodelete; */

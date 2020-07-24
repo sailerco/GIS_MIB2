@@ -8,7 +8,7 @@ namespace IceCreamLand {
         [type: string]: string| string[]| undefined;
     }
     let gettheorder: Bestellung[];
-    /* let currentOrder: String; */
+    
     console.log("start");
     let orders: Mongo.Collection;
     let port: number = Number(process.env.PORT);
