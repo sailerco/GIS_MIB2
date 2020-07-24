@@ -168,7 +168,7 @@ h2{
     flex-direction: column;
     background-color: rgb(204, 224, 255);
 }
-#staff .vorschau > p{
+#staff .vorschau > p, #Bestellung p{
     color: rgb(204, 224, 255);
     background-color: white;
     width: 200px;
