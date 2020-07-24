@@ -401,8 +401,6 @@ namespace IceCreamLand {
             countsauce = 0;
             trash++;
         }            
-        
-
         if (_sauce == "Erdbeere") {
             let img: HTMLImageElement = document.createElement("img");
             setAttributes(img, 2, "sauceimg", _sauce, "sauceimg/erdbeere" + howmany + ".png");
@@ -513,12 +511,8 @@ namespace IceCreamLand {
         h2.setAttribute("id", "orderhead");
         order.insertBefore(h2, document.getElementById("form"));
         document.location.href = "#order";
-        /* if (window.matchMedia("(min-width: 1025px)").matches) {
-            side.style.left = "60%";
-            side.style.top = "20%"; */
         side.setAttribute("class", "orderside");
         orderside.appendChild(side);
-        /* } */
         toppingtest.style.display = "none";
         order.style.display = "block";
     }
