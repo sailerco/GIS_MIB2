@@ -32,13 +32,6 @@ input:focus{
 #reminder{
     display: none;
 }
-#sauceimg.alignsauce3{
-    top: 0%;
-}
-#sauceimg.alignsauce4{
-    top: -1%;
-    left: 20%;
-}
 .home,  .staff{
     width: 30px;
     position: absolute;
@@ -48,9 +41,9 @@ input:focus{
 #orderhead{
     padding-top: 20px;
 }
-#start .staff{
+#start .staff, .home{
     height: 30px;
-    padding: 5px;
+    padding: 10px;
 }
 .toppingonice{
     top: 0;
@@ -74,6 +67,13 @@ input:focus{
     top: 0%;
     left: 16%;
 } 
+#sauceimg.alignsauce3{
+    top: 0%;
+}
+#sauceimg.alignsauce4{
+    top: -1%;
+    left: 20%;
+}
  #kugel1,#kugel2, #kugel3, #kugel4 {
     width: 50px;
     height: 50px;
@@ -379,11 +379,10 @@ button#surprise:hover, #form button:hover, #exit:hover {
 .home{
     width: 40px;
 }
-
-#start .staff{
+#start .staff, .home{
     height: 40px;
     width: 40px;
-    padding: 5px;
+    padding: 20px;
 }
 #saucetopping h2{
     font-size: 40px;
@@ -395,7 +394,7 @@ h2.sortentext {
 #sauceimg{
     width: 130px;
     top: 0%;
-    left: 8%;
+    left: 12%;
 } 
 .toppingonice{
     width: 60px;
@@ -572,7 +571,10 @@ button{
 @media screen and (min-width:1025px) {
 #sauceimg.alignsauce3, #sauceimg.alignsauce4{
     top: -1%;
-}   
+} 
+#sauceimg.alignsauce4{
+    left: 24%;
+}     
 .flavour img{
     display: inline;
 }
@@ -877,13 +879,7 @@ form{
     font-size: large;
     font-weight: 500;
 }
-button#surprise{
-    font-size: x-large;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    box-shadow: 0 0 40px 40px white inset, 0 0 0 0 white;
-}
+
 #exit{
     margin-top: 20px;
     width: 170px;

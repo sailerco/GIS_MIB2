@@ -57,7 +57,6 @@ var IceCreamLand;
     function buttonclick() {
         document.location.href = "#becher";
         becher.style.display = "block";
-        becher.style.maxWidth = becher.style.maxHeight = "100%";
         start.style.display = "none";
     }
     function setAttributes(_element, _number, _classOrId, _alt, _src) {

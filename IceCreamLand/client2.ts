@@ -48,7 +48,7 @@ namespace IceCreamLand {
             let number: number = index + 1;
             p.innerHTML = "Bestellung " + number + "<br>";
             p.innerHTML += "Name: " + reply[index].Vorname + " " + reply[index].Nachname + "<br>";
-            p.innerHTML += "Adresse: <br>" + reply[index].Straße + "<br>" + reply[index].Ort;
+            p.innerHTML += "Adresse: <br>" + reply[index].Straße + "<br>" + reply[index].Ort + "<br>";
             p.innerHTML += "Behälter: " + reply[index].Behaelter + "<br>";
             
             if (reply[index].kugeln == "1")

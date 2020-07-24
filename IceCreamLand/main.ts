@@ -67,7 +67,6 @@ namespace IceCreamLand {
     function buttonclick(): void {
         document.location.href = "#becher";
         becher.style.display = "block";
-        becher.style.maxWidth = becher.style.maxHeight = "100%";
         start.style.display = "none";
     }
     function setAttributes(_element: HTMLElement, _number: number, _classOrId: string, _alt: string, _src: string): void {
